@@ -24,6 +24,7 @@ Best practices:
 - Validate and sanitize all user inputs server-side`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// ✅ Safe - React escapes automatically
 function Comment({ text }) {
   return <p>{text}</p>;  // <script> becomes &lt;script&gt;
@@ -92,6 +93,7 @@ Prevention strategies:
    - X-Requested-With or custom token header`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Getting CSRF token from meta tag (Rails-style)
 function getCSRFToken() {
   return document.querySelector('meta[name="csrf-token"]')?.content;
@@ -168,6 +170,7 @@ Memory (state):
 Best practice: Use HTTP-only cookies for auth tokens.`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// ❌ Bad - Token accessible to XSS attacks
 localStorage.setItem('authToken', token);
 
@@ -239,6 +242,7 @@ Challenges with React:
 - Style-in-JS libraries may need configuration`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Next.js - next.config.js
 const securityHeaders = [
   {
@@ -318,6 +322,7 @@ Prevention methods:
 Best practice: Use both X-Frame-Options and CSP.`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Next.js security headers
 // next.config.js
 module.exports = {
@@ -384,6 +389,7 @@ Authorization patterns:
 Key principle: Never trust the client. Always validate on the server.`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Route protection in Next.js App Router
 // middleware.ts
 import { NextResponse } from 'next/server';
@@ -472,6 +478,7 @@ function EditButton({ postId }) {
    - Don't expose internal errors`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Secure Server Action
 'use server';
 
@@ -554,6 +561,7 @@ export async function createPost(formData: FormData) {
    - Use secret management services for production`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// .env.local (never commit!)
 DATABASE_URL=postgresql://...
 API_SECRET_KEY=secret123
@@ -627,6 +635,7 @@ Prevention:
    - Pre-compiled queries`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// ❌ VULNERABLE - String concatenation
 const query = \`SELECT * FROM users WHERE id = \${userId}\`;
 // userId = "1; DROP TABLE users; --" → disaster!
@@ -699,6 +708,7 @@ Algorithms:
 - Leaky bucket`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Next.js with Upstash Redis rate limiting
 // lib/ratelimit.ts
 import { Ratelimit } from '@upstash/ratelimit';
@@ -777,6 +787,7 @@ Storage:
 - Consider cloud storage (S3) with signed URLs`,
     difficulty: 'senior',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// Server Action with validation
 'use server';
 import { randomUUID } from 'crypto';
@@ -862,6 +873,7 @@ Security concerns:
 Misconfigurations can expose APIs to unauthorized access.`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Next.js API Route with CORS
 // app/api/data/route.ts
 const allowedOrigins = [
@@ -943,6 +955,7 @@ app.use(cors({
 Never concatenate user input into SQL strings!`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// ❌ VULNERABLE - String interpolation
 const userId = req.query.id;
 const query = \`SELECT * FROM users WHERE id = '\${userId}'\`;
@@ -1014,6 +1027,7 @@ Token management:
 - Revocation mechanism`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Secure cookie settings
 const sessionCookie = {
   name: 'session',
@@ -1108,6 +1122,7 @@ Prevention methods:
 frame-ancestors is more flexible and recommended for modern browsers.`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Next.js security headers
 // next.config.js
 module.exports = {
@@ -1183,6 +1198,7 @@ Server-side:
 - Implement proper access controls`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// ❌ BAD - Secrets in client code
 const API_KEY = 'sk-secret-key-12345';
 
@@ -1266,6 +1282,7 @@ Prevention:
 - Freeze prototypes in critical code`,
     difficulty: 'expert',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// ❌ VULNERABLE - Unsafe deep merge
 function deepMerge(target, source) {
   for (const key in source) {
@@ -1341,6 +1358,7 @@ Validation:
 - Implement account lockout`,
     difficulty: 'senior',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `import bcrypt from 'bcrypt';
 import { z } from 'zod';
 
@@ -1460,6 +1478,7 @@ Prevention:
 - Use URL parsing and validation`,
     difficulty: 'expert',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// ❌ VULNERABLE - Direct user URL
 async function fetchUrl(request: Request) {
   const { url } = await request.json();
@@ -1552,6 +1571,7 @@ Usage:
 - Implement key expiration`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// ❌ BAD - Key in client code
 const API_KEY = 'sk_live_12345';
 
@@ -1646,6 +1666,7 @@ Mitigation:
 - Use fewer dependencies`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Check for vulnerabilities
 npm audit
 
@@ -1732,6 +1753,7 @@ Best practices:
 - Don't expose internal details`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// ❌ BAD - Exposes internal details
 app.use((err, req, res, next) => {
   res.status(500).json({
@@ -1835,6 +1857,7 @@ Directives:
 - frame-ancestors: Who can embed (clickjacking)`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Next.js CSP configuration
 // next.config.js
 const ContentSecurityPolicy = \`
@@ -1932,6 +1955,7 @@ Implementation:
 - Provide backup codes`,
     difficulty: 'senior',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `import { authenticator } from 'otplib';
 import QRCode from 'qrcode';
 
@@ -2050,6 +2074,7 @@ Prevention:
 - Generic error messages`,
     difficulty: 'expert',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `import crypto from 'crypto';
 
 // ❌ VULNERABLE - Non-constant time comparison
@@ -2150,6 +2175,7 @@ Prevention:
 - Don't spread request body directly`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// ❌ VULNERABLE - Spreads entire body
 export async function updateProfile(request: Request) {
   const body = await request.json();
@@ -2250,6 +2276,7 @@ Client-side:
 - Redirect to login`,
     difficulty: 'intermediate',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// Server Action for logout
 export async function logout() {
   'use server';
@@ -2361,6 +2388,7 @@ Prevention:
 - Avoid user-controlled redirects`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// ❌ VULNERABLE - Direct user-controlled redirect
 export async function GET(request: NextRequest) {
   const returnTo = request.nextUrl.searchParams.get('returnTo');
@@ -2455,6 +2483,7 @@ Protection:
 - Implement timeouts`,
     difficulty: 'senior',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// Server-side WebSocket with authentication
 import { WebSocketServer } from 'ws';
 import { verifyToken } from './auth';
@@ -2581,6 +2610,7 @@ Required headers:
 - Permissions-Policy - Feature control`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// next.config.js - Complete security headers
 module.exports = {
   async headers() {
@@ -2695,6 +2725,7 @@ export function middleware(request: NextRequest) {
    - Verify signature`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// NextAuth.js OAuth configuration
 import NextAuth from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
@@ -2836,6 +2867,7 @@ async function handleCallback(request: Request) {
    - Retry-After header`,
     difficulty: 'senior',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// Upstash rate limiting
 import { Ratelimit } from '@upstash/ratelimit';
 import { Redis } from '@upstash/redis';
@@ -2963,6 +2995,7 @@ async function rateLimitWithFallback(identifier: string) {
    - Use worker processes`,
     difficulty: 'senior',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// Secure file upload API route
 import { NextResponse } from 'next/server';
 import { put } from '@vercel/blob';
@@ -3120,6 +3153,7 @@ async function processImage(buffer: Buffer) {
    - Audit log access`,
     difficulty: 'senior',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// Secure logger implementation
 type LogLevel = 'debug' | 'info' | 'warn' | 'error';
 
@@ -3273,6 +3307,7 @@ logger.info('Auth attempt', {
    - Use secrets manager`,
     difficulty: 'senior',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// Environment validation with Zod
 // lib/env.ts
 import { z } from 'zod';
@@ -3413,6 +3448,7 @@ async function rotateApiKey() {
    - Remove unused`,
     difficulty: 'senior',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// package.json scripts for security
 {
   "scripts": {
@@ -3548,6 +3584,7 @@ function evaluateDependency(packageName: string) {
    - Message sanitization`,
     difficulty: 'senior',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// Secure WebSocket server
 import { WebSocketServer, WebSocket } from 'ws';
 import jwt from 'jsonwebtoken';
@@ -3713,6 +3750,7 @@ function useSecureWebSocket(url: string) {
    - Security scanners`,
     difficulty: 'senior',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// middleware.ts - Security headers
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
@@ -3853,6 +3891,7 @@ async function verifySecurityHeaders(url: string) {
    - Absolute timeout`,
     difficulty: 'senior',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// Secure session configuration with NextAuth
 import NextAuth from 'next-auth';
 import { PrismaAdapter } from '@auth/prisma-adapter';
@@ -4055,6 +4094,7 @@ export const sessionManager = new SessionManager();`,
    - Request signing`,
     difficulty: 'senior',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// Secure API route with middleware
 import { NextResponse } from 'next/server';
 import { auth } from '@/auth';
@@ -4239,6 +4279,7 @@ function verifyRequestSignature(request: Request) {
    - Security scanners`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// next.config.js - X-Frame-Options
 module.exports = {
   async headers() {
@@ -4380,6 +4421,7 @@ export function middleware(request: NextRequest) {
    - Single use`,
     difficulty: 'senior',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// Password hashing with bcrypt
 import bcrypt from 'bcrypt';
 
@@ -4565,6 +4607,7 @@ async function resetPassword(token: string, newPassword: string) {
    - Monitor violations`,
     difficulty: 'senior',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// Comprehensive CSP configuration
 // middleware.ts
 import { NextResponse } from 'next/server';
@@ -4750,6 +4793,7 @@ async function testCSP(url: string) {
    - Retention policies`,
     difficulty: 'senior',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// Audit logging service
 interface AuditEvent {
   timestamp: Date;
@@ -4944,6 +4988,263 @@ async function getAuditLogs(filters: {
 }`,
     tags: ['security', 'audit-logging', 'monitoring', 'compliance'],
     timeEstimate: 6
+  },
+  
+  // Multiple Choice Questions
+  {
+    id: 'sec-mcq-1',
+    category: 'Security',
+    question: 'What does XSS stand for?',
+    answer: 'Cross-Site Scripting - A vulnerability that allows attackers to inject malicious scripts into web pages viewed by other users.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Cross-Site Scripting', isCorrect: true },
+      { id: 'b', text: 'Cross-Server Security', isCorrect: false },
+      { id: 'c', text: 'Cross-Site Styling', isCorrect: false },
+      { id: 'd', text: 'Cross-System Scripting', isCorrect: false }
+    ],
+    tags: ['security', 'xss'],
+    timeEstimate: 1
+  },
+  {
+    id: 'sec-mcq-2',
+    category: 'Security',
+    question: 'Which React feature helps prevent XSS attacks by default?',
+    answer: 'JSX automatically escapes values before rendering them, preventing XSS attacks.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'React.memo()', isCorrect: false },
+      { id: 'b', text: 'JSX automatic escaping', isCorrect: true },
+      { id: 'c', text: 'useEffect cleanup', isCorrect: false },
+      { id: 'd', text: 'Virtual DOM', isCorrect: false }
+    ],
+    tags: ['security', 'xss', 'jsx'],
+    timeEstimate: 1
+  },
+  {
+    id: 'sec-mcq-3',
+    category: 'Security',
+    question: 'What is CSRF?',
+    answer: 'Cross-Site Request Forgery - An attack that forces users to execute unwanted actions on a web application where they are authenticated.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Cross-Site Request Forgery', isCorrect: true },
+      { id: 'b', text: 'Client-Side Request Failure', isCorrect: false },
+      { id: 'c', text: 'Cross-Server Resource Fetch', isCorrect: false },
+      { id: 'd', text: 'Client-Server Request Format', isCorrect: false }
+    ],
+    tags: ['security', 'csrf'],
+    timeEstimate: 1
+  },
+  {
+    id: 'sec-mcq-4',
+    category: 'Security',
+    question: 'Which method should you use to render user-provided HTML safely?',
+    answer: 'Sanitize the HTML with a library like DOMPurify before using dangerouslySetInnerHTML.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Use innerHTML directly', isCorrect: false },
+      { id: 'b', text: 'Sanitize with DOMPurify before dangerouslySetInnerHTML', isCorrect: true },
+      { id: 'c', text: 'Use eval() on the HTML', isCorrect: false },
+      { id: 'd', text: 'Always trust user input', isCorrect: false }
+    ],
+    tags: ['security', 'xss', 'sanitization'],
+    timeEstimate: 1
+  },
+  {
+    id: 'sec-mcq-5',
+    category: 'Security',
+    question: 'Where should you store sensitive API keys in a React application?',
+    answer: 'Server-side only - Never expose API keys in client-side code; use environment variables on the server.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'In the React component state', isCorrect: false },
+      { id: 'b', text: 'In localStorage', isCorrect: false },
+      { id: 'c', text: 'Server-side only, never in client code', isCorrect: true },
+      { id: 'd', text: 'In a JavaScript constant', isCorrect: false }
+    ],
+    tags: ['security', 'api-keys', 'environment'],
+    timeEstimate: 1
+  },
+  {
+    id: 'sec-mcq-6',
+    category: 'Security',
+    question: 'What is the purpose of Content Security Policy (CSP)?',
+    answer: 'To prevent XSS attacks by specifying which dynamic resources are allowed to load.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'To compress content for faster loading', isCorrect: false },
+      { id: 'b', text: 'To prevent XSS by controlling resource loading', isCorrect: true },
+      { id: 'c', text: 'To encrypt all data', isCorrect: false },
+      { id: 'd', text: 'To cache content offline', isCorrect: false }
+    ],
+    tags: ['security', 'csp', 'xss'],
+    timeEstimate: 1
+  },
+  {
+    id: 'sec-mcq-7',
+    category: 'Security',
+    question: 'Which HTTP header helps prevent clickjacking attacks?',
+    answer: 'X-Frame-Options or Content-Security-Policy frame-ancestors directive.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'X-Content-Type-Options', isCorrect: false },
+      { id: 'b', text: 'X-Frame-Options', isCorrect: true },
+      { id: 'c', text: 'X-XSS-Protection', isCorrect: false },
+      { id: 'd', text: 'Cache-Control', isCorrect: false }
+    ],
+    tags: ['security', 'clickjacking', 'headers'],
+    timeEstimate: 1
+  },
+  {
+    id: 'sec-mcq-8',
+    category: 'Security',
+    question: 'What is the secure way to store authentication tokens in a browser?',
+    answer: 'HttpOnly cookies - They cannot be accessed by JavaScript, reducing XSS risk.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'localStorage', isCorrect: false },
+      { id: 'b', text: 'sessionStorage', isCorrect: false },
+      { id: 'c', text: 'HttpOnly cookies', isCorrect: true },
+      { id: 'd', text: 'In a global JavaScript variable', isCorrect: false }
+    ],
+    tags: ['security', 'authentication', 'cookies'],
+    timeEstimate: 1
+  },
+  {
+    id: 'sec-mcq-9',
+    category: 'Security',
+    question: 'What does the "SameSite" cookie attribute help prevent?',
+    answer: 'CSRF attacks - It restricts how cookies are sent with cross-site requests.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'XSS attacks', isCorrect: false },
+      { id: 'b', text: 'CSRF attacks', isCorrect: true },
+      { id: 'c', text: 'SQL injection', isCorrect: false },
+      { id: 'd', text: 'Man-in-the-middle attacks', isCorrect: false }
+    ],
+    tags: ['security', 'csrf', 'cookies'],
+    timeEstimate: 1
+  },
+  {
+    id: 'sec-mcq-10',
+    category: 'Security',
+    question: 'What is the recommended approach for handling user authentication in Next.js?',
+    answer: 'Use NextAuth.js or similar authentication library with secure session management.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Store passwords in localStorage', isCorrect: false },
+      { id: 'b', text: 'Use NextAuth.js or a secure auth library', isCorrect: true },
+      { id: 'c', text: 'Implement custom password hashing in the frontend', isCorrect: false },
+      { id: 'd', text: 'Use URL parameters for tokens', isCorrect: false }
+    ],
+    tags: ['security', 'authentication', 'next.js'],
+    timeEstimate: 1
+  },
+  {
+    id: 'sec-mcq-11',
+    category: 'Security',
+    question: 'Which hook can cause security issues if used with unsanitized user data?',
+    answer: 'dangerouslySetInnerHTML - It bypasses React\'s built-in XSS protection.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'useState', isCorrect: false },
+      { id: 'b', text: 'useEffect', isCorrect: false },
+      { id: 'c', text: 'dangerouslySetInnerHTML', isCorrect: true },
+      { id: 'd', text: 'useContext', isCorrect: false }
+    ],
+    tags: ['security', 'xss', 'react'],
+    timeEstimate: 1
+  },
+  {
+    id: 'sec-mcq-12',
+    category: 'Security',
+    question: 'What is input validation best performed?',
+    answer: 'On both client-side and server-side, but server-side is essential.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Only on the client-side', isCorrect: false },
+      { id: 'b', text: 'Only on the server-side', isCorrect: false },
+      { id: 'c', text: 'On both client and server, but server is essential', isCorrect: true },
+      { id: 'd', text: 'Input validation is not necessary', isCorrect: false }
+    ],
+    tags: ['security', 'validation'],
+    timeEstimate: 1
+  },
+  {
+    id: 'sec-mcq-13',
+    category: 'Security',
+    question: 'What is the purpose of HTTPS?',
+    answer: 'To encrypt data in transit between the client and server.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'To make websites load faster', isCorrect: false },
+      { id: 'b', text: 'To encrypt data in transit', isCorrect: true },
+      { id: 'c', text: 'To store data securely', isCorrect: false },
+      { id: 'd', text: 'To compress images', isCorrect: false }
+    ],
+    tags: ['security', 'https', 'encryption'],
+    timeEstimate: 1
+  },
+  {
+    id: 'sec-mcq-14',
+    category: 'Security',
+    question: 'What should you do with error messages in production?',
+    answer: 'Show generic messages to users and log detailed errors server-side.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Show full stack traces to help users debug', isCorrect: false },
+      { id: 'b', text: 'Show generic messages to users, log details server-side', isCorrect: true },
+      { id: 'c', text: 'Hide all errors completely', isCorrect: false },
+      { id: 'd', text: 'Display database query errors', isCorrect: false }
+    ],
+    tags: ['security', 'error-handling'],
+    timeEstimate: 1
+  },
+  {
+    id: 'sec-mcq-15',
+    category: 'Security',
+    question: 'What is the OWASP Top 10?',
+    answer: 'A list of the most critical web application security risks, updated periodically.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'The top 10 JavaScript frameworks', isCorrect: false },
+      { id: 'b', text: 'A list of the most critical web security risks', isCorrect: true },
+      { id: 'c', text: 'The top 10 React components', isCorrect: false },
+      { id: 'd', text: 'A performance benchmark list', isCorrect: false }
+    ],
+    tags: ['security', 'owasp'],
+    timeEstimate: 1
   }
 ];
 

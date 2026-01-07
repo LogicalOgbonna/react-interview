@@ -1,4 +1,4 @@
-import { Question, Category } from '../types';
+import { Question, Category, AnswerFormat } from '../types';
 import { reactCoreQuestions } from './react-core';
 import { hooksQuestions } from './hooks';
 import { nextjsQuestions } from './nextjs';
@@ -43,7 +43,7 @@ export const categories: Category[] = [
     name: 'Next.js',
     description: 'App Router, Server Components, SSR, SSG, ISR, routing, and middleware',
     icon: '▲',
-    color: '#000000',
+    color: '#ffffff',
     questionCount: nextjsQuestions.length,
   },
   {
@@ -127,6 +127,15 @@ export function searchQuestions(query: string): Question[] {
   );
 }
 
+export function getQuestionsByFormat(format: AnswerFormat): Question[] {
+  return allQuestions.filter(q => q.answerFormat === format);
+}
+
+export function getQuestionsByCategoryAndFormat(categoryId: string, format: AnswerFormat): Question[] {
+  const questions = getQuestionsByCategory(categoryId);
+  return questions.filter(q => q.answerFormat === format);
+}
+
 // Statistics
 export const stats = {
   totalQuestions: allQuestions.length,
@@ -141,6 +150,10 @@ export const stats = {
     coding: allQuestions.filter(q => q.type === 'coding').length,
     debugging: allQuestions.filter(q => q.type === 'debugging').length,
     'system-design': allQuestions.filter(q => q.type === 'system-design').length,
+  },
+  byFormat: {
+    essay: allQuestions.filter(q => q.answerFormat === 'essay').length,
+    'multiple-choice': allQuestions.filter(q => q.answerFormat === 'multiple-choice').length,
   },
   totalCategories: categories.length,
 };

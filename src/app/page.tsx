@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { 
   BookOpen, 
   Clock, 
@@ -10,7 +11,8 @@ import {
   BarChart3,
   Zap,
   Target,
-  CheckCircle
+  CheckCircle,
+  FileText
 } from 'lucide-react';
 import { categories, stats } from '@/data/questions';
 import { usePracticeStore } from '@/store/practice-store';
@@ -58,10 +60,22 @@ export default function Home() {
             <span className="text-foreground">React Interview</span>
           </h1>
           
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
             Practice {stats.totalQuestions}+ senior-level questions across {stats.totalCategories} categories.
             Timed sessions, AI grading, and detailed feedback.
           </p>
+          
+          {/* CV Builder CTA */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link
+              href="/cv-builder"
+              className="flex items-center gap-3 px-6 py-3 rounded-xl bg-gradient-to-r from-teal-500 to-emerald-500 text-white font-semibold hover:from-teal-600 hover:to-emerald-600 transition-all shadow-lg hover:shadow-xl hover:scale-105"
+            >
+              <FileText className="w-5 h-5" />
+              <span>Build Your CV</span>
+            </Link>
+            <span className="text-muted-foreground text-sm">or practice interview questions below</span>
+          </div>
         </motion.header>
         
         {/* Quick Stats */}

@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { Question } from '@/data/types';
-import { getRandomQuestions, getQuestionsByCategory } from '@/data/questions';
+import { Question, AnswerFormat } from '@/data/types';
+import { getRandomQuestions, getQuestionsByCategory, allQuestions } from '@/data/questions';
 
 export interface SessionResult {
   questionId: string;
@@ -27,13 +27,15 @@ export interface PracticeSession {
   isComplete: boolean;
 }
 
+type QuestionFormatFilter = 'all' | AnswerFormat;
+
 interface PracticeStore {
   // Session state
   currentSession: PracticeSession | null;
   sessionHistory: PracticeSession[];
   
   // Actions
-  startSession: (categoryId: string, categoryName: string, questionCount: number, timeLimit: number) => void;
+  startSession: (categoryId: string, categoryName: string, questionCount: number, timeLimit: number, formatFilter?: QuestionFormatFilter) => void;
   submitAnswer: (answer: string, timeTaken: number) => void;
   gradeAnswer: (questionId: string, score: number, feedback: string) => void;
   nextQuestion: () => void;
@@ -56,10 +58,20 @@ export const usePracticeStore = create<PracticeStore>()(
       currentSession: null,
       sessionHistory: [],
       
-      startSession: (categoryId, categoryName, questionCount, timeLimit) => {
-        const questions = categoryId === 'all' 
-          ? getRandomQuestions(questionCount)
-          : getRandomQuestions(questionCount, categoryId);
+      startSession: (categoryId, categoryName, questionCount, timeLimit, formatFilter = 'all') => {
+        // Get base questions
+        let sourceQuestions = categoryId === 'all' 
+          ? allQuestions 
+          : getQuestionsByCategory(categoryId);
+        
+        // Filter by format if specified
+        if (formatFilter !== 'all') {
+          sourceQuestions = sourceQuestions.filter(q => q.answerFormat === formatFilter);
+        }
+        
+        // Shuffle and take the requested count
+        const shuffled = [...sourceQuestions].sort(() => Math.random() - 0.5);
+        const questions = shuffled.slice(0, questionCount);
         
         const session: PracticeSession = {
           id: `session-${Date.now()}`,

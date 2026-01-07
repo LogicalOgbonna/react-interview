@@ -30,6 +30,7 @@ export const debuggingQuestions: Question[] = [
    - Strict Mode for detecting issues`,
     difficulty: 'intermediate',
     type: 'debugging',
+    answerFormat: 'essay',
     codeExample: `// Strategic console.log
 function MyComponent({ data }) {
   console.log('[MyComponent] render', { data });
@@ -96,6 +97,7 @@ Detection:
 - React DevTools Profiler`,
     difficulty: 'senior',
     type: 'debugging',
+    answerFormat: 'essay',
     codeExample: `// ❌ Memory leak - no cleanup
 useEffect(() => {
   const handler = () => console.log('resize');
@@ -175,6 +177,7 @@ useEffect(() => {
 The error protects against stack overflow.`,
     difficulty: 'intermediate',
     type: 'debugging',
+    answerFormat: 'essay',
     codeExample: `// ❌ Infinite loop - setState during render
 function Bad() {
   const [count, setCount] = useState(0);
@@ -255,6 +258,7 @@ Debugging approach:
 4. Wrap client-only components in Suspense`,
     difficulty: 'senior',
     type: 'debugging',
+    answerFormat: 'essay',
     codeExample: `// ❌ Hydration error - different values
 function Bad() {
   return <p>Time: {new Date().toISOString()}</p>;
@@ -335,6 +339,7 @@ Solutions:
 4. Use latest ref pattern`,
     difficulty: 'expert',
     type: 'debugging',
+    answerFormat: 'essay',
     codeExample: `// ❌ Stale closure - count is always 0
 function Counter() {
   const [count, setCount] = useState(0);
@@ -431,6 +436,7 @@ function useLatestCallback(callback) {
    - A/B test optimizations`,
     difficulty: 'senior',
     type: 'debugging',
+    answerFormat: 'essay',
     codeExample: `// Using React Profiler programmatically
 function onRenderCallback(
   id, phase, actualDuration, baseDuration,
@@ -509,6 +515,7 @@ Solutions:
 5. Libraries like TanStack Query`,
     difficulty: 'senior',
     type: 'debugging',
+    answerFormat: 'essay',
     codeExample: `// ❌ Race condition - search results
 function Search() {
   const [query, setQuery] = useState('');
@@ -620,6 +627,7 @@ function Search() {
    - Inspect computed styles`,
     difficulty: 'intermediate',
     type: 'debugging',
+    answerFormat: 'essay',
     codeExample: `// Debugging trick: Outline all elements
 // Add to global CSS temporarily
 * { outline: 1px solid red !important; }
@@ -690,6 +698,7 @@ Debugging:
 - Add artificial delays to reproduce`,
     difficulty: 'senior',
     type: 'debugging',
+    answerFormat: 'essay',
     codeExample: `// Add request tracking for debugging
 let requestId = 0;
 
@@ -767,6 +776,7 @@ Debugging:
 - Check Next.js build output`,
     difficulty: 'senior',
     type: 'debugging',
+    answerFormat: 'essay',
     codeExample: `// Debug hydration mismatch
 function HydrationDebug({ children }) {
   const [mounted, setMounted] = useState(false);
@@ -865,6 +875,7 @@ Best practices:
 - Disable "Pause on Caught Exceptions"`,
     difficulty: 'intermediate',
     type: 'debugging',
+    answerFormat: 'essay',
     codeExample: `// Place breakpoints at key points
 function UserProfile({ userId }) {
   const [user, setUser] = useState(null);
@@ -952,6 +963,7 @@ Debugging:
 - Verify value memoization`,
     difficulty: 'senior',
     type: 'debugging',
+    answerFormat: 'essay',
     codeExample: `// Debug context with display component
 const ThemeContext = createContext(undefined);
 
@@ -1061,6 +1073,7 @@ Debugging:
 - Test edge cases (empty, long strings)`,
     difficulty: 'intermediate',
     type: 'debugging',
+    answerFormat: 'essay',
     codeExample: `// Debug form state with React Hook Form
 import { useForm } from 'react-hook-form';
 
@@ -1164,6 +1177,7 @@ Techniques:
 - Return error objects for client handling`,
     difficulty: 'senior',
     type: 'debugging',
+    answerFormat: 'essay',
     codeExample: `// Server Action with detailed logging
 'use server';
 
@@ -1279,6 +1293,7 @@ Debugging:
 - Chrome Performance tab`,
     difficulty: 'senior',
     type: 'debugging',
+    answerFormat: 'essay',
     codeExample: `// Measure component mount time
 function SlowComponent() {
   const startTime = useRef(performance.now());
@@ -1397,6 +1412,7 @@ Debugging:
 - Check for conflicting routes`,
     difficulty: 'intermediate',
     type: 'debugging',
+    answerFormat: 'essay',
     codeExample: `// Debug middleware execution
 // middleware.ts
 import { NextResponse } from 'next/server';
@@ -1506,6 +1522,7 @@ Debugging:
 - Check for preventDefault/stopPropagation`,
     difficulty: 'intermediate',
     type: 'debugging',
+    answerFormat: 'essay',
     codeExample: `// Debug event not firing
 function DebugButton() {
   const handleClick = (e) => {
@@ -1618,6 +1635,7 @@ Checks:
 - Response status and body`,
     difficulty: 'intermediate',
     type: 'debugging',
+    answerFormat: 'essay',
     codeExample: `// Comprehensive fetch debugging
 async function debugFetch(url, options = {}) {
   const requestId = Math.random().toString(36).substr(2, 9);
@@ -1738,6 +1756,7 @@ Debugging:
 - Isolate in minimal reproduction`,
     difficulty: 'senior',
     type: 'debugging',
+    answerFormat: 'essay',
     codeExample: `// Check for version issues
 // package.json
 {
@@ -1847,6 +1866,7 @@ Debugging:
 - Add explicit type annotations`,
     difficulty: 'intermediate',
     type: 'debugging',
+    answerFormat: 'essay',
     codeExample: `// Error: Property 'value' does not exist on type 'never'
 // Usually means type narrowing failed
 function debug1() {
@@ -1944,6 +1964,7 @@ Common culprits:
 - Duplicate dependencies`,
     difficulty: 'senior',
     type: 'debugging',
+    answerFormat: 'essay',
     codeExample: `// Install and use bundle analyzer
 // npm install @next/bundle-analyzer
 
@@ -2034,6 +2055,7 @@ Debugging:
 - Verify single source of truth`,
     difficulty: 'senior',
     type: 'debugging',
+    answerFormat: 'essay',
     codeExample: `// Debug state with middleware-style logging
 function useLoggedState(initialValue, name) {
   const [state, setState] = useState(initialValue);
@@ -2154,6 +2176,7 @@ Debugging:
 - Animation inspector`,
     difficulty: 'intermediate',
     type: 'debugging',
+    answerFormat: 'essay',
     codeExample: `// Debug animation performance
 function AnimatedComponent() {
   useEffect(() => {
@@ -2282,6 +2305,7 @@ Strategies:
 - Use error tracking services`,
     difficulty: 'senior',
     type: 'debugging',
+    answerFormat: 'essay',
     codeExample: `// Enable source maps for production debugging
 // next.config.js
 module.exports = {
@@ -2396,6 +2420,7 @@ Debugging:
 - axe DevTools extension`,
     difficulty: 'intermediate',
     type: 'debugging',
+    answerFormat: 'essay',
     codeExample: `// Debug focus visibility
 function DebugFocus() {
   return (
@@ -2530,6 +2555,7 @@ Debugging:
 - Use environment indicators`,
     difficulty: 'intermediate',
     type: 'debugging',
+    answerFormat: 'essay',
     codeExample: `// Log environment info at startup
 console.log('=== Environment Info ===');
 console.log('NODE_ENV:', process.env.NODE_ENV);
@@ -2651,6 +2677,7 @@ Tools:
 - Performance profiling`,
     difficulty: 'senior',
     type: 'debugging',
+    answerFormat: 'essay',
     codeExample: `// Add timing to fetch calls
 async function timedFetch(url, options) {
   const start = performance.now();
@@ -2769,6 +2796,7 @@ Debugging:
 - Test components in isolation`,
     difficulty: 'intermediate',
     type: 'debugging',
+    answerFormat: 'essay',
     codeExample: `// Debug props passing
 function Parent({ children, ...props }) {
   console.log('Parent props:', props);
@@ -2911,6 +2939,7 @@ Prevention:
 - Weak references when appropriate`,
     difficulty: 'senior',
     type: 'debugging',
+    answerFormat: 'essay',
     codeExample: `// Common memory leak patterns and fixes
 
 // ❌ Memory leak: No cleanup
@@ -3033,6 +3062,7 @@ Tools:
    - Action creator tests`,
     difficulty: 'intermediate',
     type: 'debugging',
+    answerFormat: 'essay',
     codeExample: `// Redux DevTools setup
 import { configureStore } from '@reduxjs/toolkit';
 
@@ -3161,6 +3191,7 @@ Tools:
 - axios interceptors`,
     difficulty: 'intermediate',
     type: 'debugging',
+    answerFormat: 'essay',
     codeExample: `// Axios interceptor for debugging
 import axios from 'axios';
 
@@ -3311,6 +3342,7 @@ Debugging approach:
 - Use TypeScript playground`,
     difficulty: 'intermediate',
     type: 'debugging',
+    answerFormat: 'essay',
     codeExample: `// Common TypeScript errors and fixes
 
 // Error: Property 'x' does not exist on type 'Y'
@@ -3426,6 +3458,7 @@ Best practices:
 - Use stable file hashes`,
     difficulty: 'senior',
     type: 'debugging',
+    answerFormat: 'essay',
     codeExample: `// next.config.js - Source map configuration
 module.exports = {
   // Generate source maps in production
@@ -3535,6 +3568,7 @@ Debugging tools:
 - Console timing`,
     difficulty: 'intermediate',
     type: 'debugging',
+    answerFormat: 'essay',
     codeExample: `// Enable async stack traces
 // Chrome DevTools → Settings → Enable async stack traces
 
@@ -3673,6 +3707,7 @@ Common issues:
 - Responsive breakpoints`,
     difficulty: 'intermediate',
     type: 'debugging',
+    answerFormat: 'essay',
     codeExample: `// Debug CSS-in-JS (styled-components, Emotion)
 import styled from 'styled-components';
 
@@ -3806,6 +3841,7 @@ Debugging tools:
 - Context logging`,
     difficulty: 'intermediate',
     type: 'debugging',
+    answerFormat: 'essay',
     codeExample: `// Debug provider - wraps context with logging
 import { createContext, useContext, useMemo, useEffect } from 'react';
 
@@ -3960,6 +3996,7 @@ Common issues:
 - Routing issues`,
     difficulty: 'senior',
     type: 'debugging',
+    answerFormat: 'essay',
     codeExample: `// Enable Node.js inspector for server debugging
 // package.json
 {
@@ -4102,6 +4139,7 @@ Tools:
 - Network tab for submissions`,
     difficulty: 'intermediate',
     type: 'debugging',
+    answerFormat: 'essay',
     codeExample: `// React Hook Form debugging
 import { useForm } from 'react-hook-form';
 import { DevTool } from '@hookform/devtools';
@@ -4258,6 +4296,7 @@ React-specific:
 - Focus traps`,
     difficulty: 'intermediate',
     type: 'debugging',
+    answerFormat: 'essay',
     codeExample: `// Install and configure eslint-plugin-jsx-a11y
 // .eslintrc.js
 module.exports = {
@@ -4410,6 +4449,7 @@ Common issues:
 - Event handling`,
     difficulty: 'intermediate',
     type: 'debugging',
+    answerFormat: 'essay',
     codeExample: `import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -4566,6 +4606,7 @@ Specific tools:
 - Layout inspector`,
     difficulty: 'senior',
     type: 'debugging',
+    answerFormat: 'essay',
     codeExample: `// Enable debugging in React Native
 // Shake device or Cmd+D (iOS) / Cmd+M (Android)
 // Select "Debug with Chrome"
@@ -4719,6 +4760,7 @@ Tools:
 - CI/CD logs`,
     difficulty: 'senior',
     type: 'debugging',
+    answerFormat: 'essay',
     codeExample: `// Debug build with verbose output
 // package.json
 {
@@ -4876,6 +4918,7 @@ Fixes:
 - Add conditional checks`,
     difficulty: 'intermediate',
     type: 'debugging',
+    answerFormat: 'essay',
     codeExample: `// ❌ Infinite loop: Object dependency changes every render
 function BadComponent({ userId }) {
   const [user, setUser] = useState(null);
@@ -5039,6 +5082,7 @@ Best practices:
 - Verify forwardRef setup`,
     difficulty: 'intermediate',
     type: 'debugging',
+    answerFormat: 'essay',
     codeExample: `// Debug ref timing
 function DebugRef() {
   const ref = useRef(null);
@@ -5198,6 +5242,7 @@ Debugging steps:
 - Review changelogs`,
     difficulty: 'senior',
     type: 'debugging',
+    answerFormat: 'essay',
     codeExample: `// Debug library loading
 function DebugLibraryLoading() {
   useEffect(() => {
@@ -5342,6 +5387,7 @@ Setup includes:
 - Source maps`,
     difficulty: 'senior',
     type: 'debugging',
+    answerFormat: 'essay',
     codeExample: `// Sentry setup for Next.js
 // sentry.client.config.ts
 import * as Sentry from '@sentry/nextjs';
@@ -5505,6 +5551,7 @@ Tools:
 - Custom logging`,
     difficulty: 'senior',
     type: 'debugging',
+    answerFormat: 'essay',
     codeExample: `// Debug WebSocket connection
 function useWebSocketDebug(url) {
   const [state, setState] = useState('connecting');
@@ -5697,6 +5744,7 @@ Features:
 - Visual feedback`,
     difficulty: 'senior',
     type: 'debugging',
+    answerFormat: 'essay',
     codeExample: `// Debug mode toggle
 const DEBUG_KEY = 'debug_mode';
 
@@ -5887,6 +5935,263 @@ function getStateDiff(prev, next) {
 }`,
     tags: ['debugging', 'utilities', 'dev-tools', 'monitoring'],
     timeEstimate: 6
+  },
+  
+  // Multiple Choice Questions
+  {
+    id: 'debug-mcq-1',
+    category: 'Debugging',
+    question: 'Which React DevTools feature allows you to inspect component props and state?',
+    answer: 'The Components tab in React DevTools.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Console tab', isCorrect: false },
+      { id: 'b', text: 'Components tab', isCorrect: true },
+      { id: 'c', text: 'Network tab', isCorrect: false },
+      { id: 'd', text: 'Sources tab', isCorrect: false }
+    ],
+    tags: ['debugging', 'devtools'],
+    timeEstimate: 1
+  },
+  {
+    id: 'debug-mcq-2',
+    category: 'Debugging',
+    question: 'What does the React Profiler help you identify?',
+    answer: 'Performance bottlenecks by showing render times and frequency.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Security vulnerabilities', isCorrect: false },
+      { id: 'b', text: 'Performance bottlenecks and render times', isCorrect: true },
+      { id: 'c', text: 'Network latency', isCorrect: false },
+      { id: 'd', text: 'CSS styling issues', isCorrect: false }
+    ],
+    tags: ['debugging', 'profiler', 'performance'],
+    timeEstimate: 1
+  },
+  {
+    id: 'debug-mcq-3',
+    category: 'Debugging',
+    question: 'What error message indicates a component is updating during render?',
+    answer: 'Cannot update a component while rendering a different component.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Maximum call stack size exceeded', isCorrect: false },
+      { id: 'b', text: 'Cannot update a component while rendering a different component', isCorrect: true },
+      { id: 'c', text: 'Hydration mismatch', isCorrect: false },
+      { id: 'd', text: 'Objects are not valid as a React child', isCorrect: false }
+    ],
+    tags: ['debugging', 'errors', 'render'],
+    timeEstimate: 1
+  },
+  {
+    id: 'debug-mcq-4',
+    category: 'Debugging',
+    question: 'Which hook can help debug why a component re-rendered?',
+    answer: 'A custom useWhyDidYouUpdate hook or useDebugValue.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'useState', isCorrect: false },
+      { id: 'b', text: 'useEffect', isCorrect: false },
+      { id: 'c', text: 'useWhyDidYouUpdate or useDebugValue', isCorrect: true },
+      { id: 'd', text: 'useCallback', isCorrect: false }
+    ],
+    tags: ['debugging', 'hooks', 'render'],
+    timeEstimate: 1
+  },
+  {
+    id: 'debug-mcq-5',
+    category: 'Debugging',
+    question: 'What causes a "Maximum update depth exceeded" error?',
+    answer: 'An infinite loop of state updates, often from useEffect with wrong dependencies.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Too many components in the tree', isCorrect: false },
+      { id: 'b', text: 'Infinite loop of state updates', isCorrect: true },
+      { id: 'c', text: 'Too much data in state', isCorrect: false },
+      { id: 'd', text: 'Using too many hooks', isCorrect: false }
+    ],
+    tags: ['debugging', 'errors', 'infinite-loop'],
+    timeEstimate: 1
+  },
+  {
+    id: 'debug-mcq-6',
+    category: 'Debugging',
+    question: 'What does "Hydration failed" error typically indicate?',
+    answer: 'Server-rendered HTML doesn\'t match client-side React output.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Missing API data', isCorrect: false },
+      { id: 'b', text: 'Server HTML doesn\'t match client React output', isCorrect: true },
+      { id: 'c', text: 'Browser doesn\'t support React', isCorrect: false },
+      { id: 'd', text: 'Component failed to mount', isCorrect: false }
+    ],
+    tags: ['debugging', 'hydration', 'ssr'],
+    timeEstimate: 1
+  },
+  {
+    id: 'debug-mcq-7',
+    category: 'Debugging',
+    question: 'What is the purpose of React.StrictMode in debugging?',
+    answer: 'It highlights potential problems by double-invoking certain functions.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'To make the app run faster', isCorrect: false },
+      { id: 'b', text: 'To highlight potential problems by double-invoking functions', isCorrect: true },
+      { id: 'c', text: 'To enable TypeScript strict mode', isCorrect: false },
+      { id: 'd', text: 'To prevent all errors', isCorrect: false }
+    ],
+    tags: ['debugging', 'strict-mode'],
+    timeEstimate: 1
+  },
+  {
+    id: 'debug-mcq-8',
+    category: 'Debugging',
+    question: 'Which browser tool helps debug memory leaks in React apps?',
+    answer: 'The Memory tab in Chrome DevTools for heap snapshots.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Console tab', isCorrect: false },
+      { id: 'b', text: 'Network tab', isCorrect: false },
+      { id: 'c', text: 'Memory tab for heap snapshots', isCorrect: true },
+      { id: 'd', text: 'Application tab', isCorrect: false }
+    ],
+    tags: ['debugging', 'memory', 'devtools'],
+    timeEstimate: 1
+  },
+  {
+    id: 'debug-mcq-9',
+    category: 'Debugging',
+    question: 'What does "Cannot read property of undefined" usually indicate?',
+    answer: 'Trying to access a property on a variable that hasn\'t been initialized.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'The server is down', isCorrect: false },
+      { id: 'b', text: 'Accessing a property on an uninitialized variable', isCorrect: true },
+      { id: 'c', text: 'React is not installed', isCorrect: false },
+      { id: 'd', text: 'The browser is outdated', isCorrect: false }
+    ],
+    tags: ['debugging', 'errors', 'javascript'],
+    timeEstimate: 1
+  },
+  {
+    id: 'debug-mcq-10',
+    category: 'Debugging',
+    question: 'How can you debug async/await code in React?',
+    answer: 'Use try/catch blocks, debugger statements, or console.log.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Only use console.log', isCorrect: false },
+      { id: 'b', text: 'Use try/catch, debugger statements, or console.log', isCorrect: true },
+      { id: 'c', text: 'Async code cannot be debugged', isCorrect: false },
+      { id: 'd', text: 'Restart the server', isCorrect: false }
+    ],
+    tags: ['debugging', 'async', 'javascript'],
+    timeEstimate: 1
+  },
+  {
+    id: 'debug-mcq-11',
+    category: 'Debugging',
+    question: 'What is the "Highlight updates" feature in React DevTools for?',
+    answer: 'Visually showing which components re-render when state changes.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Highlighting syntax errors', isCorrect: false },
+      { id: 'b', text: 'Showing which components re-render', isCorrect: true },
+      { id: 'c', text: 'Highlighting CSS changes', isCorrect: false },
+      { id: 'd', text: 'Showing network requests', isCorrect: false }
+    ],
+    tags: ['debugging', 'devtools', 'render'],
+    timeEstimate: 1
+  },
+  {
+    id: 'debug-mcq-12',
+    category: 'Debugging',
+    question: 'What causes "Each child in a list should have a unique key" warning?',
+    answer: 'Missing or duplicate key props when rendering lists.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Using wrong HTML tags', isCorrect: false },
+      { id: 'b', text: 'Missing or duplicate key props in lists', isCorrect: true },
+      { id: 'c', text: 'Not using React.Fragment', isCorrect: false },
+      { id: 'd', text: 'Having too many children', isCorrect: false }
+    ],
+    tags: ['debugging', 'keys', 'lists'],
+    timeEstimate: 1
+  },
+  {
+    id: 'debug-mcq-13',
+    category: 'Debugging',
+    question: 'Which tool can help identify unnecessary re-renders caused by context?',
+    answer: 'React DevTools Profiler with "Record why each component rendered" enabled.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'ESLint', isCorrect: false },
+      { id: 'b', text: 'React DevTools Profiler', isCorrect: true },
+      { id: 'c', text: 'TypeScript compiler', isCorrect: false },
+      { id: 'd', text: 'Network inspector', isCorrect: false }
+    ],
+    tags: ['debugging', 'context', 'profiler'],
+    timeEstimate: 1
+  },
+  {
+    id: 'debug-mcq-14',
+    category: 'Debugging',
+    question: 'What is the best way to debug useEffect cleanup issues?',
+    answer: 'Add console.log in the cleanup function and check the order of logs.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Remove all useEffect hooks', isCorrect: false },
+      { id: 'b', text: 'Add console.log in cleanup and check log order', isCorrect: true },
+      { id: 'c', text: 'Restart the browser', isCorrect: false },
+      { id: 'd', text: 'Use only class components', isCorrect: false }
+    ],
+    tags: ['debugging', 'useEffect', 'cleanup'],
+    timeEstimate: 1
+  },
+  {
+    id: 'debug-mcq-15',
+    category: 'Debugging',
+    question: 'What does the error "Objects are not valid as a React child" mean?',
+    answer: 'You\'re trying to render an object directly instead of its properties or a string.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'The component is too large', isCorrect: false },
+      { id: 'b', text: 'Trying to render an object directly instead of its properties', isCorrect: true },
+      { id: 'c', text: 'Missing import statement', isCorrect: false },
+      { id: 'd', text: 'React version is outdated', isCorrect: false }
+    ],
+    tags: ['debugging', 'errors', 'render'],
+    timeEstimate: 1
   }
 ];
 

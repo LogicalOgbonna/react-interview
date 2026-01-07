@@ -15,6 +15,7 @@ Key characteristics:
 React is used by many Fortune 500 companies including Meta, Netflix, Airbnb, and more.`,
     difficulty: 'beginner',
     type: 'conceptual',
+    answerFormat: 'essay',
     tags: ['fundamentals', 'basics'],
     timeEstimate: 2
   },
@@ -32,6 +33,7 @@ Key points:
 - JSX prevents injection attacks by escaping embedded values`,
     difficulty: 'beginner',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// JSX
 const element = <h1>Hello, {user.name}</h1>;
 
@@ -55,6 +57,7 @@ Key differences:
 - Components describe how to render`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Element
 const element = <div id="container">Hello</div>;
 
@@ -90,6 +93,7 @@ Benefits:
 - Declarative programming model`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     tags: ['virtual-dom', 'performance', 'reconciliation'],
     timeEstimate: 4
   },
@@ -112,6 +116,7 @@ Fiber enables:
 - Time-slicing for expensive renders`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     tags: ['fiber', 'internals', 'performance'],
     timeEstimate: 5
   },
@@ -135,6 +140,7 @@ Uncontrolled:
 - Better for file inputs`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Controlled
 function ControlledInput() {
   const [value, setValue] = useState('');
@@ -169,6 +175,7 @@ Common HOCs: connect() from Redux, withRouter() from React Router
 Note: With Hooks, many HOC use cases can be replaced with custom hooks.`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `function withLoading(WrappedComponent) {
   return function WithLoadingComponent({ isLoading, ...props }) {
     if (isLoading) return <div>Loading...</div>;
@@ -199,6 +206,7 @@ Key assumptions:
 - React batches multiple changes for efficiency`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     tags: ['reconciliation', 'diffing', 'performance'],
     timeEstimate: 4
   },
@@ -219,6 +227,7 @@ Best practices:
 - Keys must be unique among siblings, not globally`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Bad - using index
 {items.map((item, index) => <Item key={index} {...item} />)}
 
@@ -245,6 +254,7 @@ Two syntaxes:
 - Short syntax: <> </> (no key support)`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Short syntax
 function Columns() {
   return (
@@ -283,6 +293,7 @@ Use cases:
 - Widgets that need to escape overflow:hidden containers`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `import { createPortal } from 'react-dom';
 
 function Modal({ children, isOpen }) {
@@ -313,6 +324,7 @@ Key features:
 Note: As of React 17, event pooling was removed, so you no longer need to call e.persist() to access event properties asynchronously.`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `function handleClick(e) {
   // e is a SyntheticEvent
   e.preventDefault();
@@ -341,6 +353,7 @@ The pattern involves:
 4. Pass event handlers to update state`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Parent manages shared state
 function Parent() {
   const [temperature, setTemperature] = useState(0);
@@ -382,6 +395,7 @@ Key distinctions:
 RSCs are the foundation for Next.js App Router architecture.`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Server Component (default in Next.js App Router)
 async function UserProfile({ id }) {
   const user = await db.user.findUnique({ where: { id } });
@@ -415,6 +429,7 @@ Solutions:
 4. Custom hooks for shared logic`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Instead of prop drilling:
 <App user={user}>
   <Layout user={user}>
@@ -461,6 +476,7 @@ When NOT to use:
 Note: For custom comparison logic, pass a comparison function as the second argument.`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `const ExpensiveComponent = React.memo(function MyComponent({ data }) {
   // expensive render logic
   return <div>{processData(data)}</div>;
@@ -495,6 +511,7 @@ Key differences:
 Both props and state changes trigger re-renders.`,
     difficulty: 'beginner',
     type: 'conceptual',
+    answerFormat: 'essay',
     tags: ['props', 'state', 'fundamentals'],
     timeEstimate: 3
   },
@@ -516,6 +533,7 @@ Special cases:
 - Counting: React.Children.count()`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Basic composition
 function Card({ children, title }) {
   return (
@@ -563,6 +581,7 @@ Best practices:
 - Log errors to error monitoring services`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `class ErrorBoundary extends React.Component {
   state = { hasError: false };
 
@@ -609,6 +628,7 @@ In React 18, Strict Mode also:
 Note: Strict Mode only runs in development, not in production.`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `import { StrictMode } from 'react';
 
 function App() {
@@ -639,6 +659,7 @@ cloneElement(element, props, ...children):
 - Useful for adding props to children`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// createElement
 const element = React.createElement('div', { className: 'box' }, 'Hello');
 
@@ -675,6 +696,7 @@ Virtual DOM:
 They serve completely different purposes and can be used together.`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     tags: ['shadow-dom', 'virtual-dom', 'browser'],
     timeEstimate: 3
   },
@@ -697,6 +719,7 @@ Best practices:
 - Be careful with && and falsy values (0, '')`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Ternary
 {isLoggedIn ? <Dashboard /> : <Login />}
 
@@ -736,6 +759,7 @@ React automatically infers displayName from:
 - Variable assignment (const MyComponent = ...)`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// HOC with displayName
 function withLogger(WrappedComponent) {
   function WithLogger(props) {
@@ -779,6 +803,7 @@ Caveats:
 - Can cause bugs if you mutate data`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Class - Pure Component
 class MyPureComponent extends React.PureComponent {
   render() {
@@ -815,6 +840,7 @@ Use cases:
 Note: With React 19, refs can be passed as regular props, making forwardRef less necessary.`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `const FancyInput = React.forwardRef((props, ref) => (
   <input ref={ref} className="fancy-input" {...props} />
 ));
@@ -864,6 +890,7 @@ Error Handling:
 - componentDidCatch()`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `class LifecycleDemo extends React.Component {
   constructor(props) {
     super(props);
@@ -918,6 +945,7 @@ HOCs:
 Modern alternative: Custom Hooks provide cleaner logic sharing for most use cases.`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Render Props
 function MouseTracker({ render }) {
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -963,6 +991,7 @@ Other differences:
 - Passive event listeners for scroll/touch`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// HTML
 <button onclick="handleClick()">Click</button>
 
@@ -1005,6 +1034,7 @@ React 18 (Automatic Batching):
 To opt out of batching, use flushSync() from react-dom.`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// React 18 - All batched automatically
 function handleClick() {
   setCount(c => c + 1); // No re-render yet
@@ -1057,6 +1087,7 @@ Common hydration errors:
 - Different data on server vs client`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Server-side
 import { renderToString } from 'react-dom/server';
 const html = renderToString(<App />);
@@ -1105,6 +1136,7 @@ function Component() {
 6. Comments use {/* */}`,
     difficulty: 'beginner',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Valid JSX
 function ValidJSX() {
   return (
@@ -1151,6 +1183,7 @@ Modern approaches:
 - Conform (progressive enhancement)`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Controlled Form
 function ControlledForm() {
   const [formData, setFormData] = useState({
@@ -1209,6 +1242,7 @@ Default Parameters:
 Note: defaultProps is being phased out for function components in favor of default parameters.`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// defaultProps (older pattern)
 function Button({ color, size }) {
   return <button className={\`btn-\${color} btn-\${size}\`}>Click</button>;
@@ -1254,6 +1288,7 @@ Security considerations:
 - Consider alternatives when possible`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `import DOMPurify from 'dompurify';
 
 function RichContent({ html }) {
@@ -1299,6 +1334,7 @@ Pattern:
 3. Use computed property names [name]: value`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `function MultiInputForm() {
   const [formData, setFormData] = useState({
     firstName: '',
@@ -1353,6 +1389,7 @@ Other renderers:
 - react-pdf (PDF)`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// react - core library
 import { useState, useEffect, Component } from 'react';
 
@@ -1388,6 +1425,7 @@ When to use each:
 - shouldComponentUpdate: Fine-grained control`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Return null
 function ConditionalComponent({ show }) {
   if (!show) return null;
@@ -1445,6 +1483,7 @@ class MyComponent extends React.Component {
    - Avoid prop drilling`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Custom Hook (Best for most cases)
 function useWindowSize() {
   const [size, setSize] = useState({ width: 0, height: 0 });
@@ -1485,6 +1524,7 @@ Use cases:
 This works because changing the key tells React it's a completely different component instance.`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Reset form when user changes
 function UserEditor({ userId }) {
   return (
@@ -1513,6 +1553,263 @@ function AnimatedComponent({ trigger }) {
 }`,
     tags: ['keys', 'state-reset', 'patterns'],
     timeEstimate: 4
+  },
+  
+  // Multiple Choice Questions
+  {
+    id: 'rc-mcq-1',
+    category: 'React Core',
+    question: 'What does JSX stand for?',
+    answer: 'JavaScript XML - JSX is a syntax extension for JavaScript that allows you to write HTML-like code within JavaScript.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'JavaScript XML', isCorrect: true },
+      { id: 'b', text: 'JavaScript Extension', isCorrect: false },
+      { id: 'c', text: 'Java Syntax Extension', isCorrect: false },
+      { id: 'd', text: 'JavaScript eXtreme', isCorrect: false }
+    ],
+    tags: ['jsx', 'fundamentals'],
+    timeEstimate: 1
+  },
+  {
+    id: 'rc-mcq-2',
+    category: 'React Core',
+    question: 'Which method is used to render a React element into the DOM in React 18?',
+    answer: 'createRoot().render() - In React 18, you use createRoot from react-dom/client to create a root and then call render on it.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'ReactDOM.render()', isCorrect: false },
+      { id: 'b', text: 'createRoot().render()', isCorrect: true },
+      { id: 'c', text: 'React.render()', isCorrect: false },
+      { id: 'd', text: 'document.render()', isCorrect: false }
+    ],
+    tags: ['fundamentals', 'react-18'],
+    timeEstimate: 1
+  },
+  {
+    id: 'rc-mcq-3',
+    category: 'React Core',
+    question: 'What is the correct way to pass a prop named "title" to a component?',
+    answer: '<Component title="Hello" /> - Props are passed as attributes to components using the attribute name followed by the value.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: '<Component title="Hello" />', isCorrect: true },
+      { id: 'b', text: '<Component props.title="Hello" />', isCorrect: false },
+      { id: 'c', text: '<Component (title="Hello") />', isCorrect: false },
+      { id: 'd', text: '<Component {title: "Hello"} />', isCorrect: false }
+    ],
+    tags: ['props', 'fundamentals'],
+    timeEstimate: 1
+  },
+  {
+    id: 'rc-mcq-4',
+    category: 'React Core',
+    question: 'Which lifecycle method is called immediately after a component is mounted in class components?',
+    answer: 'componentDidMount() - This lifecycle method is invoked immediately after a component is inserted into the DOM tree.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'componentWillMount()', isCorrect: false },
+      { id: 'b', text: 'componentDidMount()', isCorrect: true },
+      { id: 'c', text: 'componentDidUpdate()', isCorrect: false },
+      { id: 'd', text: 'render()', isCorrect: false }
+    ],
+    tags: ['lifecycle', 'class-components'],
+    timeEstimate: 1
+  },
+  {
+    id: 'rc-mcq-5',
+    category: 'React Core',
+    question: 'What is the purpose of the Virtual DOM in React?',
+    answer: 'To improve performance by minimizing direct DOM manipulation - React uses the Virtual DOM to batch updates and minimize costly DOM operations.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'To directly manipulate the browser DOM', isCorrect: false },
+      { id: 'b', text: 'To improve performance by minimizing direct DOM manipulation', isCorrect: true },
+      { id: 'c', text: 'To replace HTML completely', isCorrect: false },
+      { id: 'd', text: 'To enable server-side rendering only', isCorrect: false }
+    ],
+    tags: ['virtual-dom', 'performance'],
+    timeEstimate: 1
+  },
+  {
+    id: 'rc-mcq-6',
+    category: 'React Core',
+    question: 'Which of the following is NOT a valid way to create a React component?',
+    answer: 'var component = React.component() - This is not valid syntax. Components must be created as functions or classes.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'function MyComponent() { return <div />; }', isCorrect: false },
+      { id: 'b', text: 'const MyComponent = () => <div />;', isCorrect: false },
+      { id: 'c', text: 'class MyComponent extends React.Component {}', isCorrect: false },
+      { id: 'd', text: 'var component = React.component()', isCorrect: true }
+    ],
+    tags: ['components', 'fundamentals'],
+    timeEstimate: 1
+  },
+  {
+    id: 'rc-mcq-7',
+    category: 'React Core',
+    question: 'What is the default behavior when a parent component re-renders?',
+    answer: 'All child components re-render by default - When a parent re-renders, React will re-render all of its children unless they are memoized.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Only children with changed props re-render', isCorrect: false },
+      { id: 'b', text: 'All child components re-render', isCorrect: true },
+      { id: 'c', text: 'No child components re-render', isCorrect: false },
+      { id: 'd', text: 'Only the first child re-renders', isCorrect: false }
+    ],
+    tags: ['rendering', 'performance'],
+    timeEstimate: 1
+  },
+  {
+    id: 'rc-mcq-8',
+    category: 'React Core',
+    question: 'Which attribute should be used to apply inline styles in React?',
+    answer: 'style={{ color: "red" }} - Inline styles in React are passed as objects with camelCase properties.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'style="color: red"', isCorrect: false },
+      { id: 'b', text: 'style={{ color: "red" }}', isCorrect: true },
+      { id: 'c', text: 'css={{ color: "red" }}', isCorrect: false },
+      { id: 'd', text: 'styles="color: red"', isCorrect: false }
+    ],
+    tags: ['styling', 'jsx'],
+    timeEstimate: 1
+  },
+  {
+    id: 'rc-mcq-9',
+    category: 'React Core',
+    question: 'What is the correct way to conditionally render a component in React?',
+    answer: '{condition && <Component />} - The logical AND operator is commonly used for conditional rendering.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'if (condition) <Component />', isCorrect: false },
+      { id: 'b', text: '{condition && <Component />}', isCorrect: true },
+      { id: 'c', text: '<Component if={condition} />', isCorrect: false },
+      { id: 'd', text: '@if(condition) <Component />', isCorrect: false }
+    ],
+    tags: ['conditional-rendering', 'jsx'],
+    timeEstimate: 1
+  },
+  {
+    id: 'rc-mcq-10',
+    category: 'React Core',
+    question: 'What does React.Fragment (or <></>) allow you to do?',
+    answer: 'Group multiple elements without adding extra nodes to the DOM - Fragments let you group children without adding wrapper divs.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Create a reusable component', isCorrect: false },
+      { id: 'b', text: 'Group multiple elements without adding extra nodes to the DOM', isCorrect: true },
+      { id: 'c', text: 'Split a component into smaller parts', isCorrect: false },
+      { id: 'd', text: 'Lazy load components', isCorrect: false }
+    ],
+    tags: ['fragments', 'jsx'],
+    timeEstimate: 1
+  },
+  {
+    id: 'rc-mcq-11',
+    category: 'React Core',
+    question: 'In React, what is the purpose of the "key" prop when rendering lists?',
+    answer: 'To help React identify which items have changed, been added, or removed - Keys give elements a stable identity for efficient reconciliation.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'To style list items uniquely', isCorrect: false },
+      { id: 'b', text: 'To help React identify which items have changed, been added, or removed', isCorrect: true },
+      { id: 'c', text: 'To sort the list automatically', isCorrect: false },
+      { id: 'd', text: 'To encrypt the list data', isCorrect: false }
+    ],
+    tags: ['keys', 'lists'],
+    timeEstimate: 1
+  },
+  {
+    id: 'rc-mcq-12',
+    category: 'React Core',
+    question: 'Which of the following is true about props in React?',
+    answer: 'Props are read-only and cannot be modified by the child component - Props are immutable from the perspective of the receiving component.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Props can be modified by the child component', isCorrect: false },
+      { id: 'b', text: 'Props are read-only and cannot be modified by the child component', isCorrect: true },
+      { id: 'c', text: 'Props can only contain strings', isCorrect: false },
+      { id: 'd', text: 'Props are the same as state', isCorrect: false }
+    ],
+    tags: ['props', 'fundamentals'],
+    timeEstimate: 1
+  },
+  {
+    id: 'rc-mcq-13',
+    category: 'React Core',
+    question: 'What is the difference between a controlled and uncontrolled component?',
+    answer: 'Controlled components have their state managed by React, uncontrolled components manage their own state via the DOM.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Controlled components are faster', isCorrect: false },
+      { id: 'b', text: 'Controlled components have their state managed by React, uncontrolled by the DOM', isCorrect: true },
+      { id: 'c', text: 'Uncontrolled components cannot have default values', isCorrect: false },
+      { id: 'd', text: 'There is no difference', isCorrect: false }
+    ],
+    tags: ['forms', 'controlled', 'uncontrolled'],
+    timeEstimate: 1
+  },
+  {
+    id: 'rc-mcq-14',
+    category: 'React Core',
+    question: 'What is React.memo() used for?',
+    answer: 'To memoize a functional component and prevent unnecessary re-renders when props have not changed.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'To store data in local storage', isCorrect: false },
+      { id: 'b', text: 'To memoize a component and prevent unnecessary re-renders', isCorrect: true },
+      { id: 'c', text: 'To create class components', isCorrect: false },
+      { id: 'd', text: 'To fetch data from an API', isCorrect: false }
+    ],
+    tags: ['memo', 'performance'],
+    timeEstimate: 1
+  },
+  {
+    id: 'rc-mcq-15',
+    category: 'React Core',
+    question: 'What does the "use client" directive do in Next.js/React?',
+    answer: 'It marks the component as a Client Component that runs in the browser with interactivity.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'It makes the component run on the server only', isCorrect: false },
+      { id: 'b', text: 'It marks the component as a Client Component with interactivity', isCorrect: true },
+      { id: 'c', text: 'It imports the client library', isCorrect: false },
+      { id: 'd', text: 'It enables TypeScript support', isCorrect: false }
+    ],
+    tags: ['rsc', 'next.js'],
+    timeEstimate: 1
   }
 ];
 

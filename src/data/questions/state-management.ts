@@ -28,6 +28,7 @@ Key concepts:
 - Dispatch: Method to send actions`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Action types
 const ADD_TODO = 'ADD_TODO';
 const TOGGLE_TODO = 'TOGGLE_TODO';
@@ -84,6 +85,7 @@ Benefits:
 - DevTools configured automatically`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `import { createSlice, configureStore, createAsyncThunk } from '@reduxjs/toolkit';
 
 // Async thunk
@@ -164,6 +166,7 @@ Context API:
 - Best for: Simple, rarely-changing state`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Zustand - minimal and simple
 import { create } from 'zustand';
 
@@ -240,6 +243,7 @@ State library better when:
 Key insight: Context is for prop drilling, not for frequently updating state.`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Good use of Context - infrequent updates
 const ThemeContext = createContext<'light' | 'dark'>('light');
 
@@ -311,6 +315,7 @@ TanStack Query handles:
 It's not a replacement for Redux/Zustand, but complements them for server state.`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 
 // Fetching data
@@ -400,6 +405,7 @@ Patterns:
 4. External stores (Zustand) for shared client state`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Pattern 1: URL as state (searchParams)
 // Works with Server Components!
 async function ProductsPage({ searchParams }) {
@@ -493,6 +499,7 @@ mapDispatchToProps:
 Modern alternative: useSelector and useDispatch hooks.`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `import { connect } from 'react-redux';
 import { addTodo, toggleTodo } from './actions';
 
@@ -578,6 +585,7 @@ Benefits:
 Reselect library provides createSelector for memoized selectors.`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `import { createSelector } from '@reduxjs/toolkit';
 
 // Basic selector
@@ -654,6 +662,7 @@ const { selectData, selectIsLoading } = api.endpoints.getTodos.select();`,
    - Caching, polling, invalidation`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Thunk (manual)
 const fetchUser = (userId) => async (dispatch, getState) => {
   dispatch({ type: 'user/loading' });
@@ -752,6 +761,7 @@ Choose MobX when:
 - Fine-grained reactivity needed`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `import { makeAutoObservable, runInAction } from 'mobx';
 import { observer } from 'mobx-react-lite';
 
@@ -848,6 +858,7 @@ Use Thunks for:
 - Smaller bundle size`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `import { call, put, takeEvery, takeLatest, all, race, delay } from 'redux-saga/effects';
 
 // Basic saga
@@ -920,6 +931,7 @@ Tools:
 - RTK's createEntityAdapter`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Without normalization (nested, duplicated)
 const badState = {
   posts: [
@@ -1001,6 +1013,7 @@ Benefits:
 - Built into Redux Toolkit`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `import produce from 'immer';
 
 // Without Immer - verbose immutable updates
@@ -1088,6 +1101,7 @@ Libraries:
 - localforage (abstraction)`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Redux Persist
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
@@ -1187,6 +1201,7 @@ Best for:
 - When you need derived async state`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `import { atom, selector, useRecoilState, useRecoilValue } from 'recoil';
 
 // Atoms - basic units of state
@@ -1290,6 +1305,7 @@ Key considerations:
 - Field-level vs form-level state`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// React Hook Form - performant, minimal re-renders
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -1401,6 +1417,7 @@ Concepts:
 - Actions, services, context`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `import { createMachine, assign } from 'xstate';
 import { useMachine } from '@xstate/react';
 
@@ -1512,6 +1529,7 @@ Considerations:
 - Show error states`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// With TanStack Query
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 
@@ -1629,6 +1647,7 @@ const todosSlice = createSlice({
    - Integration test flows`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Redux logger middleware
 import { configureStore } from '@reduxjs/toolkit';
 
@@ -1731,6 +1750,7 @@ Implications:
 - Client state needs reactivity`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Client state - Zustand (or useState, Context)
 const useUIStore = create((set) => ({
   sidebarOpen: false,
@@ -1811,6 +1831,7 @@ Patterns:
 4. State machines (complex flows)`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Pattern 1: Boolean flags (can have invalid states)
 const [isLoading, setIsLoading] = useState(false);
 const [error, setError] = useState(null);
@@ -1906,6 +1927,7 @@ const { data, isLoading, isError, error } = useGetUserQuery(userId);`,
    - Good for cross-cutting concerns`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Method 1: Zustand (simplest for shared state)
 // No provider needed - works anywhere
 import { create } from 'zustand';
@@ -2001,6 +2023,7 @@ Middleware signature:
 store => next => action => result`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Middleware signature
 const myMiddleware = (store) => (next) => (action) => {
   // Before reducer
@@ -2103,6 +2126,7 @@ Libraries:
 - Immer patches`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Pattern 1: State history with Zustand
 import { create } from 'zustand';
 
@@ -2228,6 +2252,7 @@ Considerations:
 - Conflict resolution`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// WebSocket + Zustand
 import { create } from 'zustand';
 
@@ -2353,6 +2378,7 @@ Guidelines:
 - URL state for shareable state`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Anti-pattern: Everything in global state
 // Don't do this!
 const globalStore = create((set) => ({
@@ -2449,6 +2475,7 @@ function App() {
    - Manual batching for external stores`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Problem: Selecting entire store = re-render on any change
 function BadComponent() {
   const store = useStore(); // Re-renders on ANY state change
@@ -2536,6 +2563,7 @@ Benefits:
 - Good for complex forms`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Simple counter - useState is fine
 const [count, setCount] = useState(0);
 
@@ -2628,6 +2656,7 @@ Approaches:
 Anti-pattern: Storing derived state separately (causes sync issues)`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Anti-pattern: Storing derived state
 function BadExample() {
   const [todos, setTodos] = useState([]);
@@ -2739,6 +2768,7 @@ const selectFilteredTodos = createSelector(
    - Shareable, back button works`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Pattern 1: Local state (simple)
 function ProductCard({ product }) {
   const [showDetails, setShowDetails] = useState(false);
@@ -2848,6 +2878,263 @@ const handleDelete = async () => {
 };`,
     tags: ['modals', 'dialogs', 'ui-state', 'patterns'],
     timeEstimate: 5
+  },
+  
+  // Multiple Choice Questions
+  {
+    id: 'state-mcq-1',
+    category: 'State Management',
+    question: 'What is the primary difference between local state and global state?',
+    answer: 'Local state is confined to a single component, while global state is shared across multiple components.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Local is faster, global is slower', isCorrect: false },
+      { id: 'b', text: 'Local is for one component, global is shared across components', isCorrect: true },
+      { id: 'c', text: 'Local uses Redux, global uses useState', isCorrect: false },
+      { id: 'd', text: 'There is no difference', isCorrect: false }
+    ],
+    tags: ['state', 'fundamentals'],
+    timeEstimate: 1
+  },
+  {
+    id: 'state-mcq-2',
+    category: 'State Management',
+    question: 'Which hook is used to manage complex state logic in React?',
+    answer: 'useReducer - it\'s ideal for state with complex update logic.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'useState', isCorrect: false },
+      { id: 'b', text: 'useEffect', isCorrect: false },
+      { id: 'c', text: 'useReducer', isCorrect: true },
+      { id: 'd', text: 'useRef', isCorrect: false }
+    ],
+    tags: ['hooks', 'useReducer'],
+    timeEstimate: 1
+  },
+  {
+    id: 'state-mcq-3',
+    category: 'State Management',
+    question: 'What is Redux primarily used for?',
+    answer: 'Predictable state management with a single source of truth.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Routing', isCorrect: false },
+      { id: 'b', text: 'Styling components', isCorrect: false },
+      { id: 'c', text: 'Predictable state management', isCorrect: true },
+      { id: 'd', text: 'API calls', isCorrect: false }
+    ],
+    tags: ['redux', 'state'],
+    timeEstimate: 1
+  },
+  {
+    id: 'state-mcq-4',
+    category: 'State Management',
+    question: 'What problem does React Context solve?',
+    answer: 'Prop drilling - passing props through many intermediate components.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Slow rendering', isCorrect: false },
+      { id: 'b', text: 'Prop drilling', isCorrect: true },
+      { id: 'c', text: 'API rate limiting', isCorrect: false },
+      { id: 'd', text: 'CSS conflicts', isCorrect: false }
+    ],
+    tags: ['context', 'prop-drilling'],
+    timeEstimate: 1
+  },
+  {
+    id: 'state-mcq-5',
+    category: 'State Management',
+    question: 'Which library is known for its minimal boilerplate and hook-based API?',
+    answer: 'Zustand - a small, fast state management library.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Redux', isCorrect: false },
+      { id: 'b', text: 'MobX', isCorrect: false },
+      { id: 'c', text: 'Zustand', isCorrect: true },
+      { id: 'd', text: 'Recoil', isCorrect: false }
+    ],
+    tags: ['zustand', 'state'],
+    timeEstimate: 1
+  },
+  {
+    id: 'state-mcq-6',
+    category: 'State Management',
+    question: 'What is the purpose of Redux middleware?',
+    answer: 'To intercept and process actions before they reach the reducer.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'To style Redux components', isCorrect: false },
+      { id: 'b', text: 'To intercept actions before they reach the reducer', isCorrect: true },
+      { id: 'c', text: 'To create components', isCorrect: false },
+      { id: 'd', text: 'To manage routing', isCorrect: false }
+    ],
+    tags: ['redux', 'middleware'],
+    timeEstimate: 1
+  },
+  {
+    id: 'state-mcq-7',
+    category: 'State Management',
+    question: 'What is "immutability" in state management?',
+    answer: 'Not modifying state directly, but creating new copies with changes.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'State that never changes', isCorrect: false },
+      { id: 'b', text: 'Creating new state copies instead of modifying directly', isCorrect: true },
+      { id: 'c', text: 'Storing state in localStorage', isCorrect: false },
+      { id: 'd', text: 'Using TypeScript readonly types', isCorrect: false }
+    ],
+    tags: ['immutability', 'patterns'],
+    timeEstimate: 1
+  },
+  {
+    id: 'state-mcq-8',
+    category: 'State Management',
+    question: 'What is React Query primarily used for?',
+    answer: 'Server state management - fetching, caching, and syncing remote data.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Form validation', isCorrect: false },
+      { id: 'b', text: 'Server state management and caching', isCorrect: true },
+      { id: 'c', text: 'Component styling', isCorrect: false },
+      { id: 'd', text: 'Animation', isCorrect: false }
+    ],
+    tags: ['react-query', 'server-state'],
+    timeEstimate: 1
+  },
+  {
+    id: 'state-mcq-9',
+    category: 'State Management',
+    question: 'What pattern does Redux follow?',
+    answer: 'Flux pattern - unidirectional data flow with actions, reducers, and store.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'MVC pattern', isCorrect: false },
+      { id: 'b', text: 'Flux pattern', isCorrect: true },
+      { id: 'c', text: 'Observer pattern', isCorrect: false },
+      { id: 'd', text: 'Factory pattern', isCorrect: false }
+    ],
+    tags: ['redux', 'flux', 'patterns'],
+    timeEstimate: 1
+  },
+  {
+    id: 'state-mcq-10',
+    category: 'State Management',
+    question: 'When should you lift state up?',
+    answer: 'When multiple components need to share the same changing data.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'When the app is slow', isCorrect: false },
+      { id: 'b', text: 'When multiple components need the same data', isCorrect: true },
+      { id: 'c', text: 'When using TypeScript', isCorrect: false },
+      { id: 'd', text: 'Always, for all state', isCorrect: false }
+    ],
+    tags: ['lifting-state', 'patterns'],
+    timeEstimate: 1
+  },
+  {
+    id: 'state-mcq-11',
+    category: 'State Management',
+    question: 'What is the difference between Recoil atoms and selectors?',
+    answer: 'Atoms are units of state, selectors are derived state computed from atoms.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Atoms are for numbers, selectors are for strings', isCorrect: false },
+      { id: 'b', text: 'Atoms are state units, selectors are derived/computed state', isCorrect: true },
+      { id: 'c', text: 'There is no difference', isCorrect: false },
+      { id: 'd', text: 'Selectors are faster than atoms', isCorrect: false }
+    ],
+    tags: ['recoil', 'atoms', 'selectors'],
+    timeEstimate: 1
+  },
+  {
+    id: 'state-mcq-12',
+    category: 'State Management',
+    question: 'What is the purpose of Redux Toolkit\'s createSlice?',
+    answer: 'To simplify reducer and action creation with less boilerplate.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'To create React components', isCorrect: false },
+      { id: 'b', text: 'To simplify reducer and action creation', isCorrect: true },
+      { id: 'c', text: 'To handle API calls', isCorrect: false },
+      { id: 'd', text: 'To style components', isCorrect: false }
+    ],
+    tags: ['redux-toolkit', 'createSlice'],
+    timeEstimate: 1
+  },
+  {
+    id: 'state-mcq-13',
+    category: 'State Management',
+    question: 'What is "optimistic update" in state management?',
+    answer: 'Updating UI immediately before server confirmation, then reverting if it fails.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Always assuming requests will fail', isCorrect: false },
+      { id: 'b', text: 'Updating UI before server confirmation', isCorrect: true },
+      { id: 'c', text: 'Waiting for all data to load', isCorrect: false },
+      { id: 'd', text: 'Using local storage for backup', isCorrect: false }
+    ],
+    tags: ['optimistic-update', 'patterns'],
+    timeEstimate: 1
+  },
+  {
+    id: 'state-mcq-14',
+    category: 'State Management',
+    question: 'What is state normalization?',
+    answer: 'Structuring state like a database with IDs as keys to avoid duplication.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Converting state to strings', isCorrect: false },
+      { id: 'b', text: 'Structuring state like a database with IDs as keys', isCorrect: true },
+      { id: 'c', text: 'Removing all state', isCorrect: false },
+      { id: 'd', text: 'Making state lowercase', isCorrect: false }
+    ],
+    tags: ['normalization', 'patterns'],
+    timeEstimate: 1
+  },
+  {
+    id: 'state-mcq-15',
+    category: 'State Management',
+    question: 'What is the main benefit of using Immer with Redux?',
+    answer: 'Write mutable-looking code that produces immutable updates.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Faster performance', isCorrect: false },
+      { id: 'b', text: 'Write mutable code that produces immutable updates', isCorrect: true },
+      { id: 'c', text: 'Better TypeScript support', isCorrect: false },
+      { id: 'd', text: 'Smaller bundle size', isCorrect: false }
+    ],
+    tags: ['immer', 'immutability'],
+    timeEstimate: 1
   }
 ];
 

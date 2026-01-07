@@ -23,6 +23,7 @@ export const codeOrganizationQuestions: Question[] = [
 Next.js App Router enforces app/ structure.`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Feature-based structure (recommended)
 src/
 ├── app/                    # Next.js App Router
@@ -93,6 +94,7 @@ components/ui/Button/
    - Controlled public API`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Presentational component (dumb)
 // components/ui/Button/Button.tsx
 interface ButtonProps {
@@ -174,6 +176,7 @@ import { Button, Input, Modal } from '@/components/ui';`,
    - Type definitions`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Organized hooks structure
 hooks/
 ├── useDebounce.ts
@@ -285,6 +288,7 @@ function useUsers() {
    - RTK Query`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// lib/api/client.ts - Base API configuration
 import axios from 'axios';
 
@@ -398,6 +402,7 @@ export function useCreateUser() {
    - Catch more errors`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// types/index.ts - Shared types
 export interface User {
   id: string;
@@ -511,6 +516,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
    - Error queue/toast system`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// components/ErrorBoundary.tsx
 import { Component, ReactNode } from 'react';
 import * as Sentry from '@sentry/nextjs';
@@ -632,6 +638,7 @@ Modern perspective:
 - Think: "logic hooks" + "UI components"`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Traditional Container/Presentational
 
 // Presentational (dumb) - only UI
@@ -740,6 +747,7 @@ function UserCard({ userId }: { userId: string }) {
    - Fail fast on missing vars`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// .env.local (git-ignored)
 DATABASE_URL="postgresql://..."
 AUTH_SECRET="super-secret"
@@ -829,6 +837,7 @@ Test naming:
 - feature.e2e.test.tsx`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Co-located structure (recommended)
 src/
 ├── components/
@@ -924,6 +933,7 @@ Pattern uses:
 - Static properties or named exports`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Compound component pattern
 import { createContext, useContext, useState, ReactNode } from 'react';
 
@@ -1056,6 +1066,7 @@ Organization:
 - Component styles co-located`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// 1. CSS Modules
 // Button.module.css
 .button {
@@ -1167,6 +1178,7 @@ Variations:
 Note: Custom hooks have largely replaced render props for logic sharing, but pattern still useful for customizable rendering.`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Render prop pattern
 interface MouseTrackerProps {
   render: (position: { x: number; y: number }) => React.ReactNode;
@@ -1297,6 +1309,7 @@ function Component() {
    - Use as const for literal types`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// lib/constants/index.ts
 export * from './routes';
 export * from './api';
@@ -1425,6 +1438,7 @@ Modern status:
 Naming: withSomething (withAuth, withTheme)`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// HOC pattern
 import { ComponentType, useEffect } from 'react';
 
@@ -1543,6 +1557,7 @@ Benefits:
 - Better DX`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Monorepo structure
 my-monorepo/
 ├── apps/
@@ -1660,6 +1675,7 @@ Best practices:
 - Consider Zustand for frequent updates`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Complete provider pattern implementation
 import { createContext, useContext, useState, useMemo, ReactNode } from 'react';
 
@@ -1789,6 +1805,7 @@ Organization:
 - CI enforcement`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// .eslintrc.js
 module.exports = {
   root: true,
@@ -1910,6 +1927,7 @@ module.exports = {
    - Tree-shakeable (named exports)`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// lib/utils/index.ts - Barrel export
 export * from './string';
 export * from './date';
@@ -2025,6 +2043,7 @@ Benefits:
 - Load on demand`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// 1. next/dynamic for components
 import dynamic from 'next/dynamic';
 
@@ -2135,6 +2154,7 @@ module.exports = withBundleAnalyzer({
    - API documentation`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// 1. JSDoc/TSDoc for components
 /**
  * A customizable button component with multiple variants and sizes.
@@ -2275,6 +2295,7 @@ export function useAsync<T>(
    - Prefer interfaces for objects`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// types/index.ts - Centralized shared types
 export * from './user';
 export * from './api';
@@ -2403,6 +2424,7 @@ declare module 'next-auth' {
    - Test business rules`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// lib/services/user.service.ts
 import { prisma } from '@/lib/prisma';
 import { hash, compare } from 'bcrypt';
@@ -2575,6 +2597,7 @@ async function handleCheckout(formData: FormData) {
    - Easier maintenance`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// lib/forms/types.ts
 export type FieldType = 'text' | 'email' | 'password' | 'select' | 'checkbox' | 'textarea';
 
@@ -2738,6 +2761,7 @@ Use cases:
 - Cache layer`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// lib/repositories/types.ts
 export interface Repository<T, CreateInput, UpdateInput> {
   findById(id: string): Promise<T | null>;
@@ -2885,6 +2909,7 @@ Patterns:
 - Public/internal separation`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Feature module structure with boundaries
 features/
 ├── auth/
@@ -3022,6 +3047,7 @@ describe('Module boundaries', () => {
    - Type-safe keys`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Project structure
 locales/
 ├── en/
@@ -3165,6 +3191,7 @@ Best practices:
 - Type request/response`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// API route structure
 app/
 ├── api/
@@ -3331,6 +3358,7 @@ function ProfileForm({ user }) {
    - Changelogs`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Conventional commit format
 // type(scope): description
 // 
@@ -3449,6 +3477,7 @@ Key features:
 - Visual regression testing`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Installation
 npx storybook@latest init
 
@@ -3593,6 +3622,7 @@ export const AllSizes: Story = {
    - Documentation`,
     difficulty: 'senior',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// Comprehensive story example
 // Card.stories.tsx
 import type { Meta, StoryObj } from '@storybook/react';
@@ -3772,6 +3802,7 @@ export const ProductCards: Story = {
    - addon-outline`,
     difficulty: 'senior',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// .storybook/main.ts - Addon configuration
 const config: StorybookConfig = {
   addons: [
@@ -3946,6 +3977,7 @@ Features:
 - Source code display`,
     difficulty: 'intermediate',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// Button.mdx - Component documentation
 import { Meta, Canvas, Controls, Story, Source, ArgTypes } from '@storybook/blocks';
 import * as ButtonStories from './Button.stories';
@@ -4114,6 +4146,7 @@ When NOT to use:
 - Strong coupling needed`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Micro-frontend architecture patterns
 
 // 1. Build-time integration (npm packages)
@@ -4225,6 +4258,7 @@ Setup:
 - Handle loading states`,
     difficulty: 'senior',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// Shell Application (Host)
 // next.config.js
 const NextFederationPlugin = require('@module-federation/nextjs-mf');
@@ -4386,6 +4420,7 @@ Concepts:
 - Utility modules: Shared code`,
     difficulty: 'senior',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// Root Config - index.html
 <!DOCTYPE html>
 <html>
@@ -4565,6 +4600,7 @@ export function getAuthToken(): string | null {
    - Message bus`,
     difficulty: 'senior',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// Shared Auth Module
 // packages/auth/index.ts
 import { create } from 'zustand';
@@ -4758,6 +4794,7 @@ Best practices:
 - Search functionality`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Design System Structure
 packages/
 ├── design-system/
@@ -4963,6 +5000,7 @@ Best practices:
 - Version documentation`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// OpenAPI with Next.js API Routes
 // lib/swagger.ts
 import { createSwaggerSpec } from 'next-swagger-doc';
@@ -5152,6 +5190,7 @@ Best practices:
 - Test in isolation and together`,
     difficulty: 'senior',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// 1. CSS Modules - Automatic scoping
 // Button.module.css
 .button {
@@ -5328,6 +5367,7 @@ Best practices:
 - Visual regression testing`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// 1. Unit Testing within MFE
 // products-mfe/ProductCard.test.tsx
 import { render, screen, fireEvent } from '@testing-library/react';
@@ -5501,6 +5541,263 @@ jobs:
       - run: cd packages/\${{ matrix.mfe }} && npm run chromatic`,
     tags: ['micro-frontends', 'testing', 'contract-testing', 'e2e'],
     timeEstimate: 7
+  },
+  
+  // Multiple Choice Questions
+  {
+    id: 'org-mcq-1',
+    category: 'Code Organization',
+    question: 'What is the main benefit of the "feature-based" folder structure?',
+    answer: 'Related files are grouped together, making features easier to find and maintain.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Faster compilation', isCorrect: false },
+      { id: 'b', text: 'Related files grouped together for easier maintenance', isCorrect: true },
+      { id: 'c', text: 'Smaller bundle size', isCorrect: false },
+      { id: 'd', text: 'Better TypeScript support', isCorrect: false }
+    ],
+    tags: ['folder-structure', 'organization'],
+    timeEstimate: 1
+  },
+  {
+    id: 'org-mcq-2',
+    category: 'Code Organization',
+    question: 'What is a barrel file (index.ts) used for?',
+    answer: 'Re-exporting modules from a single entry point to simplify imports.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Storing database connections', isCorrect: false },
+      { id: 'b', text: 'Re-exporting modules from a single entry point', isCorrect: true },
+      { id: 'c', text: 'Defining global variables', isCorrect: false },
+      { id: 'd', text: 'Testing configuration', isCorrect: false }
+    ],
+    tags: ['barrel-files', 'imports'],
+    timeEstimate: 1
+  },
+  {
+    id: 'org-mcq-3',
+    category: 'Code Organization',
+    question: 'What is the purpose of absolute imports in React projects?',
+    answer: 'Cleaner imports without relative path navigation (../../).',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Faster loading', isCorrect: false },
+      { id: 'b', text: 'Cleaner imports without ../.. navigation', isCorrect: true },
+      { id: 'c', text: 'Better security', isCorrect: false },
+      { id: 'd', text: 'Reduced bundle size', isCorrect: false }
+    ],
+    tags: ['imports', 'paths'],
+    timeEstimate: 1
+  },
+  {
+    id: 'org-mcq-4',
+    category: 'Code Organization',
+    question: 'What does "separation of concerns" mean in React?',
+    answer: 'Keeping different aspects (logic, UI, data) in separate, focused modules.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Using multiple React apps', isCorrect: false },
+      { id: 'b', text: 'Keeping logic, UI, and data in separate modules', isCorrect: true },
+      { id: 'c', text: 'Never using hooks', isCorrect: false },
+      { id: 'd', text: 'Writing all code in one file', isCorrect: false }
+    ],
+    tags: ['separation-of-concerns', 'architecture'],
+    timeEstimate: 1
+  },
+  {
+    id: 'org-mcq-5',
+    category: 'Code Organization',
+    question: 'What is a custom hook best practice for naming?',
+    answer: 'Prefix with "use" (e.g., useAuth, useFetch).',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Start with "hook" (e.g., hookAuth)', isCorrect: false },
+      { id: 'b', text: 'Start with "use" (e.g., useAuth)', isCorrect: true },
+      { id: 'c', text: 'End with "Hook" (e.g., AuthHook)', isCorrect: false },
+      { id: 'd', text: 'Use PascalCase (e.g., UseAuth)', isCorrect: false }
+    ],
+    tags: ['hooks', 'naming'],
+    timeEstimate: 1
+  },
+  {
+    id: 'org-mcq-6',
+    category: 'Code Organization',
+    question: 'What is the DRY principle?',
+    answer: 'Don\'t Repeat Yourself - avoid code duplication by abstracting common logic.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Delete Redundant Yield', isCorrect: false },
+      { id: 'b', text: 'Don\'t Repeat Yourself', isCorrect: true },
+      { id: 'c', text: 'Data Redundancy Yield', isCorrect: false },
+      { id: 'd', text: 'Dynamic React Yield', isCorrect: false }
+    ],
+    tags: ['dry', 'principles'],
+    timeEstimate: 1
+  },
+  {
+    id: 'org-mcq-7',
+    category: 'Code Organization',
+    question: 'What is a "container/presentational" component pattern?',
+    answer: 'Containers handle logic/data, presentational components focus on UI.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Containers are large, presentational are small', isCorrect: false },
+      { id: 'b', text: 'Containers handle logic, presentational focus on UI', isCorrect: true },
+      { id: 'c', text: 'Containers use Redux, presentational use Context', isCorrect: false },
+      { id: 'd', text: 'They are the same thing', isCorrect: false }
+    ],
+    tags: ['patterns', 'components'],
+    timeEstimate: 1
+  },
+  {
+    id: 'org-mcq-8',
+    category: 'Code Organization',
+    question: 'Where should utility functions typically be placed?',
+    answer: 'In a shared utils or lib folder accessible throughout the app.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Inside each component file', isCorrect: false },
+      { id: 'b', text: 'In a shared utils or lib folder', isCorrect: true },
+      { id: 'c', text: 'In the public folder', isCorrect: false },
+      { id: 'd', text: 'In node_modules', isCorrect: false }
+    ],
+    tags: ['utils', 'folder-structure'],
+    timeEstimate: 1
+  },
+  {
+    id: 'org-mcq-9',
+    category: 'Code Organization',
+    question: 'What is the purpose of TypeScript interfaces in React?',
+    answer: 'Define the shape of props, state, and data for type safety.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'To style components', isCorrect: false },
+      { id: 'b', text: 'Define prop and data shapes for type safety', isCorrect: true },
+      { id: 'c', text: 'To create API endpoints', isCorrect: false },
+      { id: 'd', text: 'To optimize performance', isCorrect: false }
+    ],
+    tags: ['typescript', 'interfaces'],
+    timeEstimate: 1
+  },
+  {
+    id: 'org-mcq-10',
+    category: 'Code Organization',
+    question: 'What is the recommended way to organize React component files?',
+    answer: 'Co-locate component, styles, tests, and types in the same folder.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Put all components in one file', isCorrect: false },
+      { id: 'b', text: 'Co-locate component, styles, tests in same folder', isCorrect: true },
+      { id: 'c', text: 'Separate styles in a global CSS folder', isCorrect: false },
+      { id: 'd', text: 'Always use inline styles', isCorrect: false }
+    ],
+    tags: ['components', 'folder-structure'],
+    timeEstimate: 1
+  },
+  {
+    id: 'org-mcq-11',
+    category: 'Code Organization',
+    question: 'What is "atomic design" in component organization?',
+    answer: 'Building UI from atoms (buttons) to molecules to organisms to templates.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Using atomic CSS classes', isCorrect: false },
+      { id: 'b', text: 'Building UI from small pieces to larger compositions', isCorrect: true },
+      { id: 'c', text: 'Never breaking down components', isCorrect: false },
+      { id: 'd', text: 'Using only HTML elements', isCorrect: false }
+    ],
+    tags: ['atomic-design', 'components'],
+    timeEstimate: 1
+  },
+  {
+    id: 'org-mcq-12',
+    category: 'Code Organization',
+    question: 'What is a monorepo?',
+    answer: 'A single repository containing multiple projects or packages.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'A repo with only one file', isCorrect: false },
+      { id: 'b', text: 'A single repo containing multiple projects', isCorrect: true },
+      { id: 'c', text: 'A mono-colored theme for GitHub', isCorrect: false },
+      { id: 'd', text: 'A repository for monitoring', isCorrect: false }
+    ],
+    tags: ['monorepo', 'architecture'],
+    timeEstimate: 1
+  },
+  {
+    id: 'org-mcq-13',
+    category: 'Code Organization',
+    question: 'What should constants and configuration values be stored in?',
+    answer: 'Separate config files or environment variables.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Hardcoded in each component', isCorrect: false },
+      { id: 'b', text: 'Separate config files or environment variables', isCorrect: true },
+      { id: 'c', text: 'In comments', isCorrect: false },
+      { id: 'd', text: 'In the package.json', isCorrect: false }
+    ],
+    tags: ['config', 'constants'],
+    timeEstimate: 1
+  },
+  {
+    id: 'org-mcq-14',
+    category: 'Code Organization',
+    question: 'What is the single responsibility principle (SRP)?',
+    answer: 'Each module/component should have one reason to change.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Only use single-line functions', isCorrect: false },
+      { id: 'b', text: 'Each module should have one reason to change', isCorrect: true },
+      { id: 'c', text: 'Only one person can modify each file', isCorrect: false },
+      { id: 'd', text: 'Use only one framework', isCorrect: false }
+    ],
+    tags: ['srp', 'solid', 'principles'],
+    timeEstimate: 1
+  },
+  {
+    id: 'org-mcq-15',
+    category: 'Code Organization',
+    question: 'What is the benefit of using path aliases in tsconfig.json?',
+    answer: 'Shorter, more readable imports and easier refactoring.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Faster TypeScript compilation', isCorrect: false },
+      { id: 'b', text: 'Shorter imports and easier refactoring', isCorrect: true },
+      { id: 'c', text: 'Better runtime performance', isCorrect: false },
+      { id: 'd', text: 'Automatic code generation', isCorrect: false }
+    ],
+    tags: ['typescript', 'paths'],
+    timeEstimate: 1
   }
 ];
 

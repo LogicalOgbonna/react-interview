@@ -20,6 +20,7 @@ Important behaviors:
 - State updates are asynchronous`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `const [count, setCount] = useState(0);
 
 // Direct update
@@ -57,6 +58,7 @@ Common uses:
 - Timers`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// componentDidMount + componentWillUnmount
 useEffect(() => {
   const subscription = subscribeToEvents();
@@ -97,6 +99,7 @@ Rule: Start with useEffect. Only use useLayoutEffect if you see visual glitches.
 SSR Note: useLayoutEffect shows warnings on server. Use useEffect or check typeof window.`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// useLayoutEffect for measuring DOM
 function Tooltip({ targetRef }) {
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -130,6 +133,7 @@ Key characteristics:
 - Initialized once (like instance variable)`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// DOM access
 function TextInput() {
   const inputRef = useRef(null);
@@ -179,6 +183,7 @@ When to use:
 - For expensive computations`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// useMemo - memoize expensive calculation
 const sortedItems = useMemo(() => {
   return items.sort((a, b) => a.value - b.value);
@@ -219,6 +224,7 @@ useState is simpler for:
 - Unrelated state pieces`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `const initialState = { count: 0, step: 1 };
 
 function reducer(state, action) {
@@ -276,6 +282,7 @@ Optimization strategies:
 - Use context selectors (third-party libs)`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Creating context
 const ThemeContext = createContext('light');
 
@@ -321,6 +328,7 @@ Best practices:
 - Use sparingly (declarative is usually better)`,
     difficulty: 'expert',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `import { forwardRef, useImperativeHandle, useRef } from 'react';
 
 const FancyInput = forwardRef((props, ref) => {
@@ -369,6 +377,7 @@ Benefits:
 - Cleaner component code`,
     difficulty: 'senior',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// useFetch - data fetching hook
 function useFetch(url) {
   const [data, setData] = useState(null);
@@ -433,6 +442,7 @@ Why these rules exist:
 ESLint plugin: eslint-plugin-react-hooks enforces these rules.`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// ❌ BAD - conditional hook
 function Bad({ condition }) {
   if (condition) {
@@ -487,6 +497,7 @@ Important considerations:
 - Handle loading and error states`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Method 1: Named function
 useEffect(() => {
   async function fetchData() {
@@ -555,6 +566,7 @@ Common useRef use cases:
 - Any mutable value that doesn't affect UI`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `function Example() {
   // useState - triggers re-render on change
   const [count, setCount] = useState(0);
@@ -599,6 +611,7 @@ Common causes and solutions:
    → Use functional updates or refs`,
     difficulty: 'senior',
     type: 'debugging',
+    answerFormat: 'essay',
     codeExample: `// ❌ INFINITE LOOP - object recreated each render
 useEffect(() => {
   fetchData(options);
@@ -651,6 +664,7 @@ Important notes:
 - Prefix with : for CSS selector safety`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `function PasswordField() {
   const passwordId = useId();
   const hintId = useId();
@@ -702,6 +716,7 @@ Use cases:
 Best practice: Avoid overuse - prefer declarative patterns. Use only when imperative actions are necessary.`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `const FancyInput = forwardRef((props, ref) => {
   const inputRef = useRef();
   const [value, setValue] = useState('');
@@ -753,6 +768,7 @@ Use cases:
 It replaces patterns that previously used useEffect for subscriptions.`,
     difficulty: 'expert',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Subscribe to browser online status
 function useOnlineStatus() {
   const isOnline = useSyncExternalStore(
@@ -808,6 +824,7 @@ Best practices:
 - Use format function for expensive formatting`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Basic usage
 function useOnlineStatus() {
   const isOnline = useSyncExternalStore(subscribe, getSnapshot);
@@ -858,6 +875,7 @@ useInsertionEffect:
 Regular developers rarely need it - it's for library authors.`,
     difficulty: 'expert',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// CSS-in-JS library implementation
 function useCSS(rule) {
   useInsertionEffect(() => {
@@ -906,6 +924,7 @@ Solutions:
 The cleanup function in useEffect is key to preventing state updates from stale requests.`,
     difficulty: 'senior',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// Solution 1: Boolean flag
 useEffect(() => {
   let cancelled = false;
@@ -975,6 +994,7 @@ Why these rules exist:
 ESLint plugin 'eslint-plugin-react-hooks' enforces these rules.`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// ❌ WRONG - conditional hook
 function Component({ isLoggedIn }) {
   if (isLoggedIn) {
@@ -1028,6 +1048,7 @@ Benefits:
 - Composable behaviors`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Base hook
 function useFetch(url) {
   const [data, setData] = useState(null);
@@ -1086,6 +1107,7 @@ Pattern:
 3. Revert automatically if operation fails`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `function TodoList({ todos, addTodo }) {
   const [optimisticTodos, addOptimisticTodo] = useOptimistic(
     todos,
@@ -1142,6 +1164,7 @@ Use cases:
 - Prevent double submissions`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `import { useFormStatus } from 'react-dom';
 
 function SubmitButton() {
@@ -1199,6 +1222,7 @@ Requirements:
 - Sync across tabs (optional)`,
     difficulty: 'intermediate',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `function useLocalStorage(key, initialValue) {
   // Get initial value from localStorage or use default
   const [storedValue, setStoredValue] = useState(() => {
@@ -1260,6 +1284,7 @@ Use cases:
 Implementation uses useRef to store the previous value and useEffect to update it after render.`,
     difficulty: 'intermediate',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `function usePrevious(value) {
   const ref = useRef();
   
@@ -1323,6 +1348,7 @@ Features:
 Returns: [state, formAction, isPending]`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `import { useActionState } from 'react';
 
 async function submitForm(previousState, formData) {
@@ -1372,6 +1398,7 @@ Benefits:
 - Prevents excessive re-renders`,
     difficulty: 'intermediate',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `function useDebounce(value, delay) {
   const [debouncedValue, setDebouncedValue] = useState(value);
   
@@ -1438,6 +1465,7 @@ Considerations:
 - Consider portal elements`,
     difficulty: 'intermediate',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `function useClickOutside(ref, handler) {
   useEffect(() => {
     const listener = (event) => {
@@ -1513,6 +1541,7 @@ function Dropdown() {
    - Fix: Only include reactive values`,
     difficulty: 'senior',
     type: 'debugging',
+    answerFormat: 'essay',
     codeExample: `// ❌ Missing dependency
 useEffect(() => {
   fetchUser(userId); // userId not in deps
@@ -1574,6 +1603,7 @@ Use cases:
 - Rate-limited API calls`,
     difficulty: 'intermediate',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `function useThrottle(value, limit) {
   const [throttledValue, setThrottledValue] = useState(value);
   const lastRan = useRef(Date.now());
@@ -1649,6 +1679,7 @@ Features:
 Note: use integrates with Suspense for loading states and Error Boundaries for error handling.`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `import { use, Suspense } from 'react';
 
 // Reading a promise
@@ -1704,6 +1735,7 @@ Testing strategies:
 5. Test cleanup - Verify effect cleanup`,
     difficulty: 'senior',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `import { renderHook, act } from '@testing-library/react';
 import { useCounter } from './useCounter';
 
@@ -1766,6 +1798,7 @@ Strategies:
 5. Use refs for intermediate values`,
     difficulty: 'senior',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// Strategy 1: Single effect with async chain
 useEffect(() => {
   let cancelled = false;
@@ -1854,6 +1887,7 @@ createRef:
 - Designed for single use in constructor`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// useRef - persists across renders
 function FunctionComponent() {
   const inputRef = useRef(null);
@@ -1904,6 +1938,263 @@ function Timer() {
 }`,
     tags: ['hooks', 'useRef', 'createRef', 'refs'],
     timeEstimate: 3
+  },
+  
+  // Multiple Choice Questions
+  {
+    id: 'hooks-mcq-1',
+    category: 'Hooks',
+    question: 'What is the correct syntax for the useState hook?',
+    answer: 'const [state, setState] = useState(initialValue) - useState returns an array with the current state and a setter function.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'const [state, setState] = useState(initialValue)', isCorrect: true },
+      { id: 'b', text: 'const state = useState(initialValue)', isCorrect: false },
+      { id: 'c', text: 'const {state, setState} = useState(initialValue)', isCorrect: false },
+      { id: 'd', text: 'useState(initialValue) => [state, setState]', isCorrect: false }
+    ],
+    tags: ['hooks', 'useState'],
+    timeEstimate: 1
+  },
+  {
+    id: 'hooks-mcq-2',
+    category: 'Hooks',
+    question: 'When does useEffect run by default (with no dependency array)?',
+    answer: 'After every render - Without a dependency array, useEffect runs after every component render.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Only on mount', isCorrect: false },
+      { id: 'b', text: 'Never', isCorrect: false },
+      { id: 'c', text: 'After every render', isCorrect: true },
+      { id: 'd', text: 'Only on unmount', isCorrect: false }
+    ],
+    tags: ['hooks', 'useEffect'],
+    timeEstimate: 1
+  },
+  {
+    id: 'hooks-mcq-3',
+    category: 'Hooks',
+    question: 'What does passing an empty dependency array [] to useEffect do?',
+    answer: 'Runs the effect only once on mount - An empty array means no dependencies, so it only runs on initial mount.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Runs the effect on every render', isCorrect: false },
+      { id: 'b', text: 'Runs the effect only once on mount', isCorrect: true },
+      { id: 'c', text: 'Never runs the effect', isCorrect: false },
+      { id: 'd', text: 'Throws an error', isCorrect: false }
+    ],
+    tags: ['hooks', 'useEffect'],
+    timeEstimate: 1
+  },
+  {
+    id: 'hooks-mcq-4',
+    category: 'Hooks',
+    question: 'Which hook should you use to store a mutable value that does NOT cause re-renders when changed?',
+    answer: 'useRef - useRef returns a mutable ref object whose .current property can be changed without triggering re-renders.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'useState', isCorrect: false },
+      { id: 'b', text: 'useRef', isCorrect: true },
+      { id: 'c', text: 'useMemo', isCorrect: false },
+      { id: 'd', text: 'useCallback', isCorrect: false }
+    ],
+    tags: ['hooks', 'useRef'],
+    timeEstimate: 1
+  },
+  {
+    id: 'hooks-mcq-5',
+    category: 'Hooks',
+    question: 'What is the main difference between useMemo and useCallback?',
+    answer: 'useMemo memoizes a value, useCallback memoizes a function - useMemo returns the memoized result of a calculation, useCallback returns a memoized function.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'They are exactly the same', isCorrect: false },
+      { id: 'b', text: 'useMemo memoizes a value, useCallback memoizes a function', isCorrect: true },
+      { id: 'c', text: 'useCallback is for class components only', isCorrect: false },
+      { id: 'd', text: 'useMemo is deprecated', isCorrect: false }
+    ],
+    tags: ['hooks', 'useMemo', 'useCallback'],
+    timeEstimate: 1
+  },
+  {
+    id: 'hooks-mcq-6',
+    category: 'Hooks',
+    question: 'Which hook is best suited for complex state logic with multiple sub-values?',
+    answer: 'useReducer - useReducer is ideal for managing complex state objects with multiple related values.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'useState', isCorrect: false },
+      { id: 'b', text: 'useRef', isCorrect: false },
+      { id: 'c', text: 'useReducer', isCorrect: true },
+      { id: 'd', text: 'useEffect', isCorrect: false }
+    ],
+    tags: ['hooks', 'useReducer'],
+    timeEstimate: 1
+  },
+  {
+    id: 'hooks-mcq-7',
+    category: 'Hooks',
+    question: 'What is one of the Rules of Hooks?',
+    answer: 'Only call hooks at the top level - Hooks must be called at the top level, not inside loops, conditions, or nested functions.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Always call hooks inside if statements', isCorrect: false },
+      { id: 'b', text: 'Only call hooks at the top level', isCorrect: true },
+      { id: 'c', text: 'Hooks can only be used in class components', isCorrect: false },
+      { id: 'd', text: 'You can call hooks from regular JavaScript functions', isCorrect: false }
+    ],
+    tags: ['hooks', 'rules'],
+    timeEstimate: 1
+  },
+  {
+    id: 'hooks-mcq-8',
+    category: 'Hooks',
+    question: 'What does useContext allow you to do?',
+    answer: 'Subscribe to React context and access its value without passing props through every level.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Create a new context', isCorrect: false },
+      { id: 'b', text: 'Subscribe to React context without prop drilling', isCorrect: true },
+      { id: 'c', text: 'Replace Redux completely', isCorrect: false },
+      { id: 'd', text: 'Store data in localStorage', isCorrect: false }
+    ],
+    tags: ['hooks', 'useContext'],
+    timeEstimate: 1
+  },
+  {
+    id: 'hooks-mcq-9',
+    category: 'Hooks',
+    question: 'What is the purpose of the cleanup function returned from useEffect?',
+    answer: 'To clean up side effects like subscriptions or timers when the component unmounts or before the effect runs again.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'To re-run the effect', isCorrect: false },
+      { id: 'b', text: 'To clean up side effects on unmount or before re-running', isCorrect: true },
+      { id: 'c', text: 'To optimize performance', isCorrect: false },
+      { id: 'd', text: 'To handle errors', isCorrect: false }
+    ],
+    tags: ['hooks', 'useEffect'],
+    timeEstimate: 1
+  },
+  {
+    id: 'hooks-mcq-10',
+    category: 'Hooks',
+    question: 'Which hook generates unique IDs that are stable across server and client rendering?',
+    answer: 'useId - useId is a React 18 hook that generates unique IDs consistent between SSR and hydration.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'useRef', isCorrect: false },
+      { id: 'b', text: 'useState', isCorrect: false },
+      { id: 'c', text: 'useId', isCorrect: true },
+      { id: 'd', text: 'useMemo', isCorrect: false }
+    ],
+    tags: ['hooks', 'useId', 'react-18'],
+    timeEstimate: 1
+  },
+  {
+    id: 'hooks-mcq-11',
+    category: 'Hooks',
+    question: 'What is the difference between useEffect and useLayoutEffect?',
+    answer: 'useLayoutEffect fires synchronously after DOM mutations but before paint, useEffect fires after paint.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'There is no difference', isCorrect: false },
+      { id: 'b', text: 'useLayoutEffect fires synchronously before paint, useEffect after', isCorrect: true },
+      { id: 'c', text: 'useLayoutEffect is for CSS only', isCorrect: false },
+      { id: 'd', text: 'useEffect is deprecated', isCorrect: false }
+    ],
+    tags: ['hooks', 'useLayoutEffect', 'useEffect'],
+    timeEstimate: 1
+  },
+  {
+    id: 'hooks-mcq-12',
+    category: 'Hooks',
+    question: 'Custom hooks must start with which prefix?',
+    answer: 'use - Custom hooks must start with "use" to follow React conventions and enable linting rules.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'custom', isCorrect: false },
+      { id: 'b', text: 'hook', isCorrect: false },
+      { id: 'c', text: 'use', isCorrect: true },
+      { id: 'd', text: 'with', isCorrect: false }
+    ],
+    tags: ['hooks', 'custom-hooks'],
+    timeEstimate: 1
+  },
+  {
+    id: 'hooks-mcq-13',
+    category: 'Hooks',
+    question: 'Which hook should you use to subscribe to external stores in React 18?',
+    answer: 'useSyncExternalStore - This hook is designed for subscribing to external stores while maintaining concurrent rendering safety.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'useEffect', isCorrect: false },
+      { id: 'b', text: 'useExternalStore', isCorrect: false },
+      { id: 'c', text: 'useSyncExternalStore', isCorrect: true },
+      { id: 'd', text: 'useSubscription', isCorrect: false }
+    ],
+    tags: ['hooks', 'useSyncExternalStore'],
+    timeEstimate: 1
+  },
+  {
+    id: 'hooks-mcq-14',
+    category: 'Hooks',
+    question: 'What happens if you update state with the same value in useState?',
+    answer: 'React bails out and skips re-rendering - React uses Object.is to compare and skips if the value is identical.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'The component re-renders twice', isCorrect: false },
+      { id: 'b', text: 'React throws an error', isCorrect: false },
+      { id: 'c', text: 'React bails out and skips re-rendering', isCorrect: true },
+      { id: 'd', text: 'The state is reset to initial value', isCorrect: false }
+    ],
+    tags: ['hooks', 'useState', 'performance'],
+    timeEstimate: 1
+  },
+  {
+    id: 'hooks-mcq-15',
+    category: 'Hooks',
+    question: 'In the useState updater function setCount(prev => prev + 1), what does "prev" represent?',
+    answer: 'The current state value at the time of the update - The updater function receives the latest state value.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'The initial state', isCorrect: false },
+      { id: 'b', text: 'The previous render state', isCorrect: false },
+      { id: 'c', text: 'The current state value at the time of the update', isCorrect: true },
+      { id: 'd', text: 'The next state value', isCorrect: false }
+    ],
+    tags: ['hooks', 'useState'],
+    timeEstimate: 1
   }
 ];
 

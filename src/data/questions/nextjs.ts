@@ -20,6 +20,7 @@ Major features:
 - Incremental Static Regeneration (ISR)`,
     difficulty: 'beginner',
     type: 'conceptual',
+    answerFormat: 'essay',
     tags: ['next.js', 'fundamentals', 'ssr'],
     timeEstimate: 3
   },
@@ -47,6 +48,7 @@ App Router (app/):
 App Router is the recommended approach for new projects.`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Page Router (pages/about.js)
 export default function About() {
   return <h1>About</h1>;
@@ -92,6 +94,7 @@ CSR (Client-Side Rendering):
 - Use for: dashboards, authenticated content`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// SSR - Page Router
 export async function getServerSideProps() {
   const data = await fetchData();
@@ -153,6 +156,7 @@ Benefits:
 To make a Client Component, add 'use client' directive.`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Server Component (default)
 // app/products/page.tsx
 import { db } from '@/lib/db';
@@ -205,6 +209,7 @@ Usage:
 - Call from forms or event handlers`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// app/actions.ts
 'use server';
 
@@ -271,6 +276,7 @@ Route types:
 - Parallel routes: @modal/page.tsx`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// app/blog/[slug]/page.tsx
 interface Props {
   params: { slug: string };
@@ -325,6 +331,7 @@ Patterns:
 Request deduplication: Same fetch calls are automatically deduped.`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Parallel data fetching
 async function Dashboard() {
   // These run in parallel
@@ -387,6 +394,7 @@ Middleware runs for every route. Use matcher to limit scope.
 Location: middleware.ts in project root.`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// middleware.ts
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
@@ -440,6 +448,7 @@ Configuration in next.config.js for external domains.
 For static images, import them for automatic dimensions.`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `import Image from 'next/image';
 import profilePic from './profile.jpg';
 
@@ -516,6 +525,7 @@ Key considerations:
 - Never expose secrets to client`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Using next-auth (Auth.js)
 // app/api/auth/[...nextauth]/route.ts
 import NextAuth from 'next-auth';
@@ -581,6 +591,7 @@ Implementation:
 Works automatically with Server Components.`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Route-level loading (automatic Suspense)
 // app/dashboard/loading.tsx
 export default function Loading() {
@@ -646,6 +657,7 @@ Special files:
 Metadata is automatically merged from layouts to pages.`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Static metadata
 // app/layout.tsx
 export const metadata = {
@@ -713,6 +725,7 @@ Features:
 Location: app/api/[route]/route.ts`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// app/api/users/route.ts
 import { NextRequest, NextResponse } from 'next/server';
 
@@ -778,6 +791,7 @@ headers():
 - Used for content negotiation, localization`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `import { cookies, headers } from 'next/headers';
 
 // Server Component - reading
@@ -842,6 +856,7 @@ Key considerations:
 - Use httpOnly cookies for security`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// middleware.ts
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
@@ -924,6 +939,7 @@ async function login(formData: FormData) {
 Slots are defined with @folder convention and passed as props to layout.`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Folder structure
 app/
   @dashboard/
@@ -1002,6 +1018,7 @@ Use cases:
 - Cart overlays`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Structure for Instagram-like photo modal
 app/
   feed/
@@ -1081,6 +1098,7 @@ Best practices:
 - Configure remote patterns`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `import Image from 'next/image';
 
 // Basic usage
@@ -1155,6 +1173,7 @@ Options:
 - replace - Replace history instead of push`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `import Link from 'next/link';
 
 // Basic usage
@@ -1229,6 +1248,7 @@ Key considerations:
 - Static generation per locale`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// middleware.ts
 import { NextRequest, NextResponse } from 'next/server';
 
@@ -1314,6 +1334,7 @@ Use cases:
 - Request/response transformations`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Route Handler with Edge runtime
 // app/api/location/route.ts
 export const runtime = 'edge';
@@ -1398,6 +1419,7 @@ Additionally:
 - try/catch in Server Actions`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// app/dashboard/error.tsx
 'use client';
 
@@ -1495,6 +1517,7 @@ Benefits:
 - Optimal caching`,
     difficulty: 'expert',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// next.config.js
 module.exports = {
   experimental: {
@@ -1571,6 +1594,7 @@ Access:
 NEXT_PUBLIC_ prefix exposes variables to browser.`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// .env.local
 DATABASE_URL=postgresql://localhost/mydb
 API_SECRET=secret-key-never-expose
@@ -1648,6 +1672,7 @@ permanentRedirect():
 Both work in Server Components, Server Actions, and Route Handlers.`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `import { redirect, permanentRedirect } from 'next/navigation';
 
 // Server Component - temporary redirect
@@ -1732,6 +1757,7 @@ Considerations:
 - Edge vs serverless tradeoffs`,
     difficulty: 'senior',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// Using Upstash Redis rate limiting
 import { Ratelimit } from '@upstash/ratelimit';
 import { Redis } from '@upstash/redis';
@@ -1818,6 +1844,7 @@ Use cases:
 Route groups don't create URL segments - the folder name is excluded from the path.`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Folder structure with route groups
 app/
   (marketing)/
@@ -1898,6 +1925,7 @@ Considerations:
 - Storage destination`,
     difficulty: 'senior',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// Server Action approach
 // app/upload/actions.ts
 'use server';
@@ -2006,6 +2034,7 @@ Client Components:
 - JavaScript included in bundle`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Server Component (default)
 // Can fetch data directly
 async function ServerComponent() {
@@ -2087,6 +2116,7 @@ function ClientWrapper({ children }) {
 For production, external services are recommended due to serverless constraints.`,
     difficulty: 'senior',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// Option 1: Server-Sent Events (Route Handler)
 // app/api/events/route.ts
 export async function GET(request: NextRequest) {
@@ -2198,6 +2228,7 @@ Options:
 - Suspense integration`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `import dynamic from 'next/dynamic';
 
 // Basic dynamic import
@@ -2288,6 +2319,7 @@ Best practices:
 - Set appropriate pool sizes`,
     difficulty: 'senior',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// lib/db.ts - Prisma singleton pattern
 import { PrismaClient } from '@prisma/client';
 
@@ -2368,6 +2400,7 @@ Key concepts:
 - Dynamic content translation`,
     difficulty: 'senior',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// middleware.ts
 import createMiddleware from 'next-intl/middleware';
 
@@ -2482,6 +2515,7 @@ Features:
 - RBAC support`,
     difficulty: 'senior',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// auth.ts
 import NextAuth from 'next-auth';
 import { PrismaAdapter } from '@auth/prisma-adapter';
@@ -2619,6 +2653,7 @@ Considerations:
 - Progress tracking`,
     difficulty: 'intermediate',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// Using Vercel Blob
 // app/api/upload/route.ts
 import { put } from '@vercel/blob';
@@ -2746,6 +2781,7 @@ Considerations:
 - State synchronization`,
     difficulty: 'senior',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// Server-Sent Events (SSE)
 // app/api/events/route.ts
 export const dynamic = 'force-dynamic';
@@ -2879,6 +2915,7 @@ Considerations:
 - Billing per tenant`,
     difficulty: 'senior',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// Subdomain-based multi-tenancy
 // middleware.ts
 import { NextResponse } from 'next/server';
@@ -3009,6 +3046,7 @@ Considerations:
 - Retry logic`,
     difficulty: 'senior',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// Vercel Cron Jobs
 // vercel.json
 {
@@ -3148,6 +3186,7 @@ Features:
 - User-friendly fallbacks`,
     difficulty: 'intermediate',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// app/error.tsx - Route error boundary
 'use client';
 
@@ -3296,6 +3335,7 @@ Use cases:
 - Share cards`,
     difficulty: 'intermediate',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// app/api/og/route.tsx
 import { ImageResponse } from 'next/og';
 
@@ -3451,6 +3491,7 @@ Considerations:
 - Analytics integration`,
     difficulty: 'senior',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// Middleware-based A/B testing
 // middleware.ts
 import { NextResponse } from 'next/server';
@@ -3590,6 +3631,7 @@ Approaches:
 - Auto-loading`,
     difficulty: 'intermediate',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// Server Action for fetching more
 'use server';
 
@@ -3738,6 +3780,7 @@ Benefits:
 - Graceful degradation`,
     difficulty: 'senior',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// Using useOptimistic
 'use client';
 import { useOptimistic } from 'react';
@@ -3889,6 +3932,7 @@ Considerations:
 - Navigation testing`,
     difficulty: 'senior',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// jest.config.js
 const nextJest = require('next/jest');
 
@@ -4035,6 +4079,7 @@ Platforms:
 - Docker`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// next.config.js - Production optimization
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -4179,6 +4224,263 @@ export async function GET() {
 }`,
     tags: ['next.js', 'deployment', 'production', 'docker'],
     timeEstimate: 6
+  },
+  
+  // Multiple Choice Questions
+  {
+    id: 'nextjs-mcq-1',
+    category: 'Next.js',
+    question: 'What is the default rendering mode for components in the Next.js App Router?',
+    answer: 'Server Components - By default, all components in the App Router are React Server Components.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Client Components', isCorrect: false },
+      { id: 'b', text: 'Server Components', isCorrect: true },
+      { id: 'c', text: 'Static Components', isCorrect: false },
+      { id: 'd', text: 'Hybrid Components', isCorrect: false }
+    ],
+    tags: ['next.js', 'rsc', 'app-router'],
+    timeEstimate: 1
+  },
+  {
+    id: 'nextjs-mcq-2',
+    category: 'Next.js',
+    question: 'Which directive marks a component as a Client Component in Next.js?',
+    answer: '"use client" - This directive at the top of the file marks the component as a Client Component.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: '"use server"', isCorrect: false },
+      { id: 'b', text: '"use client"', isCorrect: true },
+      { id: 'c', text: '"client only"', isCorrect: false },
+      { id: 'd', text: '"browser"', isCorrect: false }
+    ],
+    tags: ['next.js', 'client-components'],
+    timeEstimate: 1
+  },
+  {
+    id: 'nextjs-mcq-3',
+    category: 'Next.js',
+    question: 'What file should you create for a loading UI in the App Router?',
+    answer: 'loading.tsx - This file creates an instant loading state using React Suspense.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'spinner.tsx', isCorrect: false },
+      { id: 'b', text: 'loading.tsx', isCorrect: true },
+      { id: 'c', text: 'loader.tsx', isCorrect: false },
+      { id: 'd', text: '_loading.tsx', isCorrect: false }
+    ],
+    tags: ['next.js', 'app-router', 'loading'],
+    timeEstimate: 1
+  },
+  {
+    id: 'nextjs-mcq-4',
+    category: 'Next.js',
+    question: 'What is ISR in Next.js?',
+    answer: 'Incremental Static Regeneration - A feature that allows you to update static pages after building without rebuilding the entire site.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Internal Server Routing', isCorrect: false },
+      { id: 'b', text: 'Incremental Static Regeneration', isCorrect: true },
+      { id: 'c', text: 'Instant Static Rendering', isCorrect: false },
+      { id: 'd', text: 'Interactive State Rehydration', isCorrect: false }
+    ],
+    tags: ['next.js', 'isr'],
+    timeEstimate: 1
+  },
+  {
+    id: 'nextjs-mcq-5',
+    category: 'Next.js',
+    question: 'How do you create a dynamic route segment in the App Router?',
+    answer: 'Using square brackets like [id] - This creates a dynamic segment that can match any value.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: ':id', isCorrect: false },
+      { id: 'b', text: '{id}', isCorrect: false },
+      { id: 'c', text: '[id]', isCorrect: true },
+      { id: 'd', text: '<id>', isCorrect: false }
+    ],
+    tags: ['next.js', 'routing', 'dynamic-routes'],
+    timeEstimate: 1
+  },
+  {
+    id: 'nextjs-mcq-6',
+    category: 'Next.js',
+    question: 'Which function is used to redirect users in a Server Component?',
+    answer: 'redirect() - This function from next/navigation triggers a redirect on the server.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'router.push()', isCorrect: false },
+      { id: 'b', text: 'redirect()', isCorrect: true },
+      { id: 'c', text: 'navigate()', isCorrect: false },
+      { id: 'd', text: 'Response.redirect()', isCorrect: false }
+    ],
+    tags: ['next.js', 'navigation', 'redirect'],
+    timeEstimate: 1
+  },
+  {
+    id: 'nextjs-mcq-7',
+    category: 'Next.js',
+    question: 'What is the purpose of the generateMetadata function?',
+    answer: 'To dynamically generate SEO metadata for pages - It allows you to set dynamic titles, descriptions, etc.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'To create database schemas', isCorrect: false },
+      { id: 'b', text: 'To dynamically generate SEO metadata', isCorrect: true },
+      { id: 'c', text: 'To generate static paths', isCorrect: false },
+      { id: 'd', text: 'To create API routes', isCorrect: false }
+    ],
+    tags: ['next.js', 'seo', 'metadata'],
+    timeEstimate: 1
+  },
+  {
+    id: 'nextjs-mcq-8',
+    category: 'Next.js',
+    question: 'What does the revalidatePath function do?',
+    answer: 'Purges cached data for a specific path - It triggers revalidation of cached data on-demand.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Validates form inputs', isCorrect: false },
+      { id: 'b', text: 'Checks if a path exists', isCorrect: false },
+      { id: 'c', text: 'Purges cached data for a specific path', isCorrect: true },
+      { id: 'd', text: 'Redirects to a valid path', isCorrect: false }
+    ],
+    tags: ['next.js', 'caching', 'revalidation'],
+    timeEstimate: 1
+  },
+  {
+    id: 'nextjs-mcq-9',
+    category: 'Next.js',
+    question: 'Which file is used to define middleware in Next.js?',
+    answer: 'middleware.ts at the project root - This file runs before requests are completed.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: '_middleware.ts in any folder', isCorrect: false },
+      { id: 'b', text: 'middleware.ts at the project root', isCorrect: true },
+      { id: 'c', text: 'api/middleware.ts', isCorrect: false },
+      { id: 'd', text: 'app/middleware.ts', isCorrect: false }
+    ],
+    tags: ['next.js', 'middleware'],
+    timeEstimate: 1
+  },
+  {
+    id: 'nextjs-mcq-10',
+    category: 'Next.js',
+    question: 'How do you create a catch-all route segment in Next.js?',
+    answer: 'Using [...slug] - This catches all subsequent segments in a route.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: '[*slug]', isCorrect: false },
+      { id: 'b', text: '[...slug]', isCorrect: true },
+      { id: 'c', text: '[slug...]', isCorrect: false },
+      { id: 'd', text: '[[slug]]', isCorrect: false }
+    ],
+    tags: ['next.js', 'routing', 'catch-all'],
+    timeEstimate: 1
+  },
+  {
+    id: 'nextjs-mcq-11',
+    category: 'Next.js',
+    question: 'What is a Server Action in Next.js?',
+    answer: 'A function that runs on the server, triggered by form submissions or client code.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'A Redux action', isCorrect: false },
+      { id: 'b', text: 'A function that runs on the server triggered by client code', isCorrect: true },
+      { id: 'c', text: 'An API endpoint', isCorrect: false },
+      { id: 'd', text: 'A client-side event handler', isCorrect: false }
+    ],
+    tags: ['next.js', 'server-actions'],
+    timeEstimate: 1
+  },
+  {
+    id: 'nextjs-mcq-12',
+    category: 'Next.js',
+    question: 'Which hook is used for client-side navigation in the App Router?',
+    answer: 'useRouter from next/navigation - This hook provides programmatic navigation methods.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'useNavigation', isCorrect: false },
+      { id: 'b', text: 'useHistory', isCorrect: false },
+      { id: 'c', text: 'useRouter from next/navigation', isCorrect: true },
+      { id: 'd', text: 'useRoute', isCorrect: false }
+    ],
+    tags: ['next.js', 'navigation', 'hooks'],
+    timeEstimate: 1
+  },
+  {
+    id: 'nextjs-mcq-13',
+    category: 'Next.js',
+    question: 'What is the purpose of the not-found.tsx file?',
+    answer: 'To render a custom 404 page when a route is not found.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'To handle server errors', isCorrect: false },
+      { id: 'b', text: 'To render a custom 404 page', isCorrect: true },
+      { id: 'c', text: 'To redirect to the home page', isCorrect: false },
+      { id: 'd', text: 'To log missing routes', isCorrect: false }
+    ],
+    tags: ['next.js', '404', 'error-handling'],
+    timeEstimate: 1
+  },
+  {
+    id: 'nextjs-mcq-14',
+    category: 'Next.js',
+    question: 'What is the difference between layout.tsx and template.tsx?',
+    answer: 'Layouts persist between page navigations, templates create a new instance on each navigation.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'They are the same', isCorrect: false },
+      { id: 'b', text: 'Layouts are for styling, templates for logic', isCorrect: false },
+      { id: 'c', text: 'Layouts persist between navigations, templates recreate', isCorrect: true },
+      { id: 'd', text: 'Templates are deprecated', isCorrect: false }
+    ],
+    tags: ['next.js', 'layout', 'template'],
+    timeEstimate: 1
+  },
+  {
+    id: 'nextjs-mcq-15',
+    category: 'Next.js',
+    question: 'Which environment variable prefix makes variables accessible in the browser?',
+    answer: 'NEXT_PUBLIC_ - Variables with this prefix are exposed to the browser.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'PUBLIC_', isCorrect: false },
+      { id: 'b', text: 'NEXT_PUBLIC_', isCorrect: true },
+      { id: 'c', text: 'BROWSER_', isCorrect: false },
+      { id: 'd', text: 'CLIENT_', isCorrect: false }
+    ],
+    tags: ['next.js', 'environment-variables'],
+    timeEstimate: 1
   }
 ];
 

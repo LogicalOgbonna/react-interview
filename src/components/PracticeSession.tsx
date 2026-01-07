@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Clock, 
@@ -14,10 +14,13 @@ import {
   XCircle,
   AlertCircle,
   Trophy,
-  RotateCcw
+  RotateCcw,
+  Circle,
+  CheckCircle2
 } from 'lucide-react';
 import { usePracticeStore } from '@/store/practice-store';
 import { CodeBlock } from './CodeBlock';
+import { MultipleChoiceOption } from '@/data/types';
 
 export function PracticeSession() {
   const { 
@@ -31,6 +34,7 @@ export function PracticeSession() {
   } = usePracticeStore();
   
   const [answer, setAnswer] = useState('');
+  const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [showAnswer, setShowAnswer] = useState(false);
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const [timeRemaining, setTimeRemaining] = useState(0);
@@ -67,11 +71,13 @@ export function PracticeSession() {
       
       if (existingResult) {
         setAnswer(existingResult.userAnswer);
+        setSelectedOption(existingResult.userAnswer);
         setShowAnswer(true);
         setHasSubmitted(true);
         setSelfGrade(existingResult.score);
       } else {
         setAnswer('');
+        setSelectedOption(null);
         setShowAnswer(false);
         setHasSubmitted(false);
         setSelfGrade(null);
@@ -94,9 +100,23 @@ export function PracticeSession() {
   
   const handleSubmit = () => {
     const timeTaken = Math.floor((Date.now() - questionStartTime) / 1000);
-    submitAnswer(answer, timeTaken);
+    const isMultipleChoice = currentQuestion.answerFormat === 'multiple-choice';
+    const submittedAnswer = isMultipleChoice ? (selectedOption || '') : answer;
+    
+    submitAnswer(submittedAnswer, timeTaken);
     setHasSubmitted(true);
     setShowAnswer(true);
+    
+    // Auto-grade multiple choice questions
+    if (isMultipleChoice && currentQuestion.options) {
+      const selectedOptionObj = currentQuestion.options.find(o => o.id === selectedOption);
+      const score = selectedOptionObj?.isCorrect ? 1 : 0;
+      const feedback = selectedOptionObj?.isCorrect 
+        ? 'Correct! Well done.'
+        : 'Incorrect. Review the correct answer above.';
+      setSelfGrade(score);
+      gradeAnswer(currentQuestion.id, score, feedback);
+    }
   };
   
   const handleGrade = (score: number) => {
@@ -197,20 +217,67 @@ export function PracticeSession() {
           {/* Answer Input */}
           <div className="mb-6">
             <label className="block text-sm font-medium mb-2">Your Answer</label>
-            <textarea
-              value={answer}
-              onChange={(e) => setAnswer(e.target.value)}
-              placeholder="Type your answer here..."
-              disabled={hasSubmitted}
-              className="w-full h-48 p-4 rounded-lg bg-muted/50 border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none resize-none transition-colors disabled:opacity-50"
-            />
+            
+            {currentQuestion.answerFormat === 'multiple-choice' && currentQuestion.options ? (
+              // Multiple Choice Options
+              <div className="space-y-3">
+                {currentQuestion.options.map((option: MultipleChoiceOption) => {
+                  const isSelected = selectedOption === option.id;
+                  const showCorrect = hasSubmitted && option.isCorrect;
+                  const showIncorrect = hasSubmitted && isSelected && !option.isCorrect;
+                  
+                  return (
+                    <button
+                      key={option.id}
+                      onClick={() => !hasSubmitted && setSelectedOption(option.id)}
+                      disabled={hasSubmitted}
+                      className={`
+                        w-full p-4 rounded-lg text-left transition-all flex items-start gap-3
+                        ${isSelected && !hasSubmitted ? 'bg-primary/20 border-2 border-primary' : 'bg-muted/50 border-2 border-transparent'}
+                        ${showCorrect ? 'bg-emerald-500/20 border-2 border-emerald-500' : ''}
+                        ${showIncorrect ? 'bg-rose-500/20 border-2 border-rose-500' : ''}
+                        ${!hasSubmitted ? 'hover:bg-muted cursor-pointer' : 'cursor-default'}
+                        disabled:opacity-70
+                      `}
+                    >
+                      <div className="mt-0.5">
+                        {showCorrect ? (
+                          <CheckCircle2 className="w-5 h-5 text-emerald-400" />
+                        ) : showIncorrect ? (
+                          <XCircle className="w-5 h-5 text-rose-400" />
+                        ) : isSelected ? (
+                          <CheckCircle2 className="w-5 h-5 text-primary" />
+                        ) : (
+                          <Circle className="w-5 h-5 text-muted-foreground" />
+                        )}
+                      </div>
+                      <div className="flex-1">
+                        <span className="font-medium text-muted-foreground mr-2">{option.id.toUpperCase()}.</span>
+                        <span className={`${showCorrect ? 'text-emerald-400' : showIncorrect ? 'text-rose-400' : ''}`}>
+                          {option.text}
+                        </span>
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+            ) : (
+              // Essay Text Area
+              <textarea
+                value={answer}
+                onChange={(e) => setAnswer(e.target.value)}
+                placeholder="Type your answer here..."
+                disabled={hasSubmitted}
+                className="w-full h-48 p-4 rounded-lg bg-muted/50 border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none resize-none transition-colors disabled:opacity-50"
+              />
+            )}
           </div>
           
           {/* Submit / Next Buttons */}
           {!hasSubmitted ? (
             <button
               onClick={handleSubmit}
-              disabled={!answer.trim()}
+              disabled={currentQuestion.answerFormat === 'multiple-choice' ? !selectedOption : !answer.trim()}
               className="flex items-center justify-center gap-2 w-full py-4 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <Send className="w-5 h-5" />
@@ -218,18 +285,20 @@ export function PracticeSession() {
             </button>
           ) : (
             <div className="space-y-4">
-              {/* Show/Hide Answer Toggle */}
-              <button
-                onClick={() => setShowAnswer(!showAnswer)}
-                className="flex items-center gap-2 text-sm text-primary hover:underline"
-              >
-                {showAnswer ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
-                {showAnswer ? 'Hide' : 'Show'} Correct Answer
-              </button>
+              {/* Show/Hide Answer Toggle - Only for essay questions */}
+              {currentQuestion.answerFormat === 'essay' && (
+                <button
+                  onClick={() => setShowAnswer(!showAnswer)}
+                  className="flex items-center gap-2 text-sm text-primary hover:underline"
+                >
+                  {showAnswer ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                  {showAnswer ? 'Hide' : 'Show'} Correct Answer
+                </button>
+              )}
               
-              {/* Correct Answer */}
+              {/* Correct Answer - Always shown for MCQ, toggleable for essay */}
               <AnimatePresence>
-                {showAnswer && (
+                {(showAnswer || currentQuestion.answerFormat === 'multiple-choice') && (
                   <motion.div
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: 'auto' }}
@@ -237,7 +306,9 @@ export function PracticeSession() {
                     className="overflow-hidden"
                   >
                     <div className="p-4 rounded-lg bg-emerald-500/10 border border-emerald-500/20">
-                      <h3 className="font-semibold text-emerald-400 mb-2">Expected Answer:</h3>
+                      <h3 className="font-semibold text-emerald-400 mb-2">
+                        {currentQuestion.answerFormat === 'multiple-choice' ? 'Explanation:' : 'Expected Answer:'}
+                      </h3>
                       <div className="text-sm text-foreground whitespace-pre-wrap">
                         {currentQuestion.answer}
                       </div>
@@ -253,32 +324,57 @@ export function PracticeSession() {
                 )}
               </AnimatePresence>
               
-              {/* Self Grading */}
-              <div className="p-4 rounded-lg bg-muted/50">
-                <h3 className="font-medium mb-3">How well did you answer?</h3>
-                <div className="flex gap-2">
-                  {[
-                    { score: 0.25, label: 'Needs Work', icon: XCircle, color: 'rose' },
-                    { score: 0.5, label: 'Partial', icon: AlertCircle, color: 'amber' },
-                    { score: 0.75, label: 'Good', icon: CheckCircle, color: 'blue' },
-                    { score: 1, label: 'Excellent', icon: Trophy, color: 'emerald' },
-                  ].map(({ score, label, icon: Icon, color }) => (
-                    <button
-                      key={score}
-                      onClick={() => handleGrade(score)}
-                      className={`
-                        flex-1 flex flex-col items-center gap-1 py-3 rounded-lg transition-all
-                        ${selfGrade === score 
-                          ? `bg-${color}-500/20 ring-2 ring-${color}-500` 
-                          : 'bg-muted hover:bg-muted/80'}
-                      `}
-                    >
-                      <Icon className={`w-5 h-5 ${selfGrade === score ? `text-${color}-400` : ''}`} />
-                      <span className="text-xs">{label}</span>
-                    </button>
-                  ))}
+              {/* Self Grading - Only for essay questions */}
+              {currentQuestion.answerFormat === 'essay' && (
+                <div className="p-4 rounded-lg bg-muted/50">
+                  <h3 className="font-medium mb-3">How well did you answer?</h3>
+                  <div className="flex gap-2">
+                    {[
+                      { score: 0.25, label: 'Needs Work', icon: XCircle, color: 'rose' },
+                      { score: 0.5, label: 'Partial', icon: AlertCircle, color: 'amber' },
+                      { score: 0.75, label: 'Good', icon: CheckCircle, color: 'blue' },
+                      { score: 1, label: 'Excellent', icon: Trophy, color: 'emerald' },
+                    ].map(({ score, label, icon: Icon, color }) => (
+                      <button
+                        key={score}
+                        onClick={() => handleGrade(score)}
+                        className={`
+                          flex-1 flex flex-col items-center gap-1 py-3 rounded-lg transition-all
+                          ${selfGrade === score 
+                            ? `bg-${color}-500/20 ring-2 ring-${color}-500` 
+                            : 'bg-muted hover:bg-muted/80'}
+                        `}
+                      >
+                        <Icon className={`w-5 h-5 ${selfGrade === score ? `text-${color}-400` : ''}`} />
+                        <span className="text-xs">{label}</span>
+                      </button>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
+              
+              {/* MCQ Result Feedback */}
+              {currentQuestion.answerFormat === 'multiple-choice' && selfGrade !== null && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className={`p-4 rounded-lg ${selfGrade === 1 ? 'bg-emerald-500/10' : 'bg-rose-500/10'}`}
+                >
+                  <div className="flex items-center gap-2">
+                    {selfGrade === 1 ? (
+                      <>
+                        <CheckCircle className="w-5 h-5 text-emerald-400" />
+                        <span className="font-medium text-emerald-400">Correct!</span>
+                      </>
+                    ) : (
+                      <>
+                        <XCircle className="w-5 h-5 text-rose-400" />
+                        <span className="font-medium text-rose-400">Incorrect</span>
+                      </>
+                    )}
+                  </div>
+                </motion.div>
+              )}
               
               {/* Next Button */}
               {selfGrade !== null && (

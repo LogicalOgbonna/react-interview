@@ -1,5 +1,12 @@
 export type Difficulty = 'beginner' | 'intermediate' | 'senior' | 'expert';
 export type QuestionType = 'conceptual' | 'coding' | 'debugging' | 'system-design';
+export type AnswerFormat = 'essay' | 'multiple-choice';
+
+export interface MultipleChoiceOption {
+  id: string;
+  text: string;
+  isCorrect: boolean;
+}
 
 export interface Question {
   id: string;
@@ -9,6 +16,8 @@ export interface Question {
   answer: string;
   difficulty: Difficulty;
   type: QuestionType;
+  answerFormat: AnswerFormat;
+  options?: MultipleChoiceOption[]; // For multiple-choice questions
   codeExample?: string;
   followUp?: string[];
   tags: string[];

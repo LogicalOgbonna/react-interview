@@ -26,6 +26,7 @@ Detection tools:
 Remember: Not all re-renders are bad. Optimize only when needed.`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Problem: Child re-renders when parent state changes
 function Parent() {
   const [count, setCount] = useState(0);
@@ -76,6 +77,7 @@ Library-level splitting:
 - Load only when needed`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Component-level lazy loading
 import { lazy, Suspense } from 'react';
 
@@ -141,6 +143,7 @@ Popular libraries:
 Key concept: Only render items in viewport + buffer zone.`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `import { FixedSizeList } from 'react-window';
 
 // Basic virtualized list
@@ -222,6 +225,7 @@ function InfiniteList({ hasMore, loadMore, items }) {
 Key insight: Context is not designed to be a state management solution for frequently changing values.`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// ❌ Bad: Single context for everything
 const AppContext = createContext();
 function App() {
@@ -298,6 +302,7 @@ Throttling: Limits execution to once per time period
 In React, implement with useCallback and useRef, or use libraries like lodash.`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Custom useDebounce hook
 function useDebounce(value, delay) {
   const [debouncedValue, setDebouncedValue] = useState(value);
@@ -377,6 +382,7 @@ function ScrollHandler() {
 Key metrics: LCP, FID, CLS, TTI, bundle size`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// React Profiler component
 import { Profiler } from 'react';
 
@@ -455,6 +461,7 @@ INP (Interaction to Next Paint) - Responsiveness
 - Optimize: Reduce JavaScript execution time`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Measuring Web Vitals
 import { getCLS, getFID, getLCP, getTTFB, getINP } from 'web-vitals';
 
@@ -536,6 +543,7 @@ function SearchResults({ query }) {
 Next.js Image component handles most of this automatically.`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Native lazy loading
 <img src="image.jpg" loading="lazy" alt="..." />
 
@@ -602,6 +610,7 @@ Benefits:
 - Automatic batching in React 18`,
     difficulty: 'expert',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// useTransition - Non-blocking updates
 function FilteredList({ items }) {
   const [query, setQuery] = useState('');
@@ -687,6 +696,7 @@ function Profile({ userId }) {
    - Minification`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Import optimization
 // ❌ Bad - imports entire library
 import _ from 'lodash';
@@ -755,6 +765,7 @@ Use when:
 - Memory-constrained environments`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Using react-window
 import { FixedSizeList } from 'react-window';
 
@@ -833,6 +844,7 @@ Improvement strategies:
 - Use CDN for static assets`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Preload critical hero image
 <head>
   <link 
@@ -905,6 +917,7 @@ Prevention strategies:
 - Preload fonts with font-display`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Always specify image dimensions
 <img src="/photo.jpg" width={800} height={600} alt="Photo" />
 
@@ -980,6 +993,7 @@ Improvement strategies:
 - Optimize event handlers`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Break up long tasks with scheduler.yield()
 async function processItems(items) {
   for (const item of items) {
@@ -1071,6 +1085,7 @@ Benefits:
 - Better caching (per-route chunks)`,
     difficulty: 'intermediate',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `import { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -1149,6 +1164,7 @@ useMemo:
 Both should be used judiciously - don't wrap everything.`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// useCallback - memoize function reference
 function Parent() {
   const [count, setCount] = useState(0);
@@ -1225,6 +1241,7 @@ function SearchableList({ items }) {
 Avoid putting everything in one context!`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// ❌ Single context with everything
 const AppContext = createContext({
   user: null,
@@ -1314,6 +1331,7 @@ Benefits:
 - Consistent optimization`,
     difficulty: 'expert',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Current: Manual memoization required
 function ProductList({ products, onSelect }) {
   const sortedProducts = useMemo(
@@ -1391,6 +1409,7 @@ Third-party:
 - Lighthouse`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Enable profiling in production
 // Build with: npx react-scripts build --profile
 
@@ -1473,6 +1492,7 @@ Loading strategies:
 - Priority loading for LCP images`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Native lazy loading
 <img 
   src="photo.jpg" 
@@ -1581,6 +1601,7 @@ Key considerations:
 Avoid scroll event listeners - they're expensive.`,
     difficulty: 'senior',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// Using IntersectionObserver
 function useInfiniteScroll(callback) {
   const observerRef = useRef();
@@ -1693,6 +1714,7 @@ Key rules:
 - Use database IDs when available`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// ❌ Using index as key (problems with reordering)
 {items.map((item, index) => (
   <ListItem key={index} item={item} />
@@ -1772,6 +1794,7 @@ Reduction techniques:
 - Externalize large libraries`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// 1. Analyze bundle
 // package.json
 "scripts": {
@@ -1851,6 +1874,7 @@ Maintainability:
 Rule: Lift state up only when you need to share it.`,
     difficulty: 'intermediate',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// ❌ State too high - entire app re-renders on input change
 function App() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -1951,6 +1975,7 @@ function EmailInput() {
 React Hook Form is ideal - minimal re-renders by default.`,
     difficulty: 'senior',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// ❌ Controlled form - re-renders on every keystroke
 function SlowForm() {
   const [formData, setFormData] = useState({
@@ -2080,6 +2105,7 @@ ISR (Incremental Static Regeneration):
 - Stale-while-revalidate pattern`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Next.js App Router examples
 
 // SSG - Static (default for non-dynamic pages)
@@ -2167,6 +2193,7 @@ React patterns:
 - Prefetch data before navigation`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Resource hints in <head>
 <head>
   {/* Preload critical CSS */}
@@ -2271,6 +2298,7 @@ Prevention:
 - Cancel async operations`,
     difficulty: 'senior',
     type: 'debugging',
+    answerFormat: 'essay',
     codeExample: `// ❌ Memory leak - timer not cleared
 useEffect(() => {
   const interval = setInterval(() => {
@@ -2375,6 +2403,7 @@ Improvement strategies:
 - Use web workers for heavy computation`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// 1. Defer non-critical JavaScript
 <script src="analytics.js" defer></script>
 <script src="chat-widget.js" async></script>
@@ -2471,6 +2500,7 @@ Additional optimizations:
 - Proper routing with clean URLs`,
     difficulty: 'senior',
     type: 'conceptual',
+    answerFormat: 'essay',
     codeExample: `// Next.js metadata API
 // app/products/[id]/page.tsx
 export async function generateMetadata({ params }) {
@@ -2598,6 +2628,7 @@ export default function robots() {
    - Remove unused dependencies`,
     difficulty: 'senior',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// Analyze bundle
 // npm run build -- --analyze
 // Or: ANALYZE=true npm run build
@@ -2703,6 +2734,7 @@ module.exports = {
    - CSS animations for simple cases`,
     difficulty: 'intermediate',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// CSS-only animation (best performance)
 const slideIn = \`
   @keyframes slideIn {
@@ -2847,6 +2879,7 @@ const animationDuration = prefersReducedMotion ? 0 : 300;`,
    - Render visible fields only`,
     difficulty: 'intermediate',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// React Hook Form - uncontrolled, minimal re-renders
 import { useForm, Controller } from 'react-hook-form';
 
@@ -2986,6 +3019,7 @@ Libraries:
 - Apollo Client`,
     difficulty: 'senior',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// TanStack Query optimistic update
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 
@@ -3130,6 +3164,7 @@ function TodoList({ todos }) {
    - Connection pooling`,
     difficulty: 'senior',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// Optimized WebSocket hook
 function useOptimizedWebSocket(url, options = {}) {
   const {
@@ -3298,6 +3333,7 @@ Integration:
 - Next.js web workers`,
     difficulty: 'senior',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// Basic Web Worker
 // workers/calculation.worker.ts
 self.onmessage = (e) => {
@@ -3475,6 +3511,7 @@ Next.js specific:
 - Connection handling`,
     difficulty: 'senior',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// Prisma connection pooling
 // lib/prisma.ts
 import { PrismaClient } from '@prisma/client';
@@ -3631,6 +3668,7 @@ export async function GET() {
    - Elasticsearch/Algolia`,
     difficulty: 'intermediate',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// Debounced search with caching
 import { useQuery } from '@tanstack/react-query';
 import { useDebouncedValue } from './hooks';
@@ -3803,6 +3841,7 @@ function SearchInput() {
    - Delayed loading`,
     difficulty: 'intermediate',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// Next.js Script component
 import Script from 'next/script';
 
@@ -3963,6 +4002,7 @@ function LazyScriptOnView({ src }) {
    - Handle large lists`,
     difficulty: 'intermediate',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// Cursor-based pagination with TanStack Query
 import { useInfiniteQuery } from '@tanstack/react-query';
 
@@ -4154,6 +4194,7 @@ function VirtualizedInfiniteList() {
    - Middleware optimization`,
     difficulty: 'senior',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// Optimized auth with NextAuth.js
 import NextAuth from 'next-auth';
 import { PrismaAdapter } from '@auth/prisma-adapter';
@@ -4303,6 +4344,7 @@ const cookieOptions = {
    - Debug info (dev only)`,
     difficulty: 'intermediate',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// Reusable error boundary with recovery
 import { Component, ReactNode } from 'react';
 import * as Sentry from '@sentry/nextjs';
@@ -4490,6 +4532,7 @@ function QueryBoundary({ children }) {
    - Proper error handling`,
     difficulty: 'senior',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// Edge runtime for faster responses
 // app/api/fast/route.ts
 export const runtime = 'edge';
@@ -4657,6 +4700,7 @@ export async function POST(request: Request) {
    - Progressive loading`,
     difficulty: 'senior',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// Minimal hydration data
 // Server component
 async function Page() {
@@ -4836,6 +4880,7 @@ Monitoring:
 - Alerts and dashboards`,
     difficulty: 'senior',
     type: 'coding',
+    answerFormat: 'essay',
     codeExample: `// web-vitals integration
 import { onCLS, onFID, onLCP, onINP, onTTFB } from 'web-vitals';
 
@@ -4968,6 +5013,263 @@ function VitalsDebugger() {
 }`,
     tags: ['optimization', 'web-vitals', 'monitoring', 'performance'],
     timeEstimate: 5
+  },
+  
+  // Multiple Choice Questions
+  {
+    id: 'opt-mcq-1',
+    category: 'Performance & Optimization',
+    question: 'What does React.memo() do?',
+    answer: 'Memoizes a component to prevent re-renders when props have not changed.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Stores data in local storage', isCorrect: false },
+      { id: 'b', text: 'Memoizes a component to prevent unnecessary re-renders', isCorrect: true },
+      { id: 'c', text: 'Creates a memory leak', isCorrect: false },
+      { id: 'd', text: 'Improves CSS performance', isCorrect: false }
+    ],
+    tags: ['optimization', 'memo', 'react'],
+    timeEstimate: 1
+  },
+  {
+    id: 'opt-mcq-2',
+    category: 'Performance & Optimization',
+    question: 'Which hook memoizes the result of a calculation?',
+    answer: 'useMemo - It returns a memoized value that only recalculates when dependencies change.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'useCallback', isCorrect: false },
+      { id: 'b', text: 'useMemo', isCorrect: true },
+      { id: 'c', text: 'useRef', isCorrect: false },
+      { id: 'd', text: 'useEffect', isCorrect: false }
+    ],
+    tags: ['optimization', 'useMemo', 'hooks'],
+    timeEstimate: 1
+  },
+  {
+    id: 'opt-mcq-3',
+    category: 'Performance & Optimization',
+    question: 'What is code splitting in React?',
+    answer: 'Breaking your code into smaller chunks that are loaded on demand to reduce initial bundle size.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Dividing code into multiple files for organization', isCorrect: false },
+      { id: 'b', text: 'Breaking code into chunks loaded on demand', isCorrect: true },
+      { id: 'c', text: 'Splitting a component into smaller components', isCorrect: false },
+      { id: 'd', text: 'Writing code in multiple languages', isCorrect: false }
+    ],
+    tags: ['optimization', 'code-splitting'],
+    timeEstimate: 1
+  },
+  {
+    id: 'opt-mcq-4',
+    category: 'Performance & Optimization',
+    question: 'Which function is used for lazy loading components in React?',
+    answer: 'React.lazy() - It allows you to dynamically import components.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'React.lazy()', isCorrect: true },
+      { id: 'b', text: 'React.defer()', isCorrect: false },
+      { id: 'c', text: 'React.async()', isCorrect: false },
+      { id: 'd', text: 'React.load()', isCorrect: false }
+    ],
+    tags: ['optimization', 'lazy-loading'],
+    timeEstimate: 1
+  },
+  {
+    id: 'opt-mcq-5',
+    category: 'Performance & Optimization',
+    question: 'What is the primary cause of unnecessary re-renders in React?',
+    answer: 'Parent component re-renders causing all children to re-render, or creating new object/function references.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Using too many components', isCorrect: false },
+      { id: 'b', text: 'Parent re-renders or new object/function references in props', isCorrect: true },
+      { id: 'c', text: 'Using CSS animations', isCorrect: false },
+      { id: 'd', text: 'Having too much JSX', isCorrect: false }
+    ],
+    tags: ['optimization', 're-renders'],
+    timeEstimate: 1
+  },
+  {
+    id: 'opt-mcq-6',
+    category: 'Performance & Optimization',
+    question: 'What does useCallback return?',
+    answer: 'A memoized callback function that only changes when dependencies change.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'The result of calling a function', isCorrect: false },
+      { id: 'b', text: 'A memoized callback function', isCorrect: true },
+      { id: 'c', text: 'A promise', isCorrect: false },
+      { id: 'd', text: 'An event listener', isCorrect: false }
+    ],
+    tags: ['optimization', 'useCallback'],
+    timeEstimate: 1
+  },
+  {
+    id: 'opt-mcq-7',
+    category: 'Performance & Optimization',
+    question: 'What is virtualization in the context of React performance?',
+    answer: 'Rendering only the visible items in a long list instead of all items.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Using virtual machines for React', isCorrect: false },
+      { id: 'b', text: 'Rendering only visible items in a list', isCorrect: true },
+      { id: 'c', text: 'Creating virtual components', isCorrect: false },
+      { id: 'd', text: 'Using the Virtual DOM', isCorrect: false }
+    ],
+    tags: ['optimization', 'virtualization'],
+    timeEstimate: 1
+  },
+  {
+    id: 'opt-mcq-8',
+    category: 'Performance & Optimization',
+    question: 'Which Core Web Vital measures visual stability?',
+    answer: 'CLS (Cumulative Layout Shift) - It measures unexpected layout shifts during page load.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'LCP (Largest Contentful Paint)', isCorrect: false },
+      { id: 'b', text: 'FID (First Input Delay)', isCorrect: false },
+      { id: 'c', text: 'CLS (Cumulative Layout Shift)', isCorrect: true },
+      { id: 'd', text: 'TTFB (Time to First Byte)', isCorrect: false }
+    ],
+    tags: ['optimization', 'web-vitals', 'cls'],
+    timeEstimate: 1
+  },
+  {
+    id: 'opt-mcq-9',
+    category: 'Performance & Optimization',
+    question: 'When should you NOT use useMemo?',
+    answer: 'For cheap calculations where memoization overhead exceeds the computation cost.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'For expensive calculations', isCorrect: false },
+      { id: 'b', text: 'When passing objects to memoized children', isCorrect: false },
+      { id: 'c', text: 'For cheap calculations where overhead exceeds benefit', isCorrect: true },
+      { id: 'd', text: 'When values are used in useEffect', isCorrect: false }
+    ],
+    tags: ['optimization', 'useMemo'],
+    timeEstimate: 1
+  },
+  {
+    id: 'opt-mcq-10',
+    category: 'Performance & Optimization',
+    question: 'What React DevTools feature helps identify unnecessary re-renders?',
+    answer: 'Profiler and "Highlight updates" - They help visualize component renders.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Console.log', isCorrect: false },
+      { id: 'b', text: 'Profiler and Highlight updates', isCorrect: true },
+      { id: 'c', text: 'Network tab', isCorrect: false },
+      { id: 'd', text: 'Memory tab', isCorrect: false }
+    ],
+    tags: ['optimization', 'devtools'],
+    timeEstimate: 1
+  },
+  {
+    id: 'opt-mcq-11',
+    category: 'Performance & Optimization',
+    question: 'What is tree shaking?',
+    answer: 'Eliminating dead code during the build process to reduce bundle size.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Reorganizing the component tree', isCorrect: false },
+      { id: 'b', text: 'Eliminating dead code during build', isCorrect: true },
+      { id: 'c', text: 'Removing unused CSS', isCorrect: false },
+      { id: 'd', text: 'Optimizing the Virtual DOM', isCorrect: false }
+    ],
+    tags: ['optimization', 'tree-shaking', 'bundling'],
+    timeEstimate: 1
+  },
+  {
+    id: 'opt-mcq-12',
+    category: 'Performance & Optimization',
+    question: 'Which library is commonly used for list virtualization in React?',
+    answer: 'react-window or react-virtualized - These libraries efficiently render large lists.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'react-list', isCorrect: false },
+      { id: 'b', text: 'react-window or react-virtualized', isCorrect: true },
+      { id: 'c', text: 'react-infinite', isCorrect: false },
+      { id: 'd', text: 'react-scroll', isCorrect: false }
+    ],
+    tags: ['optimization', 'virtualization'],
+    timeEstimate: 1
+  },
+  {
+    id: 'opt-mcq-13',
+    category: 'Performance & Optimization',
+    question: 'What is the recommended way to handle images in Next.js for performance?',
+    answer: 'Using the next/image component - It provides automatic optimization, lazy loading, and responsive images.',
+    difficulty: 'beginner',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Regular <img> tag', isCorrect: false },
+      { id: 'b', text: 'next/image component', isCorrect: true },
+      { id: 'c', text: 'CSS background images', isCorrect: false },
+      { id: 'd', text: 'SVG only', isCorrect: false }
+    ],
+    tags: ['optimization', 'images', 'next.js'],
+    timeEstimate: 1
+  },
+  {
+    id: 'opt-mcq-14',
+    category: 'Performance & Optimization',
+    question: 'What is debouncing used for?',
+    answer: 'Delaying function execution until a specified time has passed since the last call.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Executing a function immediately', isCorrect: false },
+      { id: 'b', text: 'Delaying execution until after the last call', isCorrect: true },
+      { id: 'c', text: 'Running a function multiple times', isCorrect: false },
+      { id: 'd', text: 'Canceling function execution', isCorrect: false }
+    ],
+    tags: ['optimization', 'debounce'],
+    timeEstimate: 1
+  },
+  {
+    id: 'opt-mcq-15',
+    category: 'Performance & Optimization',
+    question: 'What is the difference between debouncing and throttling?',
+    answer: 'Debouncing waits until activity stops, throttling limits execution to once per time period.',
+    difficulty: 'intermediate',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'They are the same', isCorrect: false },
+      { id: 'b', text: 'Debouncing waits until activity stops, throttling limits rate', isCorrect: true },
+      { id: 'c', text: 'Throttling is faster than debouncing', isCorrect: false },
+      { id: 'd', text: 'Debouncing is deprecated', isCorrect: false }
+    ],
+    tags: ['optimization', 'debounce', 'throttle'],
+    timeEstimate: 1
   }
 ];
 
