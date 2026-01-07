@@ -275,8 +275,7 @@ const CustomPdf = ({ section, styles }: { section: CVCustomSection; styles: Retu
   <>
     {section.fields.map((field) => (
       <View key={field.id} style={styles.customField}>
-        <Text style={styles.labelBold}>{field.label}: </Text>
-        <Text>{field.value}</Text>
+        <Text>{field.content}</Text>
       </View>
     ))}
   </>

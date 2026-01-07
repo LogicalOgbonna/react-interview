@@ -58,8 +58,7 @@ export interface CVSkillsSection {
 
 export interface CVCustomField {
   id: string;
-  label: string;
-  value: string;
+  content: string;
 }
 
 export interface CVCustomSection {

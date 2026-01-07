@@ -1,26 +1,22 @@
 'use client';
 
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import Link from 'next/link';
-import { 
-  BookOpen, 
-  Clock, 
-  Trophy, 
-  Play, 
-  BarChart3,
-  Zap,
-  Target,
-  CheckCircle,
-  FileText
-} from 'lucide-react';
+import { CategoryCard } from '@/components/CategoryCard';
+import { PracticeSession } from '@/components/PracticeSession';
+import { SessionConfig } from '@/components/SessionConfig';
+import { SessionHistory } from '@/components/SessionHistory';
+import { StatsCard } from '@/components/StatsCard';
 import { categories, stats } from '@/data/questions';
 import { usePracticeStore } from '@/store/practice-store';
-import { CategoryCard } from '@/components/CategoryCard';
-import { StatsCard } from '@/components/StatsCard';
-import { SessionConfig } from '@/components/SessionConfig';
-import { PracticeSession } from '@/components/PracticeSession';
-import { SessionHistory } from '@/components/SessionHistory';
+import { motion } from 'framer-motion';
+import {
+  BookOpen,
+  CheckCircle,
+  Play,
+  Target,
+  Trophy,
+  Zap
+} from 'lucide-react';
+import { useState } from 'react';
 
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
@@ -64,18 +60,6 @@ export default function Home() {
             Practice {stats.totalQuestions}+ senior-level questions across {stats.totalCategories} categories.
             Timed sessions, AI grading, and detailed feedback.
           </p>
-          
-          {/* CV Builder CTA */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link
-              href="/cv-builder"
-              className="flex items-center gap-3 px-6 py-3 rounded-xl bg-gradient-to-r from-teal-500 to-emerald-500 text-white font-semibold hover:from-teal-600 hover:to-emerald-600 transition-all shadow-lg hover:shadow-xl hover:scale-105"
-            >
-              <FileText className="w-5 h-5" />
-              <span>Build Your CV</span>
-            </Link>
-            <span className="text-muted-foreground text-sm">or practice interview questions below</span>
-          </div>
         </motion.header>
         
         {/* Quick Stats */}
