@@ -3135,6 +3135,178 @@ const handleDelete = async () => {
     ],
     tags: ['immer', 'immutability'],
     timeEstimate: 1
+  },
+  
+  // Senior/Advanced Multiple Choice Questions
+  {
+    id: 'state-mcq-16',
+    category: 'State Management',
+    question: 'What problem does useSyncExternalStore solve for state libraries?',
+    answer: 'Prevents tearing in concurrent mode by synchronizing reads during render.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Speeds up state updates', isCorrect: false },
+      { id: 'b', text: 'Prevents tearing by synchronizing reads during render', isCorrect: true },
+      { id: 'c', text: 'Enables time-travel debugging', isCorrect: false },
+      { id: 'd', text: 'Reduces bundle size', isCorrect: false }
+    ],
+    tags: ['useSyncExternalStore', 'concurrent', 'tearing'],
+    timeEstimate: 2
+  },
+  {
+    id: 'state-mcq-17',
+    category: 'State Management',
+    question: 'What is "selector stability" in state management and why does it matter?',
+    answer: 'Returning same reference for unchanged data to prevent unnecessary re-renders.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Sorting selectors alphabetically', isCorrect: false },
+      { id: 'b', text: 'Returning same reference for unchanged data', isCorrect: true },
+      { id: 'c', text: 'Using stable sort algorithms', isCorrect: false },
+      { id: 'd', text: 'Keeping selector functions pure', isCorrect: false }
+    ],
+    tags: ['selectors', 'memoization', 'performance'],
+    timeEstimate: 2
+  },
+  {
+    id: 'state-mcq-18',
+    category: 'State Management',
+    question: 'How does Zustand handle subscriptions differently from Redux?',
+    answer: 'Components subscribe to specific state slices, not the entire store.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'It uses observables', isCorrect: false },
+      { id: 'b', text: 'Components subscribe to specific state slices', isCorrect: true },
+      { id: 'c', text: 'It uses Redux under the hood', isCorrect: false },
+      { id: 'd', text: 'There is no subscription mechanism', isCorrect: false }
+    ],
+    tags: ['zustand', 'subscriptions', 'slices'],
+    timeEstimate: 2
+  },
+  {
+    id: 'state-mcq-19',
+    category: 'State Management',
+    question: 'What is the purpose of RTK Query\'s cache invalidation tags?',
+    answer: 'To automatically refetch queries when related mutations complete.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'To identify cache entries for debugging', isCorrect: false },
+      { id: 'b', text: 'To automatically refetch queries after mutations', isCorrect: true },
+      { id: 'c', text: 'To tag data for analytics', isCorrect: false },
+      { id: 'd', text: 'To organize data by type', isCorrect: false }
+    ],
+    tags: ['rtk-query', 'cache', 'invalidation'],
+    timeEstimate: 2
+  },
+  {
+    id: 'state-mcq-20',
+    category: 'State Management',
+    question: 'What pattern does Jotai use that differs from Redux?',
+    answer: 'Atomic state model where atoms are independent units of state.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Flux pattern like Redux', isCorrect: false },
+      { id: 'b', text: 'Atomic state model with independent atoms', isCorrect: true },
+      { id: 'c', text: 'Observable streams', isCorrect: false },
+      { id: 'd', text: 'Event sourcing', isCorrect: false }
+    ],
+    tags: ['jotai', 'atoms', 'patterns'],
+    timeEstimate: 2
+  },
+  {
+    id: 'state-mcq-21',
+    category: 'State Management',
+    question: 'What is "structural sharing" in state management?',
+    answer: 'Reusing unchanged portions of state tree to minimize memory and re-renders.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Sharing state between components', isCorrect: false },
+      { id: 'b', text: 'Reusing unchanged portions of state tree', isCorrect: true },
+      { id: 'c', text: 'Organizing state structure', isCorrect: false },
+      { id: 'd', text: 'Using TypeScript interfaces', isCorrect: false }
+    ],
+    tags: ['structural-sharing', 'immutability', 'performance'],
+    timeEstimate: 2
+  },
+  {
+    id: 'state-mcq-22',
+    category: 'State Management',
+    question: 'How do Server Actions in Next.js change state management patterns?',
+    answer: 'Allow direct mutations from server without client-side state for form data.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'They replace Redux entirely', isCorrect: false },
+      { id: 'b', text: 'Allow server mutations without client-side state for forms', isCorrect: true },
+      { id: 'c', text: 'They only work with Context', isCorrect: false },
+      { id: 'd', text: 'They require Zustand', isCorrect: false }
+    ],
+    tags: ['server-actions', 'next.js', 'forms'],
+    timeEstimate: 2
+  },
+  {
+    id: 'state-mcq-23',
+    category: 'State Management',
+    question: 'What is the benefit of "colocation" in state management?',
+    answer: 'Keeping state close to where it\'s used improves maintainability and performance.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Putting all state in one file', isCorrect: false },
+      { id: 'b', text: 'Keeping state close to where it\'s used', isCorrect: true },
+      { id: 'c', text: 'Co-locating state with tests', isCorrect: false },
+      { id: 'd', text: 'Using the same state library everywhere', isCorrect: false }
+    ],
+    tags: ['colocation', 'patterns', 'architecture'],
+    timeEstimate: 2
+  },
+  {
+    id: 'state-mcq-24',
+    category: 'State Management',
+    question: 'What is "state machine" approach to state management (e.g., XState)?',
+    answer: 'Modeling state as finite states with explicit transitions and effects.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Using machine learning for state', isCorrect: false },
+      { id: 'b', text: 'Modeling state as finite states with explicit transitions', isCorrect: true },
+      { id: 'c', text: 'Running state on a server', isCorrect: false },
+      { id: 'd', text: 'Automated state generation', isCorrect: false }
+    ],
+    tags: ['xstate', 'state-machines', 'patterns'],
+    timeEstimate: 2
+  },
+  {
+    id: 'state-mcq-25',
+    category: 'State Management',
+    question: 'What is the difference between "derived state" and "stored state"?',
+    answer: 'Derived state is computed from other state, stored state is explicitly saved.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Derived is on server, stored is on client', isCorrect: false },
+      { id: 'b', text: 'Derived is computed from other state, stored is explicit', isCorrect: true },
+      { id: 'c', text: 'They are the same thing', isCorrect: false },
+      { id: 'd', text: 'Derived uses Redux, stored uses Context', isCorrect: false }
+    ],
+    tags: ['derived-state', 'selectors', 'patterns'],
+    timeEstimate: 2
   }
 ];
 

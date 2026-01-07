@@ -5798,6 +5798,178 @@ jobs:
     ],
     tags: ['typescript', 'paths'],
     timeEstimate: 1
+  },
+  
+  // Senior/Advanced Multiple Choice Questions
+  {
+    id: 'org-mcq-16',
+    category: 'Code Organization',
+    question: 'What is the "screaming architecture" principle?',
+    answer: 'Folder structure should clearly communicate the app\'s purpose, not framework.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Using ALL CAPS for important files', isCorrect: false },
+      { id: 'b', text: 'Structure communicates app purpose, not framework', isCorrect: true },
+      { id: 'c', text: 'Verbose error messages', isCorrect: false },
+      { id: 'd', text: 'Large file sizes for visibility', isCorrect: false }
+    ],
+    tags: ['architecture', 'clean-architecture', 'ddd'],
+    timeEstimate: 2
+  },
+  {
+    id: 'org-mcq-17',
+    category: 'Code Organization',
+    question: 'What is the purpose of dependency injection in React applications?',
+    answer: 'Decoupling components from implementations for testability and flexibility.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'To install dependencies automatically', isCorrect: false },
+      { id: 'b', text: 'Decoupling components from implementations', isCorrect: true },
+      { id: 'c', text: 'To inject CSS styles', isCorrect: false },
+      { id: 'd', text: 'To add more dependencies', isCorrect: false }
+    ],
+    tags: ['dependency-injection', 'testing', 'architecture'],
+    timeEstimate: 2
+  },
+  {
+    id: 'org-mcq-18',
+    category: 'Code Organization',
+    question: 'What is "colocating" test files and when should you do it?',
+    answer: 'Placing tests next to source files for discoverability and maintenance.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Running tests on the same server', isCorrect: false },
+      { id: 'b', text: 'Placing tests next to source files', isCorrect: true },
+      { id: 'c', text: 'Combining test and source code', isCorrect: false },
+      { id: 'd', text: 'Testing multiple files at once', isCorrect: false }
+    ],
+    tags: ['testing', 'colocation', 'organization'],
+    timeEstimate: 2
+  },
+  {
+    id: 'org-mcq-19',
+    category: 'Code Organization',
+    question: 'What is the purpose of a "domain-driven" folder structure?',
+    answer: 'Organizing code by business domain rather than technical concerns.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Organizing by file type', isCorrect: false },
+      { id: 'b', text: 'Organizing by business domain', isCorrect: true },
+      { id: 'c', text: 'Organizing by developer', isCorrect: false },
+      { id: 'd', text: 'Organizing alphabetically', isCorrect: false }
+    ],
+    tags: ['ddd', 'domain-driven', 'architecture'],
+    timeEstimate: 2
+  },
+  {
+    id: 'org-mcq-20',
+    category: 'Code Organization',
+    question: 'What is the "facade pattern" and when should you use it in React?',
+    answer: 'Providing simple interface to complex subsystems, like API wrappers.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Styling component faces', isCorrect: false },
+      { id: 'b', text: 'Simple interface to complex subsystems', isCorrect: true },
+      { id: 'c', text: 'Building facades in 3D apps', isCorrect: false },
+      { id: 'd', text: 'Hiding components from view', isCorrect: false }
+    ],
+    tags: ['facade', 'patterns', 'api'],
+    timeEstimate: 2
+  },
+  {
+    id: 'org-mcq-21',
+    category: 'Code Organization',
+    question: 'What is a "module boundary" and why is it important?',
+    answer: 'Clear interface between modules that controls what is exported/imported.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'File size limit', isCorrect: false },
+      { id: 'b', text: 'Clear interface controlling exports/imports', isCorrect: true },
+      { id: 'c', text: 'CSS boundary for styling', isCorrect: false },
+      { id: 'd', text: 'Maximum lines per module', isCorrect: false }
+    ],
+    tags: ['modules', 'boundaries', 'encapsulation'],
+    timeEstimate: 2
+  },
+  {
+    id: 'org-mcq-22',
+    category: 'Code Organization',
+    question: 'What is the purpose of "inversify" or similar IoC containers in React?',
+    answer: 'Automatic dependency resolution and instantiation at runtime.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'To invert component hierarchy', isCorrect: false },
+      { id: 'b', text: 'Automatic dependency resolution at runtime', isCorrect: true },
+      { id: 'c', text: 'To verify type safety', isCorrect: false },
+      { id: 'd', text: 'To compress code', isCorrect: false }
+    ],
+    tags: ['ioc', 'inversify', 'dependency-injection'],
+    timeEstimate: 2
+  },
+  {
+    id: 'org-mcq-23',
+    category: 'Code Organization',
+    question: 'What is "vertical slice architecture" in frontend applications?',
+    answer: 'Organizing code by feature/use-case, including all layers in one slice.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Horizontal layout of components', isCorrect: false },
+      { id: 'b', text: 'Organizing by feature including all layers', isCorrect: true },
+      { id: 'c', text: 'Slicing images vertically', isCorrect: false },
+      { id: 'd', text: 'Splitting code by viewport size', isCorrect: false }
+    ],
+    tags: ['vertical-slice', 'architecture', 'features'],
+    timeEstimate: 2
+  },
+  {
+    id: 'org-mcq-24',
+    category: 'Code Organization',
+    question: 'What is the purpose of "shared kernel" in modular architecture?',
+    answer: 'Common code shared across modules with strict versioning and contracts.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'The Linux kernel', isCorrect: false },
+      { id: 'b', text: 'Common code shared across modules with strict contracts', isCorrect: true },
+      { id: 'c', text: 'Core React libraries', isCorrect: false },
+      { id: 'd', text: 'Database connection pool', isCorrect: false }
+    ],
+    tags: ['shared-kernel', 'ddd', 'modules'],
+    timeEstimate: 2
+  },
+  {
+    id: 'org-mcq-25',
+    category: 'Code Organization',
+    question: 'What is "feature flags" architecture and when to use it?',
+    answer: 'Runtime toggles enabling gradual rollouts and A/B testing of features.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Flags in the code comments', isCorrect: false },
+      { id: 'b', text: 'Runtime toggles for gradual rollouts and A/B testing', isCorrect: true },
+      { id: 'c', text: 'CSS flags for styling', isCorrect: false },
+      { id: 'd', text: 'Build configuration options', isCorrect: false }
+    ],
+    tags: ['feature-flags', 'deployment', 'testing'],
+    timeEstimate: 2
   }
 ];
 

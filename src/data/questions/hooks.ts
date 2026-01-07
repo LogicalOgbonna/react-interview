@@ -2195,6 +2195,178 @@ function Timer() {
     ],
     tags: ['hooks', 'useState'],
     timeEstimate: 1
+  },
+  
+  // Senior/Advanced Multiple Choice Questions
+  {
+    id: 'hooks-mcq-16',
+    category: 'Hooks',
+    question: 'What is the purpose of useSyncExternalStore?',
+    answer: 'To safely subscribe to external stores in concurrent React without tearing.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'To sync state between components', isCorrect: false },
+      { id: 'b', text: 'To safely subscribe to external stores without tearing', isCorrect: true },
+      { id: 'c', text: 'To synchronize localStorage', isCorrect: false },
+      { id: 'd', text: 'To sync server and client state', isCorrect: false }
+    ],
+    tags: ['useSyncExternalStore', 'concurrent', 'external-stores'],
+    timeEstimate: 2
+  },
+  {
+    id: 'hooks-mcq-17',
+    category: 'Hooks',
+    question: 'Why is useInsertionEffect needed for CSS-in-JS libraries?',
+    answer: 'It fires synchronously before DOM mutations, allowing style injection before layout.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'It\'s faster than useEffect', isCorrect: false },
+      { id: 'b', text: 'It fires synchronously before DOM mutations for style injection', isCorrect: true },
+      { id: 'c', text: 'It prevents style conflicts', isCorrect: false },
+      { id: 'd', text: 'It compresses CSS automatically', isCorrect: false }
+    ],
+    tags: ['useInsertionEffect', 'css-in-js', 'advanced'],
+    timeEstimate: 2
+  },
+  {
+    id: 'hooks-mcq-18',
+    category: 'Hooks',
+    question: 'What problem does useTransition solve in React 18?',
+    answer: 'Marks updates as non-urgent, keeping UI responsive during expensive state updates.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Animates component transitions', isCorrect: false },
+      { id: 'b', text: 'Marks updates as non-urgent to keep UI responsive', isCorrect: true },
+      { id: 'c', text: 'Transitions between routes', isCorrect: false },
+      { id: 'd', text: 'Handles CSS transitions', isCorrect: false }
+    ],
+    tags: ['useTransition', 'concurrent', 'react-18'],
+    timeEstimate: 2
+  },
+  {
+    id: 'hooks-mcq-19',
+    category: 'Hooks',
+    question: 'What is the key difference between useDeferredValue and useTransition?',
+    answer: 'useDeferredValue defers a value, useTransition wraps a state update function.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'useDeferredValue is synchronous, useTransition is async', isCorrect: false },
+      { id: 'b', text: 'useDeferredValue defers a value, useTransition wraps state updates', isCorrect: true },
+      { id: 'c', text: 'They are exactly the same', isCorrect: false },
+      { id: 'd', text: 'useDeferredValue is for animations only', isCorrect: false }
+    ],
+    tags: ['useDeferredValue', 'useTransition', 'concurrent'],
+    timeEstimate: 2
+  },
+  {
+    id: 'hooks-mcq-20',
+    category: 'Hooks',
+    question: 'What happens if you return a cleanup function from useLayoutEffect?',
+    answer: 'It runs synchronously before the component is removed from the DOM.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'It runs after the component is removed', isCorrect: false },
+      { id: 'b', text: 'It runs synchronously before DOM removal', isCorrect: true },
+      { id: 'c', text: 'It never runs', isCorrect: false },
+      { id: 'd', text: 'It runs during the next render', isCorrect: false }
+    ],
+    tags: ['useLayoutEffect', 'cleanup', 'lifecycle'],
+    timeEstimate: 2
+  },
+  {
+    id: 'hooks-mcq-21',
+    category: 'Hooks',
+    question: 'In useReducer, when should you use the init function (third parameter)?',
+    answer: 'For lazy initialization of state, especially when computing initial state is expensive.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Always, it\'s required', isCorrect: false },
+      { id: 'b', text: 'For lazy initialization when computing state is expensive', isCorrect: true },
+      { id: 'c', text: 'Only when using TypeScript', isCorrect: false },
+      { id: 'd', text: 'When you have more than 3 actions', isCorrect: false }
+    ],
+    tags: ['useReducer', 'lazy-init', 'optimization'],
+    timeEstimate: 2
+  },
+  {
+    id: 'hooks-mcq-22',
+    category: 'Hooks',
+    question: 'What does useImperativeHandle do and when should you use it?',
+    answer: 'Customizes the instance value exposed via ref, used with forwardRef for imperative APIs.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Handles form submissions', isCorrect: false },
+      { id: 'b', text: 'Customizes ref instance value for imperative APIs with forwardRef', isCorrect: true },
+      { id: 'c', text: 'Handles keyboard events', isCorrect: false },
+      { id: 'd', text: 'Makes hooks imperative instead of declarative', isCorrect: false }
+    ],
+    tags: ['useImperativeHandle', 'forwardRef', 'refs'],
+    timeEstimate: 2
+  },
+  {
+    id: 'hooks-mcq-23',
+    category: 'Hooks',
+    question: 'What is the correct order of hook execution in a component?',
+    answer: 'useState/useReducer → useMemo → useRef → useEffect/useLayoutEffect (after render).',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'useEffect first, then useState', isCorrect: false },
+      { id: 'b', text: 'useState/useReducer → useMemo → useRef → useEffect (after render)', isCorrect: true },
+      { id: 'c', text: 'All hooks run simultaneously', isCorrect: false },
+      { id: 'd', text: 'Random order each render', isCorrect: false }
+    ],
+    tags: ['hooks', 'order', 'lifecycle'],
+    timeEstimate: 2
+  },
+  {
+    id: 'hooks-mcq-24',
+    category: 'Hooks',
+    question: 'Why can\'t hooks be called inside conditions or loops?',
+    answer: 'React relies on call order to match hook state between renders.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'It causes memory leaks', isCorrect: false },
+      { id: 'b', text: 'React relies on call order to match state between renders', isCorrect: true },
+      { id: 'c', text: 'JavaScript doesn\'t support it', isCorrect: false },
+      { id: 'd', text: 'It\'s a TypeScript limitation', isCorrect: false }
+    ],
+    tags: ['hooks', 'rules', 'internals'],
+    timeEstimate: 2
+  },
+  {
+    id: 'hooks-mcq-25',
+    category: 'Hooks',
+    question: 'What is the purpose of the "use" hook in React 19?',
+    answer: 'To read resources like Promises or Context during render, enabling Suspense integration.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'To replace all other hooks', isCorrect: false },
+      { id: 'b', text: 'To read Promises or Context during render with Suspense', isCorrect: true },
+      { id: 'c', text: 'To use third-party libraries', isCorrect: false },
+      { id: 'd', text: 'To declare component usage', isCorrect: false }
+    ],
+    tags: ['use', 'react-19', 'suspense'],
+    timeEstimate: 2
   }
 ];
 

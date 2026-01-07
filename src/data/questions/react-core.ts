@@ -1810,6 +1810,178 @@ function AnimatedComponent({ trigger }) {
     ],
     tags: ['rsc', 'next.js'],
     timeEstimate: 1
+  },
+  
+  // Senior/Advanced Multiple Choice Questions
+  {
+    id: 'rc-mcq-16',
+    category: 'React Core',
+    question: 'What is the primary purpose of React Fiber architecture?',
+    answer: 'To enable incremental rendering by splitting rendering work into chunks.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'To make React faster on mobile devices', isCorrect: false },
+      { id: 'b', text: 'To enable incremental rendering and prioritize updates', isCorrect: true },
+      { id: 'c', text: 'To replace the Virtual DOM entirely', isCorrect: false },
+      { id: 'd', text: 'To support server-side rendering', isCorrect: false }
+    ],
+    tags: ['fiber', 'architecture', 'internals'],
+    timeEstimate: 2
+  },
+  {
+    id: 'rc-mcq-17',
+    category: 'React Core',
+    question: 'In React\'s reconciliation algorithm, what determines if a component should be re-used or recreated?',
+    answer: 'The element type and key - same type + key means update, different means unmount/remount.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'The component props only', isCorrect: false },
+      { id: 'b', text: 'The element type and key', isCorrect: true },
+      { id: 'c', text: 'The component state values', isCorrect: false },
+      { id: 'd', text: 'The DOM position only', isCorrect: false }
+    ],
+    tags: ['reconciliation', 'internals', 'keys'],
+    timeEstimate: 2
+  },
+  {
+    id: 'rc-mcq-18',
+    category: 'React Core',
+    question: 'What is the purpose of the scheduler in React 18+?',
+    answer: 'To prioritize and schedule different types of updates (urgent vs transition).',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'To schedule API calls', isCorrect: false },
+      { id: 'b', text: 'To prioritize and schedule different update types', isCorrect: true },
+      { id: 'c', text: 'To manage component lifecycles', isCorrect: false },
+      { id: 'd', text: 'To handle event delegation', isCorrect: false }
+    ],
+    tags: ['scheduler', 'concurrent', 'react-18'],
+    timeEstimate: 2
+  },
+  {
+    id: 'rc-mcq-19',
+    category: 'React Core',
+    question: 'What is the "lanes" model in React?',
+    answer: 'A bitmask-based priority system for categorizing and batching updates.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'A routing system for React apps', isCorrect: false },
+      { id: 'b', text: 'A bitmask-based priority system for updates', isCorrect: true },
+      { id: 'c', text: 'A layout algorithm for flexbox', isCorrect: false },
+      { id: 'd', text: 'A memory management technique', isCorrect: false }
+    ],
+    tags: ['lanes', 'internals', 'priority'],
+    timeEstimate: 2
+  },
+  {
+    id: 'rc-mcq-20',
+    category: 'React Core',
+    question: 'When does React bail out of rendering child components?',
+    answer: 'When props, state, and context haven\'t changed (referential equality check).',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Only when using React.memo', isCorrect: false },
+      { id: 'b', text: 'When the component returns null', isCorrect: false },
+      { id: 'c', text: 'When props, state, and context pass referential equality', isCorrect: true },
+      { id: 'd', text: 'Never - React always re-renders children', isCorrect: false }
+    ],
+    tags: ['optimization', 'rendering', 'bailout'],
+    timeEstimate: 2
+  },
+  {
+    id: 'rc-mcq-21',
+    category: 'React Core',
+    question: 'What is the "commit phase" in React\'s render cycle?',
+    answer: 'The phase where React applies changes to the DOM and runs effects.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'When React creates the virtual DOM', isCorrect: false },
+      { id: 'b', text: 'When React applies changes to DOM and runs effects', isCorrect: true },
+      { id: 'c', text: 'When components are first mounted', isCorrect: false },
+      { id: 'd', text: 'When state is updated', isCorrect: false }
+    ],
+    tags: ['commit-phase', 'lifecycle', 'internals'],
+    timeEstimate: 2
+  },
+  {
+    id: 'rc-mcq-22',
+    category: 'React Core',
+    question: 'What problem does React\'s automatic batching in React 18 solve?',
+    answer: 'Multiple state updates in async handlers now batch into a single re-render.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Reduces bundle size automatically', isCorrect: false },
+      { id: 'b', text: 'Batches state updates in async handlers into single re-render', isCorrect: true },
+      { id: 'c', text: 'Automatically splits code into chunks', isCorrect: false },
+      { id: 'd', text: 'Prevents memory leaks', isCorrect: false }
+    ],
+    tags: ['batching', 'react-18', 'performance'],
+    timeEstimate: 2
+  },
+  {
+    id: 'rc-mcq-23',
+    category: 'React Core',
+    question: 'What is the purpose of flushSync in React 18?',
+    answer: 'To force synchronous flushing of updates, bypassing automatic batching.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'To clear the component cache', isCorrect: false },
+      { id: 'b', text: 'To force synchronous updates bypassing batching', isCorrect: true },
+      { id: 'c', text: 'To sync state with localStorage', isCorrect: false },
+      { id: 'd', text: 'To flush network requests', isCorrect: false }
+    ],
+    tags: ['flushSync', 'react-18', 'synchronous'],
+    timeEstimate: 2
+  },
+  {
+    id: 'rc-mcq-24',
+    category: 'React Core',
+    question: 'In Server Components, what happens when you import a Client Component?',
+    answer: 'React creates a placeholder and serializes props to send to the client.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'The component runs on the server', isCorrect: false },
+      { id: 'b', text: 'React creates a placeholder and serializes props for the client', isCorrect: true },
+      { id: 'c', text: 'An error is thrown', isCorrect: false },
+      { id: 'd', text: 'The import is ignored', isCorrect: false }
+    ],
+    tags: ['rsc', 'server-components', 'serialization'],
+    timeEstimate: 2
+  },
+  {
+    id: 'rc-mcq-25',
+    category: 'React Core',
+    question: 'What is "tearing" in the context of concurrent React?',
+    answer: 'UI showing inconsistent state when different parts read from different versions.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Components breaking during hydration', isCorrect: false },
+      { id: 'b', text: 'UI showing inconsistent state from different store versions', isCorrect: true },
+      { id: 'c', text: 'Memory leaks from event listeners', isCorrect: false },
+      { id: 'd', text: 'CSS animations interfering with renders', isCorrect: false }
+    ],
+    tags: ['tearing', 'concurrent', 'useSyncExternalStore'],
+    timeEstimate: 2
   }
 ];
 

@@ -6192,6 +6192,178 @@ function getStateDiff(prev, next) {
     ],
     tags: ['debugging', 'errors', 'render'],
     timeEstimate: 1
+  },
+  
+  // Senior/Advanced Multiple Choice Questions
+  {
+    id: 'debug-mcq-16',
+    category: 'Debugging',
+    question: 'How do you debug why a component is re-rendering in React DevTools?',
+    answer: 'Enable "Record why each component rendered" in Profiler settings.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Check the Console tab', isCorrect: false },
+      { id: 'b', text: 'Enable "Record why each component rendered" in Profiler', isCorrect: true },
+      { id: 'c', text: 'Add console.log everywhere', isCorrect: false },
+      { id: 'd', text: 'Restart the browser', isCorrect: false }
+    ],
+    tags: ['devtools', 'profiler', 'render'],
+    timeEstimate: 2
+  },
+  {
+    id: 'debug-mcq-17',
+    category: 'Debugging',
+    question: 'What tool helps identify memory leaks from detached DOM nodes?',
+    answer: 'Chrome DevTools Memory tab with heap snapshots comparing retained objects.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'React DevTools', isCorrect: false },
+      { id: 'b', text: 'Memory tab with heap snapshots', isCorrect: true },
+      { id: 'c', text: 'Network tab', isCorrect: false },
+      { id: 'd', text: 'ESLint', isCorrect: false }
+    ],
+    tags: ['memory-leaks', 'heap-snapshots', 'devtools'],
+    timeEstimate: 2
+  },
+  {
+    id: 'debug-mcq-18',
+    category: 'Debugging',
+    question: 'How can you debug hydration mismatches in Next.js?',
+    answer: 'Check the browser console for hydration warnings and compare server vs client HTML.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Disable hydration', isCorrect: false },
+      { id: 'b', text: 'Check console warnings, compare server vs client HTML', isCorrect: true },
+      { id: 'c', text: 'Only use client components', isCorrect: false },
+      { id: 'd', text: 'Clear browser cache', isCorrect: false }
+    ],
+    tags: ['hydration', 'next.js', 'ssr'],
+    timeEstimate: 2
+  },
+  {
+    id: 'debug-mcq-19',
+    category: 'Debugging',
+    question: 'What causes the "Rendered more hooks than during the previous render" error?',
+    answer: 'Hooks being called conditionally or in loops, violating Rules of Hooks.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Using too many hooks', isCorrect: false },
+      { id: 'b', text: 'Hooks called conditionally or in loops', isCorrect: true },
+      { id: 'c', text: 'Missing dependencies array', isCorrect: false },
+      { id: 'd', text: 'Using class components', isCorrect: false }
+    ],
+    tags: ['hooks', 'rules-of-hooks', 'errors'],
+    timeEstimate: 2
+  },
+  {
+    id: 'debug-mcq-20',
+    category: 'Debugging',
+    question: 'How do you trace the source of a state update in React?',
+    answer: 'Use React DevTools to trace back updates or add debugger in the component.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Check localStorage', isCorrect: false },
+      { id: 'b', text: 'Use DevTools trace or debugger in component', isCorrect: true },
+      { id: 'c', text: 'Read the Redux store', isCorrect: false },
+      { id: 'd', text: 'Check network requests', isCorrect: false }
+    ],
+    tags: ['state', 'debugging', 'devtools'],
+    timeEstimate: 2
+  },
+  {
+    id: 'debug-mcq-21',
+    category: 'Debugging',
+    question: 'What does the Performance tab flame chart show in DevTools?',
+    answer: 'Stack traces over time showing function call duration and nesting.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Network latency', isCorrect: false },
+      { id: 'b', text: 'Stack traces over time with function durations', isCorrect: true },
+      { id: 'c', text: 'Memory allocation', isCorrect: false },
+      { id: 'd', text: 'CSS animations', isCorrect: false }
+    ],
+    tags: ['performance', 'flame-chart', 'devtools'],
+    timeEstimate: 2
+  },
+  {
+    id: 'debug-mcq-22',
+    category: 'Debugging',
+    question: 'How do you debug Server Components in Next.js?',
+    answer: 'Use console.log (appears in terminal), or attach debugger to Node.js process.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Use browser DevTools', isCorrect: false },
+      { id: 'b', text: 'console.log in terminal or attach debugger to Node.js', isCorrect: true },
+      { id: 'c', text: 'Add breakpoints in browser', isCorrect: false },
+      { id: 'd', text: 'Use React DevTools', isCorrect: false }
+    ],
+    tags: ['server-components', 'next.js', 'node'],
+    timeEstimate: 2
+  },
+  {
+    id: 'debug-mcq-23',
+    category: 'Debugging',
+    question: 'What causes "Cannot update state on unmounted component" warning?',
+    answer: 'Async operation completing after component unmount, attempting to set state.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Component has no state', isCorrect: false },
+      { id: 'b', text: 'Async operation trying to set state after unmount', isCorrect: true },
+      { id: 'c', text: 'Using wrong state variable', isCorrect: false },
+      { id: 'd', text: 'State is read-only', isCorrect: false }
+    ],
+    tags: ['memory-leak', 'async', 'unmount'],
+    timeEstimate: 2
+  },
+  {
+    id: 'debug-mcq-24',
+    category: 'Debugging',
+    question: 'How can you identify which context is causing unnecessary re-renders?',
+    answer: 'Split contexts, use React DevTools Profiler, or add why-did-you-render library.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Remove all contexts', isCorrect: false },
+      { id: 'b', text: 'Split contexts, use Profiler, or why-did-you-render library', isCorrect: true },
+      { id: 'c', text: 'Use Redux instead', isCorrect: false },
+      { id: 'd', text: 'Check the Network tab', isCorrect: false }
+    ],
+    tags: ['context', 'performance', 'debugging'],
+    timeEstimate: 2
+  },
+  {
+    id: 'debug-mcq-25',
+    category: 'Debugging',
+    question: 'What is the purpose of the $r and $0 shortcuts in DevTools console?',
+    answer: '$r references selected React component, $0 references selected DOM element.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'They run React commands', isCorrect: false },
+      { id: 'b', text: '$r is selected React component, $0 is selected DOM element', isCorrect: true },
+      { id: 'c', text: 'They are Redux selectors', isCorrect: false },
+      { id: 'd', text: 'They reference global variables', isCorrect: false }
+    ],
+    tags: ['devtools', 'console', 'shortcuts'],
+    timeEstimate: 2
   }
 ];
 

@@ -5270,6 +5270,178 @@ function VitalsDebugger() {
     ],
     tags: ['optimization', 'debounce', 'throttle'],
     timeEstimate: 1
+  },
+  
+  // Senior/Advanced Multiple Choice Questions
+  {
+    id: 'opt-mcq-16',
+    category: 'Performance & Optimization',
+    question: 'What is "virtualization" in the context of React lists?',
+    answer: 'Only rendering visible items in the viewport, not the entire list.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Running React in a virtual machine', isCorrect: false },
+      { id: 'b', text: 'Only rendering visible items in viewport', isCorrect: true },
+      { id: 'c', text: 'Using virtual DOM', isCorrect: false },
+      { id: 'd', text: 'Creating virtual components', isCorrect: false }
+    ],
+    tags: ['virtualization', 'lists', 'performance'],
+    timeEstimate: 2
+  },
+  {
+    id: 'opt-mcq-17',
+    category: 'Performance & Optimization',
+    question: 'What is the "Interaction to Next Paint" (INP) metric?',
+    answer: 'Core Web Vital measuring responsiveness from user interaction to visual feedback.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Time to first image render', isCorrect: false },
+      { id: 'b', text: 'Responsiveness from interaction to visual feedback', isCorrect: true },
+      { id: 'c', text: 'Time between React renders', isCorrect: false },
+      { id: 'd', text: 'Network latency measure', isCorrect: false }
+    ],
+    tags: ['inp', 'core-web-vitals', 'metrics'],
+    timeEstimate: 2
+  },
+  {
+    id: 'opt-mcq-18',
+    category: 'Performance & Optimization',
+    question: 'What causes "layout thrashing" and how do you prevent it?',
+    answer: 'Repeatedly reading then writing DOM properties - batch reads before writes.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Too many CSS animations', isCorrect: false },
+      { id: 'b', text: 'Repeatedly reading/writing DOM - batch reads before writes', isCorrect: true },
+      { id: 'c', text: 'Using too many event listeners', isCorrect: false },
+      { id: 'd', text: 'Having too many components', isCorrect: false }
+    ],
+    tags: ['layout-thrashing', 'dom', 'performance'],
+    timeEstimate: 2
+  },
+  {
+    id: 'opt-mcq-19',
+    category: 'Performance & Optimization',
+    question: 'What is the purpose of requestIdleCallback?',
+    answer: 'To schedule low-priority work during browser idle periods.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'To make animation callbacks', isCorrect: false },
+      { id: 'b', text: 'To schedule low-priority work during idle periods', isCorrect: true },
+      { id: 'c', text: 'To request user permissions', isCorrect: false },
+      { id: 'd', text: 'To handle idle timeouts', isCorrect: false }
+    ],
+    tags: ['requestIdleCallback', 'scheduling', 'performance'],
+    timeEstimate: 2
+  },
+  {
+    id: 'opt-mcq-20',
+    category: 'Performance & Optimization',
+    question: 'What is tree shaking and how does it work?',
+    answer: 'Dead code elimination by bundlers that removes unused exports from modules.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Organizing components in a tree structure', isCorrect: false },
+      { id: 'b', text: 'Dead code elimination removing unused exports', isCorrect: true },
+      { id: 'c', text: 'Compressing JavaScript files', isCorrect: false },
+      { id: 'd', text: 'Optimizing React component tree', isCorrect: false }
+    ],
+    tags: ['tree-shaking', 'bundling', 'optimization'],
+    timeEstimate: 2
+  },
+  {
+    id: 'opt-mcq-21',
+    category: 'Performance & Optimization',
+    question: 'When should you use useDeferredValue over useMemo?',
+    answer: 'When you need to defer re-rendering of expensive UI based on prop changes.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Always, useDeferredValue is better', isCorrect: false },
+      { id: 'b', text: 'When deferring expensive UI re-renders from prop changes', isCorrect: true },
+      { id: 'c', text: 'When memoizing functions', isCorrect: false },
+      { id: 'd', text: 'Never, useMemo is always better', isCorrect: false }
+    ],
+    tags: ['useDeferredValue', 'useMemo', 'optimization'],
+    timeEstimate: 2
+  },
+  {
+    id: 'opt-mcq-22',
+    category: 'Performance & Optimization',
+    question: 'What is the React Compiler (React Forget) designed to do?',
+    answer: 'Automatically memoize components and hooks, eliminating manual useMemo/useCallback.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Compile React to native code', isCorrect: false },
+      { id: 'b', text: 'Auto-memoize components, eliminating manual useMemo/useCallback', isCorrect: true },
+      { id: 'c', text: 'Compile TypeScript faster', isCorrect: false },
+      { id: 'd', text: 'Replace Babel', isCorrect: false }
+    ],
+    tags: ['react-compiler', 'react-forget', 'memoization'],
+    timeEstimate: 2
+  },
+  {
+    id: 'opt-mcq-23',
+    category: 'Performance & Optimization',
+    question: 'What is the "stale-while-revalidate" caching strategy?',
+    answer: 'Return cached data immediately while fetching fresh data in background.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Delete stale data before fetching', isCorrect: false },
+      { id: 'b', text: 'Return cached data while fetching fresh in background', isCorrect: true },
+      { id: 'c', text: 'Wait for validation before caching', isCorrect: false },
+      { id: 'd', text: 'Cache only validated data', isCorrect: false }
+    ],
+    tags: ['swr', 'caching', 'data-fetching'],
+    timeEstimate: 2
+  },
+  {
+    id: 'opt-mcq-24',
+    category: 'Performance & Optimization',
+    question: 'What is "selective hydration" in React 18?',
+    answer: 'Prioritizing hydration of components the user is interacting with.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Hydrating only visible components', isCorrect: false },
+      { id: 'b', text: 'Prioritizing hydration of user-interacted components', isCorrect: true },
+      { id: 'c', text: 'Skipping hydration entirely', isCorrect: false },
+      { id: 'd', text: 'Selecting which components to render', isCorrect: false }
+    ],
+    tags: ['selective-hydration', 'react-18', 'ssr'],
+    timeEstimate: 2
+  },
+  {
+    id: 'opt-mcq-25',
+    category: 'Performance & Optimization',
+    question: 'What is the purpose of the "priority hints" (fetchpriority attribute)?',
+    answer: 'To signal the browser which resources are most important for initial render.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'To set JavaScript execution priority', isCorrect: false },
+      { id: 'b', text: 'To signal which resources are important for initial render', isCorrect: true },
+      { id: 'c', text: 'To prioritize React renders', isCorrect: false },
+      { id: 'd', text: 'To order CSS rules', isCorrect: false }
+    ],
+    tags: ['fetchpriority', 'resource-hints', 'loading'],
+    timeEstimate: 2
   }
 ];
 

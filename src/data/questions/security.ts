@@ -5245,6 +5245,178 @@ async function getAuditLogs(filters: {
     ],
     tags: ['security', 'owasp'],
     timeEstimate: 1
+  },
+  
+  // Senior/Advanced Multiple Choice Questions
+  {
+    id: 'sec-mcq-16',
+    category: 'Security',
+    question: 'What is Subresource Integrity (SRI)?',
+    answer: 'A security feature to verify fetched resources haven\'t been tampered with using hashes.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'A way to check resource size', isCorrect: false },
+      { id: 'b', text: 'Verifying resources haven\'t been tampered with using hashes', isCorrect: true },
+      { id: 'c', text: 'A React integrity check', isCorrect: false },
+      { id: 'd', text: 'A database backup method', isCorrect: false }
+    ],
+    tags: ['sri', 'cdn', 'integrity'],
+    timeEstimate: 2
+  },
+  {
+    id: 'sec-mcq-17',
+    category: 'Security',
+    question: 'What is the purpose of nonce in Content Security Policy?',
+    answer: 'A one-time token to whitelist specific inline scripts or styles.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'To encrypt data', isCorrect: false },
+      { id: 'b', text: 'A one-time token to whitelist inline scripts/styles', isCorrect: true },
+      { id: 'c', text: 'To generate random IDs', isCorrect: false },
+      { id: 'd', text: 'To validate forms', isCorrect: false }
+    ],
+    tags: ['csp', 'nonce', 'inline-scripts'],
+    timeEstimate: 2
+  },
+  {
+    id: 'sec-mcq-18',
+    category: 'Security',
+    question: 'What is prototype pollution and how can it affect React apps?',
+    answer: 'Modifying Object.prototype which can affect all objects and bypass security checks.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Memory pollution from too many objects', isCorrect: false },
+      { id: 'b', text: 'Modifying Object.prototype affecting all objects', isCorrect: true },
+      { id: 'c', text: 'Creating too many prototypes', isCorrect: false },
+      { id: 'd', text: 'Pollution from third-party libraries', isCorrect: false }
+    ],
+    tags: ['prototype-pollution', 'object', 'security'],
+    timeEstimate: 2
+  },
+  {
+    id: 'sec-mcq-19',
+    category: 'Security',
+    question: 'What is the security risk of using target="_blank" without rel="noopener"?',
+    answer: 'The new page can access window.opener and potentially redirect the parent page.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'The link won\'t work', isCorrect: false },
+      { id: 'b', text: 'New page can access window.opener and redirect parent', isCorrect: true },
+      { id: 'c', text: 'It causes memory leaks', isCorrect: false },
+      { id: 'd', text: 'SEO penalty', isCorrect: false }
+    ],
+    tags: ['tabnabbing', 'noopener', 'links'],
+    timeEstimate: 2
+  },
+  {
+    id: 'sec-mcq-20',
+    category: 'Security',
+    question: 'How do Server Actions in Next.js protect against CSRF?',
+    answer: 'Actions use POST, check Origin header, and generate unique action IDs.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'They use CAPTCHA', isCorrect: false },
+      { id: 'b', text: 'POST method, Origin header check, unique action IDs', isCorrect: true },
+      { id: 'c', text: 'They don\'t - CSRF protection is manual', isCorrect: false },
+      { id: 'd', text: 'They require user re-authentication', isCorrect: false }
+    ],
+    tags: ['server-actions', 'csrf', 'next.js'],
+    timeEstimate: 2
+  },
+  {
+    id: 'sec-mcq-21',
+    category: 'Security',
+    question: 'What is the security concern with JSON.parse of untrusted data?',
+    answer: 'Large or deeply nested JSON can cause DoS via stack overflow or memory exhaustion.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'JSON.parse is always safe', isCorrect: false },
+      { id: 'b', text: 'Large/nested JSON can cause DoS via stack overflow', isCorrect: true },
+      { id: 'c', text: 'It can execute code', isCorrect: false },
+      { id: 'd', text: 'It exposes environment variables', isCorrect: false }
+    ],
+    tags: ['json', 'dos', 'parsing'],
+    timeEstimate: 2
+  },
+  {
+    id: 'sec-mcq-22',
+    category: 'Security',
+    question: 'What is the purpose of Trusted Types in web security?',
+    answer: 'To prevent DOM XSS by requiring safe type wrappers for dangerous sink APIs.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'To verify TypeScript types at runtime', isCorrect: false },
+      { id: 'b', text: 'Prevent DOM XSS by requiring safe wrappers for sink APIs', isCorrect: true },
+      { id: 'c', text: 'To validate user input types', isCorrect: false },
+      { id: 'd', text: 'To trust all data types', isCorrect: false }
+    ],
+    tags: ['trusted-types', 'xss', 'dom'],
+    timeEstimate: 2
+  },
+  {
+    id: 'sec-mcq-23',
+    category: 'Security',
+    question: 'What security headers should be set for React SPAs?',
+    answer: 'CSP, X-Frame-Options, X-Content-Type-Options, Strict-Transport-Security.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Only Cache-Control', isCorrect: false },
+      { id: 'b', text: 'CSP, X-Frame-Options, X-Content-Type-Options, HSTS', isCorrect: true },
+      { id: 'c', text: 'No headers needed for SPAs', isCorrect: false },
+      { id: 'd', text: 'Only CORS headers', isCorrect: false }
+    ],
+    tags: ['security-headers', 'spa', 'best-practices'],
+    timeEstimate: 2
+  },
+  {
+    id: 'sec-mcq-24',
+    category: 'Security',
+    question: 'What is the risk of exposing stack traces in production error messages?',
+    answer: 'Reveals internal code structure, file paths, and dependencies to attackers.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'No risk, it helps debugging', isCorrect: false },
+      { id: 'b', text: 'Reveals code structure and paths to attackers', isCorrect: true },
+      { id: 'c', text: 'Only affects performance', isCorrect: false },
+      { id: 'd', text: 'Causes memory leaks', isCorrect: false }
+    ],
+    tags: ['error-handling', 'information-disclosure', 'production'],
+    timeEstimate: 2
+  },
+  {
+    id: 'sec-mcq-25',
+    category: 'Security',
+    question: 'What is "dependency confusion" attack?',
+    answer: 'Tricking package managers into installing malicious public packages over private ones.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Having too many dependencies', isCorrect: false },
+      { id: 'b', text: 'Tricking package managers to install malicious public packages', isCorrect: true },
+      { id: 'c', text: 'Conflicting version numbers', isCorrect: false },
+      { id: 'd', text: 'Circular dependencies', isCorrect: false }
+    ],
+    tags: ['dependency-confusion', 'npm', 'supply-chain'],
+    timeEstimate: 2
   }
 ];
 

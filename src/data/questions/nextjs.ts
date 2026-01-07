@@ -4481,6 +4481,178 @@ export async function GET() {
     ],
     tags: ['next.js', 'environment-variables'],
     timeEstimate: 1
+  },
+  
+  // Senior/Advanced Multiple Choice Questions
+  {
+    id: 'nextjs-mcq-16',
+    category: 'Next.js',
+    question: 'What is Partial Prerendering (PPR) in Next.js 14+?',
+    answer: 'A rendering strategy that combines static shell with dynamic streaming content.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Partially rendering only visible components', isCorrect: false },
+      { id: 'b', text: 'Combining static shell with dynamic streaming content', isCorrect: true },
+      { id: 'c', text: 'Pre-rendering only the header', isCorrect: false },
+      { id: 'd', text: 'Skipping CSS during build', isCorrect: false }
+    ],
+    tags: ['next.js', 'ppr', 'rendering'],
+    timeEstimate: 2
+  },
+  {
+    id: 'nextjs-mcq-17',
+    category: 'Next.js',
+    question: 'How does Next.js implement Streaming SSR?',
+    answer: 'Using React\'s renderToPipeableStream to progressively send HTML chunks.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Using WebSockets', isCorrect: false },
+      { id: 'b', text: 'Using React\'s renderToPipeableStream for progressive HTML', isCorrect: true },
+      { id: 'c', text: 'Using Server-Sent Events', isCorrect: false },
+      { id: 'd', text: 'Using GraphQL subscriptions', isCorrect: false }
+    ],
+    tags: ['next.js', 'streaming', 'ssr'],
+    timeEstimate: 2
+  },
+  {
+    id: 'nextjs-mcq-18',
+    category: 'Next.js',
+    question: 'What is the purpose of the revalidatePath function?',
+    answer: 'To purge cached data for a specific path on-demand after mutations.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'To validate form inputs', isCorrect: false },
+      { id: 'b', text: 'To purge cached data for a path after mutations', isCorrect: true },
+      { id: 'c', text: 'To redirect to a new path', isCorrect: false },
+      { id: 'd', text: 'To check if a path exists', isCorrect: false }
+    ],
+    tags: ['next.js', 'revalidation', 'caching'],
+    timeEstimate: 2
+  },
+  {
+    id: 'nextjs-mcq-19',
+    category: 'Next.js',
+    question: 'What is the difference between generateStaticParams and getStaticPaths?',
+    answer: 'generateStaticParams is for App Router (async), getStaticPaths is for Pages Router.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'They are the same function', isCorrect: false },
+      { id: 'b', text: 'generateStaticParams is App Router, getStaticPaths is Pages Router', isCorrect: true },
+      { id: 'c', text: 'generateStaticParams is faster', isCorrect: false },
+      { id: 'd', text: 'getStaticPaths supports TypeScript', isCorrect: false }
+    ],
+    tags: ['next.js', 'ssg', 'app-router'],
+    timeEstimate: 2
+  },
+  {
+    id: 'nextjs-mcq-20',
+    category: 'Next.js',
+    question: 'How does Next.js handle parallel routes?',
+    answer: 'Using @folder convention to render multiple pages simultaneously in the same layout.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Using React.Suspense', isCorrect: false },
+      { id: 'b', text: 'Using @folder convention for simultaneous page rendering', isCorrect: true },
+      { id: 'c', text: 'Using Promise.all', isCorrect: false },
+      { id: 'd', text: 'Using web workers', isCorrect: false }
+    ],
+    tags: ['next.js', 'parallel-routes', 'app-router'],
+    timeEstimate: 2
+  },
+  {
+    id: 'nextjs-mcq-21',
+    category: 'Next.js',
+    question: 'What is the purpose of the Route Segment Config in Next.js?',
+    answer: 'To configure caching, revalidation, and runtime behavior per route segment.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'To define API endpoints', isCorrect: false },
+      { id: 'b', text: 'To configure caching and runtime behavior per route', isCorrect: true },
+      { id: 'c', text: 'To set up authentication', isCorrect: false },
+      { id: 'd', text: 'To define database schemas', isCorrect: false }
+    ],
+    tags: ['next.js', 'route-config', 'caching'],
+    timeEstimate: 2
+  },
+  {
+    id: 'nextjs-mcq-22',
+    category: 'Next.js',
+    question: 'What is the purpose of intercepting routes in Next.js?',
+    answer: 'To show a route in a modal while preserving the current page context.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'To block navigation', isCorrect: false },
+      { id: 'b', text: 'To show a route in a modal while preserving context', isCorrect: true },
+      { id: 'c', text: 'To intercept API calls', isCorrect: false },
+      { id: 'd', text: 'To log route changes', isCorrect: false }
+    ],
+    tags: ['next.js', 'intercepting-routes', 'modals'],
+    timeEstimate: 2
+  },
+  {
+    id: 'nextjs-mcq-23',
+    category: 'Next.js',
+    question: 'How does Next.js handle Server Actions security?',
+    answer: 'Actions are encrypted, use POST only, have CSRF protection, and validate inputs.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'No built-in security measures', isCorrect: false },
+      { id: 'b', text: 'Encrypted, POST-only, CSRF protected with input validation', isCorrect: true },
+      { id: 'c', text: 'Only HTTPS is required', isCorrect: false },
+      { id: 'd', text: 'Uses OAuth by default', isCorrect: false }
+    ],
+    tags: ['next.js', 'server-actions', 'security'],
+    timeEstimate: 2
+  },
+  {
+    id: 'nextjs-mcq-24',
+    category: 'Next.js',
+    question: 'What is the purpose of the unstable_cache function?',
+    answer: 'To cache expensive computations or database queries with custom revalidation.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'To cache images', isCorrect: false },
+      { id: 'b', text: 'To cache expensive computations with custom revalidation', isCorrect: true },
+      { id: 'c', text: 'To cache CSS', isCorrect: false },
+      { id: 'd', text: 'To cache user sessions', isCorrect: false }
+    ],
+    tags: ['next.js', 'caching', 'data-cache'],
+    timeEstimate: 2
+  },
+  {
+    id: 'nextjs-mcq-25',
+    category: 'Next.js',
+    question: 'What happens when you use "export const dynamic = \'force-dynamic\'"?',
+    answer: 'The route opts out of all caching and is always rendered dynamically.',
+    difficulty: 'senior',
+    type: 'conceptual',
+    answerFormat: 'multiple-choice',
+    options: [
+      { id: 'a', text: 'Enables client-side rendering', isCorrect: false },
+      { id: 'b', text: 'Opts out of caching, always renders dynamically', isCorrect: true },
+      { id: 'c', text: 'Forces static generation', isCorrect: false },
+      { id: 'd', text: 'Enables real-time updates', isCorrect: false }
+    ],
+    tags: ['next.js', 'dynamic', 'rendering'],
+    timeEstimate: 2
   }
 ];
 
